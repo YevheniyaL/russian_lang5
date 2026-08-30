@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Печать карточек — §3. Падеж имён существительных</title>
+<style>
+  body { font-family: 'PT Sans', Arial, sans-serif; color: #222; max-width: 800px; margin: 20px auto; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .instructions { background: #f2f5fa; border: 1px solid #c7d3e3; border-radius: 6px; padding: 14px 18px; font-size: 14px; line-height: 1.6; }
+  .instructions b { color: #1a3a66; }
+  .page-label { font-size: 13px; color: #888; margin: 26px 0 6px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 40mm; border: 1px solid #333; page-break-before: always; }
+  .cell { border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px 14px; }
+  .cell.term { font-size: 17px; font-weight: bold; color: #1a3a66; }
+  .cell.def { font-size: 12.5px; line-height: 1.4; }
+  @media print { .instructions { display: block; } .page-label { display: none; } }
+</style>
+</head>
+<body>
+
+<h1>Карточки §3. Падеж имён существительных — печать для вырезания (стр. 26–32)</h1>
+<div class="instructions">
+  <p><b>Если принтер печатает с двух сторон (дуплекс):</b> в диалоге печати
+  включите "Печать на двух сторонах" / "Two-sided" и переплёт по
+  <b>длинному краю</b>. Термин и определение окажутся на разных сторонах
+  одной карточки. Разрежьте лист по пунктирным линиям — получится
+  9 двусторонних карточек.</p>
+  <p><b>Если принтер печатает только с одной стороны:</b> напечатайте
+  первый лист (термины), переверните эту же стопку и вставьте в лоток снова,
+  чтобы напечатать второй лист (определения) на обратной стороне.</p>
+</div>
+
+<p class="page-label">Лист 1 — термины (лицевая сторона)</p>
+<div class="grid">
+  <div class="cell term">родной язык</div>
+  <div class="cell term">склонение</div>
+  <div class="cell term">именительный падеж</div>
+  <div class="cell term">косвенные падежи</div>
+  <div class="cell term">1-е склонение</div>
+  <div class="cell term">2-е склонение</div>
+  <div class="cell term">3-е склонение</div>
+  <div class="cell term">художественный стиль речи</div>
+  <div class="cell term">«словесный портрет» существительного</div>
+</div>
+
+<p class="page-label">Лист 2 — определения (обратная сторона, тот же порядок ячеек)</p>
+<div class="grid">
+  <div class="cell def">Язык предков, язык родного народа; язык, на котором говорят с детства и думают.</div>
+  <div class="cell def">Изменение существительных по падежам.</div>
+  <div class="cell def">Начальная форма существительного; вопросы кто? что?</div>
+  <div class="cell def">Все падежи, кроме именительного: Р., Д., В., Т., П.</div>
+  <div class="cell def">Существительные ж. и м. рода на -а, -я: страна, юноша.</div>
+  <div class="cell def">Существительные м. и ср. рода с нулевым окончанием или на -о, -е: конь, море.</div>
+  <div class="cell def">Существительные ж. рода с нулевым окончанием: степь, дочь.</div>
+  <div class="cell def">Стиль художественной литературы; выражает мысли и чувства автора.</div>
+  <div class="cell def">Морфологический разбор существительного: значение, признаки, роль в предложении.</div>
+</div>
+
+</body>
+</html>
