@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Эпитет, гипербола, эмоциональные слова</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf6f7; --paper-raised: #ffffff; --ink: #35232a; --ink-soft: #7a636b;
+    --accent: #c14f68; --accent-deep: #8f3049; --accent-soft: #f7dbe3; --accent-soft2: #fcedf1;
+    --gold: #b3872c; --gold-soft: #f6ecd3; --line: #eed3db; --shadow: rgba(110, 40, 60, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #241a1d; --paper-raised: #302126; --ink: #f6e9ec; --ink-soft: #cba7b0;
+      --accent: #ea8ca0; --accent-deep: #f5aebd; --accent-soft: #3c2530; --accent-soft2: #33202a;
+      --gold: #dcb75f; --gold-soft: #3a2f18; --line: #4a2d36; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #241a1d; --paper-raised: #302126; --ink: #f6e9ec; --ink-soft: #cba7b0;
+    --accent: #ea8ca0; --accent-deep: #f5aebd; --accent-soft: #3c2530; --accent-soft2: #33202a;
+    --gold: #dcb75f; --gold-soft: #3a2f18; --line: #4a2d36; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 24px; }
+
+  .device-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 620px) { .device-grid { grid-template-columns: 1fr; } }
+  .device { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: 2px 4px 0 var(--shadow); }
+  .device b { display: block; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 16px; color: var(--accent-deep); margin-bottom: 6px; }
+  .device p { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 8px; }
+  .device .example { font-style: italic; font-size: 12.5px; color: var(--ink); }
+
+  .suffix-box { background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 12px; padding: 14px 16px; margin-top: 6px; }
+  .suffix-box p { margin: 0 0 8px; font-size: 13px; color: var(--ink-soft); }
+  .suffix-strip { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+  .suffix-strip span { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; color: var(--gold); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §20 · глава IV</p>
+  <h1>Эпитет, гипербола, эмоциональные слова</h1>
+  <p class="subtitle">Все профессии важны — три способа сделать речь образной</p>
+
+  <div class="device-grid">
+    <div class="device"><b>Гипербола</b><p>Намеренное преувеличение</p><span class="example">«ручьи слёз», «не виделись сто лет»</span></div>
+    <div class="device"><b>Эпитет</b><p>Образное определение (чаще прилагательное)</p><span class="example">«лучистые глаза», «чудо-мастер»</span></div>
+    <div class="device"><b>Сравнение</b><p>Сопоставление с другим предметом (см. §21)</p><span class="example">словно доктор Айболит</span></div>
+  </div>
+
+  <div class="suffix-box">
+    <p>Эмоционально окрашенные слова — суффиксы, которые выражают отношение говорящего:</p>
+    <div class="suffix-strip">
+      <span>-к-</span><span>-ек-</span><span>-ик-</span><span>-онок-</span><span>-ёнок-</span>
+      <span>-онк-</span><span>-ищ-</span><span>-ущ-</span><span>-еньк-</span><span>-оньк-</span>
+    </div>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §20, стр. 149–156</footer>
+</div>
+</body>
+</html>

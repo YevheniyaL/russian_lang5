@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Однородные члены и заимствованные слова</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #2b2a1f; --ink-soft: #6a6656;
+    --accent: #b3781f; --accent-deep: #7c5215; --accent-soft: #f3e3c8; --accent-soft2: #faf1de;
+    --teal: #1c7d78; --teal-soft: #d8f0ee; --line: #e6d7b8; --shadow: rgba(90, 66, 20, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #241f14; --paper-raised: #2f281a; --ink: #f4eede; --ink-soft: #c2b79a;
+      --accent: #e2ab5c; --accent-deep: #f0c489; --accent-soft: #3d3120; --accent-soft2: #362c1c;
+      --teal: #5fcfc8; --teal-soft: #1c3634; --line: #4a3d26; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #241f14; --paper-raised: #2f281a; --ink: #f4eede; --ink-soft: #c2b79a;
+    --accent: #e2ab5c; --accent-deep: #f0c489; --accent-soft: #3d3120; --accent-soft2: #362c1c;
+    --teal: #5fcfc8; --teal-soft: #1c3634; --line: #4a3d26; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 24px; }
+
+  .section-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 22px 0 10px; text-align: center; }
+
+  .rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .rule-grid { grid-template-columns: 1fr; } }
+  .rule-card { border-radius: 12px; padding: 12px 14px; box-shadow: 2px 4px 0 var(--shadow); border: 1px solid var(--line); }
+  .rule-card.yes { background: var(--teal-soft); border-color: var(--teal); }
+  .rule-card.no { background: var(--accent-soft); }
+  .rule-card b { display: block; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; margin-bottom: 4px; }
+  .rule-card.yes b { color: var(--teal); }
+  .rule-card.no b { color: var(--accent-deep); }
+  .rule-card span { font-size: 12.5px; color: var(--ink-soft); }
+  .rule-card .example { display: block; margin-top: 4px; font-style: italic; color: var(--ink); font-size: 12.5px; }
+
+  .scheme-strip { text-align: center; margin: 18px 0; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 20px; color: var(--ink); }
+  .scheme-strip .o { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; border: 3px solid var(--teal); margin: 0 3px; font-size: 14px; color: var(--teal); vertical-align: middle; }
+
+  .loan-box { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-top: 16px; box-shadow: 2px 4px 0 var(--shadow); }
+  .loan-box p { margin: 0 0 8px; font-size: 13px; color: var(--ink-soft); }
+  .word-strip { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+  .word-strip span { background: var(--accent-soft2); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 12.5px; color: var(--ink); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §19 · глава IV</p>
+  <h1>Однородные члены и заимствованные слова</h1>
+  <p class="subtitle">Мир профессий — когда нужна запятая между однородными членами</p>
+
+  <div class="scheme-strip">Схема: <span class="o">О</span><span class="o">О</span> и <span class="o">О</span></div>
+
+  <p class="section-title">Когда ставится / не ставится запятая</p>
+  <div class="rule-grid">
+    <div class="rule-card yes"><b>Запятая ставится</b><span>без союзов</span><span class="example">Солнце, небо, звёзды…</span></div>
+    <div class="rule-card no"><b>Запятая не ставится</b><span>одиночный союз и, да(=и), или, либо</span><span class="example">Рыбой и морем пахнет рыбак</span></div>
+    <div class="rule-card yes"><b>Запятая ставится</b><span>союзы а, но, да (=но)</span><span class="example">Не ленись, а трудись</span></div>
+    <div class="rule-card yes"><b>Запятая ставится</b><span>повторяющиеся и—и, ни—ни, то—то</span><span class="example">Ни тонет, ни горит</span></div>
+  </div>
+
+  <div class="loan-box">
+    <p>Заимствованные слова — пришли в русский язык из других языков. Многие профессии называются именно такими словами:</p>
+    <div class="word-strip">
+      <span>бухгалтер</span><span>программист</span><span>экономист</span><span>кинолог</span>
+      <span>эколог</span><span>парикмахер</span><span>инженер</span><span>архитектор</span>
+    </div>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §19, стр. 142–148</footer>
+</div>
+</body>
+</html>
