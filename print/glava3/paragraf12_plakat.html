@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Антонимы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-soft: #fbe9c8; --line: #cfe3dc; --shadow: rgba(22, 58, 48, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-soft: #3a2f16; --line: #2c4a42; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-soft: #3a2f16; --line: #2c4a42; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 36px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.05; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 26px; }
+
+  .pairs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+  @media (max-width: 620px) { .pairs-grid { grid-template-columns: 1fr; } }
+  .pair { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: 2px 4px 0 var(--shadow); text-align: center; }
+  .pair .w1 { color: var(--accent-deep); font-weight: 800; font-family: 'Nunito', sans-serif; font-size: 16px; }
+  .pair .vs { color: var(--ink-soft); font-size: 12px; margin: 2px 0; }
+  .pair .w2 { color: var(--amber); font-weight: 800; font-family: 'Nunito', sans-serif; font-size: 16px; }
+
+  .flower-wrap { display: flex; justify-content: center; margin-bottom: 10px; }
+  .flower { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 560px; }
+  .petal { background: var(--accent-soft2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; text-align: center; }
+  .petal b { display: block; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin-bottom: 3px; }
+  .petal span { font-size: 11.5px; color: var(--ink-soft); }
+  .flower-caption { text-align: center; font-size: 12.5px; color: var(--ink-soft); margin-bottom: 10px; }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 16px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §12</p>
+  <h1>Антонимы</h1>
+  <p class="subtitle">Слова одной части речи с противоположным значением</p>
+
+  <div class="pairs-grid">
+    <div class="pair"><span class="w1">добрый</span><span class="vs">↔</span><span class="w2">злой</span></div>
+    <div class="pair"><span class="w1">день</span><span class="vs">↔</span><span class="w2">ночь</span></div>
+    <div class="pair"><span class="w1">друг</span><span class="vs">↔</span><span class="w2">враг</span></div>
+  </div>
+
+  <div class="flower-wrap">
+    <div class="flower">
+      <div class="petal"><b>Простые</b><span>факт: что? кто?</span></div>
+      <div class="petal"><b>Уточняющие</b><span>«правильно ли я понял, что…»</span></div>
+      <div class="petal"><b>Практические</b><span>как это применить?</span></div>
+      <div class="petal"><b>Объясняющие</b><span>почему?</span></div>
+      <div class="petal"><b>Творческие</b><span>что было бы, если…</span></div>
+      <div class="petal"><b>Оценочные</b><span>как вы относитесь?</span></div>
+    </div>
+  </div>
+  <p class="flower-caption">«Ромашка Блума» — шесть типов вопросов к тексту</p>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §12, стр. 96–102</footer>
+</div>
+</body>
+</html>

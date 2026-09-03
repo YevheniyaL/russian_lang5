@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кубик Блума</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-soft: #fbe9c8; --line: #cfe3dc; --shadow: rgba(22, 58, 48, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-soft: #3a2f16; --line: #2c4a42; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-soft: #3a2f16; --line: #2c4a42; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 34px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.05; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 26px; }
+
+  .cube-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
+  @media (max-width: 560px) { .cube-grid { grid-template-columns: 1fr 1fr; } }
+  .face { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 14px; text-align: center; box-shadow: 2px 4px 0 var(--shadow); }
+  .face .n { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 20px; color: var(--accent); display: block; margin-bottom: 4px; }
+  .face b { display: block; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; margin-bottom: 4px; }
+  .face span { font-size: 11.5px; color: var(--ink-soft); }
+  .face:nth-child(3n+1) { background: var(--accent-soft2); }
+  .face:nth-child(3n+2) { background: var(--paper-raised); }
+  .face:nth-child(3n) { background: var(--amber-soft); border-color: var(--amber); }
+
+  .value-strip { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+  .value-strip span { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 12px; color: var(--ink-soft); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 16px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §18 · конец главы III</p>
+  <h1>Кубик Блума</h1>
+  <p class="subtitle">Счастье — шесть граней-заданий к любой теме</p>
+
+  <div class="cube-grid">
+    <div class="face"><span class="n">1</span><b>Опиши его</b><span>что это такое</span></div>
+    <div class="face"><span class="n">2</span><b>Представь его</b><span>кого/что напоминает</span></div>
+    <div class="face"><span class="n">3</span><b>Объясни</b><span>что испытывает человек</span></div>
+    <div class="face"><span class="n">4</span><b>Расскажи о нём</b><span>как выглядит</span></div>
+    <div class="face"><span class="n">5</span><b>Проанализируй</b><span>в каких ситуациях, что даёт</span></div>
+    <div class="face"><span class="n">6</span><b>Подведи итоги</b><span>кому «даётся»</span></div>
+  </div>
+
+  <div class="value-strip">
+    <span>лёгкий</span><span>чистый</span><span>светлый</span><span>тёплый</span><span>бездонный</span>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §18, стр. 135–140</footer>
+</div>
+</body>
+</html>
