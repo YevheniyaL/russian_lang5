@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сказуемое и природа Казахстана</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5f9f2; --paper-raised: #ffffff; --ink: #22331c; --ink-soft: #5a6b52;
+    --accent: #4c8a2f; --accent-deep: #345f1f; --accent-soft: #dcefd0; --accent-soft2: #eef7e8;
+    --gold: #b3872c; --gold-soft: #f6ecd3; --line: #d9e8cf; --shadow: rgba(30, 60, 15, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #161f13; --paper-raised: #1f2a1a; --ink: #eaf3e4; --ink-soft: #aec2a2;
+      --accent: #8bd166; --accent-deep: #a9e28c; --accent-soft: #263a20; --accent-soft2: #1e2c19;
+      --gold: #dcb75f; --gold-soft: #3a2f18; --line: #2c3e26; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #161f13; --paper-raised: #1f2a1a; --ink: #eaf3e4; --ink-soft: #aec2a2;
+    --accent: #8bd166; --accent-deep: #a9e28c; --accent-soft: #263a20; --accent-soft2: #1e2c19;
+    --gold: #dcb75f; --gold-soft: #3a2f18; --line: #2c3e26; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 30px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 24px; }
+
+  .def-box { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; box-shadow: 2px 4px 0 var(--shadow); }
+  .def-box b { color: var(--accent-deep); }
+  .def-box p { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-soft); }
+
+  .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .fact-grid { grid-template-columns: 1fr; } }
+  .fact-card { background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 12px; padding: 12px 14px; }
+  .fact-card b { display: block; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--gold); margin-bottom: 4px; }
+  .fact-card span { font-size: 12px; color: var(--ink-soft); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §28 · глава VI</p>
+  <h1>Сказуемое</h1>
+  <p class="subtitle">Природа Казахстана — главный член предложения №2</p>
+
+  <div class="def-box">
+    <b>Сказуемое</b> — отвечает на вопросы <b>что делает? что делается?
+    каков? какой? что такое? кто такой?</b>
+    <p>Обычно выражается глаголом, а также прилагательным и существительным.
+    Подлежащее + сказуемое = грамматическая основа предложения.</p>
+  </div>
+
+  <div class="fact-grid">
+    <div class="fact-card"><b>Апорт</b><span>символ и визитная карточка Алматы, награждался золотыми медалями</span></div>
+    <div class="fact-card"><b>Аулие-агаш</b><span>священное дерево под Жаркентом, возраст более 700 лет</span></div>
+    <div class="fact-card"><b>Ясеневая роща</b><span>Шарынский нацпарк, существует с ледникового периода</span></div>
+    <div class="fact-card"><b>Степь</b><span>по О. Сулейменову — родина, требующая сыновней любви и заботы</span></div>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §28, стр. 45–50</footer>
+</div>
+</body>
+</html>

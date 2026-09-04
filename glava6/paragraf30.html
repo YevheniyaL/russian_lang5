@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>§30. Страна цветов. Тире между подлежащим и сказуемым</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf9f4; --paper-raised: #ffffff; --rule: #b9cfe0; --rule-soft: #dbe8f1;
+    --margin: #2f6690; --margin-soft: #c7dbea; --ink: #24304a; --ink-soft: #647089; --ink-faint: #97a2b8;
+    --good: #3c8a5c; --good-bg: #dff1e5; --bad: #c85a4f; --bad-bg: #fbe4e1;
+    --mark: #2f9e8f; --mark-bg: #d7f0ec; --shadow: rgba(36, 48, 74, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1b2431; --paper-raised: #232f3f; --rule: #3c5468; --rule-soft: #29394a;
+      --margin: #7fb1de; --margin-soft: #2c3f4f; --ink: #eceff5; --ink-soft: #a7b2c8; --ink-faint: #6d788e;
+      --good: #6fcb93; --good-bg: #23392c; --bad: #e0847a; --bad-bg: #402b2a;
+      --mark: #5fd0bd; --mark-bg: #1f3d38; --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1b2431; --paper-raised: #232f3f; --rule: #3c5468; --rule-soft: #29394a;
+    --margin: #7fb1de; --margin-soft: #2c3f4f; --ink: #eceff5; --ink-soft: #a7b2c8; --ink-faint: #6d788e;
+    --good: #6fcb93; --good-bg: #23392c; --bad: #e0847a; --bad-bg: #402b2a;
+    --mark: #5fd0bd; --mark-bg: #1f3d38; --shadow: rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; line-height: 1.5; -webkit-tap-highlight-color: transparent; }
+  h1, h2, .hand { font-family: 'Caveat', 'Comic Sans MS', cursive; font-weight: 700; text-wrap: balance; }
+  .back-link { font-size: 13px; color: var(--ink-faint); text-decoration: none; }
+  .back-link:hover { color: var(--margin); }
+  .sheet {
+    max-width: 640px; margin: 0 auto; padding: 22px 20px 60px 44px; position: relative;
+    background-image: repeating-linear-gradient(to bottom, transparent, transparent 37px, var(--rule-soft) 38px);
+    background-position: 0 128px;
+  }
+  .sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 26px; width: 2px; background: var(--margin); opacity: 0.75; }
+  header.page { padding-top: 6px; padding-bottom: 14px; }
+  h1 { font-size: 30px; margin: 0 0 2px; color: var(--ink); line-height: 1.15; }
+  .subtitle { font-size: 15px; color: var(--ink-soft); margin: 0 0 10px; }
+  nav.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 20px; }
+  .tab {
+    font-family: 'Caveat', cursive; font-size: 19px; font-weight: 600;
+    background: var(--paper-raised); border: 1px solid var(--rule); border-bottom-width: 3px;
+    color: var(--ink-soft); padding: 7px 16px 6px; border-radius: 8px 8px 4px 4px; cursor: pointer;
+    box-shadow: 1px 2px 0 var(--shadow); transition: transform 0.12s ease;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab:nth-child(1) { transform: rotate(-1.2deg); }
+  .tab:nth-child(2) { transform: rotate(0.8deg); }
+  .tab:nth-child(3) { transform: rotate(-0.6deg); }
+  .tab[aria-selected="true"] { color: var(--paper); background: var(--margin); border-color: var(--margin); }
+  .tab:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--margin); outline-offset: 2px; }
+  section.page { display: none; }
+  section.page.active { display: block; }
+  .lead { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .counter { font-family: 'Caveat', cursive; font-size: 20px; font-weight: 700; color: var(--margin); margin-bottom: 12px; }
+
+  .cards { display: grid; grid-template-columns: repeat(1, 1fr); gap: 12px; }
+  @media (min-width: 480px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  .card { perspective: 800px; height: 130px; }
+  .card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(.4,.2,.2,1); cursor: pointer; }
+  .card.flipped .card-inner { transform: rotateY(180deg); }
+  .card-face { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; backface-visibility: hidden; border-radius: 6px; border: 1px solid var(--rule); background: var(--paper-raised); box-shadow: 2px 3px 0 var(--shadow); padding: 8px; text-align: center; }
+  .card-face.back { transform: rotateY(180deg); background: var(--mark-bg); border-color: var(--mark); }
+  .card-face .term { font-size: 15px; font-weight: 700; }
+  .card-face .def { font-size: 12.5px; color: var(--ink); }
+
+  .fib-item { margin-bottom: 16px; }
+  .fib-sentence { font-size: 15px; margin-bottom: 6px; }
+  .fib-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .fib-row input[type="text"] { font-family: 'PT Sans', sans-serif; font-size: 15px; padding: 6px 9px; border: none; border-bottom: 2px solid var(--ink-faint); background: transparent; color: var(--ink); width: 160px; }
+  .fib-row input[type="text"]:focus { border-bottom-color: var(--margin); }
+  .fib-row input.correct { border-bottom-color: var(--good); color: var(--good); }
+  .fib-row input.incorrect { border-bottom-color: var(--bad); color: var(--bad); }
+  .check-btn { font-family: 'PT Sans', sans-serif; font-size: 13px; background: var(--ink); color: var(--paper); border: none; border-radius: 5px; padding: 6px 12px; cursor: pointer; }
+  .check-btn:hover { opacity: 0.88; }
+  .fib-mark { font-family: 'Caveat', cursive; font-size: 20px; font-weight: 700; min-width: 90px; }
+  .fib-mark.good-mark { color: var(--good); }
+  .fib-mark.bad-mark { color: var(--bad); }
+
+  .tf-item { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--rule); }
+  .tf-statement { font-size: 15px; }
+  .tf-buttons { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .tf-btn { font-family: 'PT Sans', sans-serif; font-size: 13px; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 5px; padding: 6px 14px; cursor: pointer; color: var(--ink); }
+  .tf-btn.chosen-good { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+  .tf-btn.chosen-bad { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+  .tf-result { font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; }
+  .tf-result.good-mark { color: var(--good); }
+  .tf-result.bad-mark { color: var(--bad); }
+
+  .reset-line { margin-top: 18px; }
+  .reset-btn { font-family: 'Caveat', cursive; font-size: 16px; background: none; border: none; color: var(--ink-faint); text-decoration: underline; cursor: pointer; padding: 0; }
+  .reset-btn:hover { color: var(--margin); }
+  footer.page { margin-top: 30px; font-size: 12px; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  footer.page a { color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="page">
+    <a class="back-link" href="../index.html">← ко всем параграфам</a>
+    <h1>§30. Страна цветов</h1>
+    <p class="subtitle">Глава VI · Живые организмы: растения · стр. 57–66</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Упражнения">
+    <button class="tab" role="tab" aria-selected="true" data-target="cards">Термины</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="fib">Правила</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="tf">Верно / неверно</button>
+  </nav>
+
+  <section class="page active" id="cards">
+    <p class="lead">Нажми на карточку — она перевернётся и покажет определение.</p>
+    <div class="cards" id="cardsGrid"></div>
+  </section>
+
+  <section class="page" id="fib">
+    <p class="lead">Впиши пропущенное слово.</p>
+    <p class="counter" id="fibCounter">Верно: 0 из 0</p>
+    <div id="fibList"></div>
+  </section>
+
+  <section class="page" id="tf">
+    <p class="lead">Отметь, верное утверждение или нет.</p>
+    <p class="counter" id="tfCounter">Верно: 0 из 0</p>
+    <div id="tfList"></div>
+    <div class="reset-line"><button class="reset-btn" id="tfReset">начать заново</button></div>
+  </section>
+
+  <footer class="page">
+    <span>Русский язык · §30 · глава VI</span>
+    <a href="../print/glava6/paragraf30.html">карточки для печати</a>
+    <a href="../print/glava6/paragraf30_proverka.html">лист самопроверки</a>
+    <a href="paragraf29.html">← предыдущий §</a>
+    <a href="paragraf31.html">следующий § →</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var TERMS = [
+    { term: "Тире между подлежащим и сказуемым", def: "Ставится, если оба выражены существительным в именительном падеже: Природа — единственная книга." },
+    { term: "Тире не ставится: не / как / местоимение / есть", def: "Разве подсолнух не цветок? Одуванчик словно солнышко. Он агроном. Природа есть наш дом." },
+    { term: "Астра ~ астрономия", def: "Оба слова — от греческого aster «звезда»." },
+    { term: "Тюльпан", def: "От слова toliban — «тюрбан»." }
+  ];
+
+  var FIB = [
+    { text: "Если подлежащее и сказуемое выражены существительным в именительном падеже, между ними ставится ___", answer: "тире" },
+    { text: "Тире не ставится, если подлежащее выражено ___", answer: "местоимением" },
+    { text: "Слово «астра» родственно слову «___» (наука о звёздах)", answer: "астрономия" }
+  ];
+
+  var TF = [
+    { text: "В предложении «Он агроном» между подлежащим и сказуемым нужно тире.", answer: false },
+    { text: "В предложении «Одуванчик словно маленькое солнышко» тире не ставится.", answer: true },
+    { text: "Тюльпан назван от слова, означающего «тюрбан».", answer: true }
+  ];
+
+  var LS_KEY = "edu5_rus_g6_p30";
+  function loadState() { try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch (e) { return {}; } }
+  function saveState(s) { try { localStorage.setItem(LS_KEY, JSON.stringify(s)); } catch (e) {} }
+  var state = loadState();
+  state.cardStatus = state.cardStatus || {};
+
+  var tabs = document.querySelectorAll(".tab");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", "false"); });
+      document.querySelectorAll("section.page").forEach(function (s) { s.classList.remove("active"); });
+      tab.setAttribute("aria-selected", "true");
+      document.getElementById(tab.dataset.target).classList.add("active");
+    });
+  });
+
+  var cardsGrid = document.getElementById("cardsGrid");
+  TERMS.forEach(function (w, idx) {
+    var card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML =
+      '<div class="card-inner">' +
+        '<div class="card-face front"><span class="term">' + w.term + '</span></div>' +
+        '<div class="card-face back"><span class="def">' + w.def + '</span></div>' +
+      '</div>';
+    card.querySelector(".card-inner").addEventListener("click", function () { card.classList.toggle("flipped"); });
+    cardsGrid.appendChild(card);
+  });
+
+  var fibList = document.getElementById("fibList");
+  var fibCounter = document.getElementById("fibCounter");
+  var fibCorrectCount = 0;
+  fibCounter.textContent = "Верно: 0 из " + FIB.length;
+  FIB.forEach(function (s, idx) {
+    var item = document.createElement("div");
+    item.className = "fib-item";
+    item.innerHTML =
+      '<div class="fib-sentence">' + (idx + 1) + '. ' + s.text + '</div>' +
+      '<div class="fib-row">' +
+        '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false">' +
+        '<button class="check-btn" type="button">Проверить</button>' +
+        '<span class="fib-mark"></span>' +
+      '</div>';
+    var input = item.querySelector("input");
+    var btn = item.querySelector(".check-btn");
+    var mark = item.querySelector(".fib-mark");
+    var checkedRight = false;
+    function check() {
+      var val = input.value.trim().toLowerCase();
+      var ok = val === s.answer.toLowerCase();
+      input.classList.toggle("correct", ok);
+      input.classList.toggle("incorrect", val.length > 0 && !ok);
+      if (ok) {
+        mark.textContent = "верно!"; mark.className = "fib-mark good-mark";
+        if (!checkedRight) { fibCorrectCount++; checkedRight = true; fibCounter.textContent = "Верно: " + fibCorrectCount + " из " + FIB.length; }
+      } else {
+        mark.textContent = "верный ответ: " + s.answer; mark.className = "fib-mark bad-mark";
+        if (checkedRight) { fibCorrectCount--; checkedRight = false; fibCounter.textContent = "Верно: " + fibCorrectCount + " из " + FIB.length; }
+      }
+    }
+    btn.addEventListener("click", check);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+    fibList.appendChild(item);
+  });
+
+  var tfList = document.getElementById("tfList");
+  var tfCounter = document.getElementById("tfCounter");
+  var tfCorrect = 0;
+  function buildTF() {
+    tfList.innerHTML = ""; tfCorrect = 0;
+    tfCounter.textContent = "Верно: 0 из " + TF.length;
+    TF.forEach(function (s) {
+      var item = document.createElement("div");
+      item.className = "tf-item";
+      item.innerHTML =
+        '<div class="tf-statement">' + s.text + '</div>' +
+        '<div class="tf-buttons">' +
+          '<button class="tf-btn" data-choice="true" type="button">Верно</button>' +
+          '<button class="tf-btn" data-choice="false" type="button">Неверно</button>' +
+          '<span class="tf-result"></span>' +
+        '</div>';
+      var buttons = item.querySelectorAll(".tf-btn");
+      var result = item.querySelector(".tf-result");
+      var answered = false;
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () {
+          if (answered) return;
+          answered = true;
+          var choice = b.dataset.choice === "true";
+          var ok = choice === s.answer;
+          b.classList.add(ok ? "chosen-good" : "chosen-bad");
+          if (ok) { result.textContent = "верно!"; result.className = "tf-result good-mark"; tfCorrect++; }
+          else { result.textContent = "неверно — правильный ответ: " + (s.answer ? "верно" : "неверно"); result.className = "tf-result bad-mark"; }
+          tfCounter.textContent = "Верно: " + tfCorrect + " из " + TF.length;
+        });
+      });
+      tfList.appendChild(item);
+    });
+  }
+  buildTF();
+  document.getElementById("tfReset").addEventListener("click", buildTF);
+})();
+</script>
+</body>
+</html>

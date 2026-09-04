@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кладовая солнца</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8ee; --paper-raised: #ffffff; --ink: #362b13; --ink-soft: #7a6a45;
+    --accent: #b9821a; --accent-deep: #7c5610; --accent-soft: #f3e2b8; --accent-soft2: #faf1dc;
+    --green: #4c7d3a; --green-soft: #e2f0d8; --line: #e9dcb5; --shadow: rgba(110, 80, 10, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #24200f; --paper-raised: #302a17; --ink: #f5eeda; --ink-soft: #cbb98d;
+      --accent: #e6b654; --accent-deep: #f2cd85; --accent-soft: #3d3018; --accent-soft2: #362b17;
+      --green: #92cf7c; --green-soft: #223a1c; --line: #4a3d20; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #24200f; --paper-raised: #302a17; --ink: #f5eeda; --ink-soft: #cbb98d;
+    --accent: #e6b654; --accent-deep: #f2cd85; --accent-soft: #3d3018; --accent-soft2: #362b17;
+    --green: #92cf7c; --green-soft: #223a1c; --line: #4a3d20; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 24px; }
+
+  .flow-strip { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .flow-strip .step { background: var(--accent-soft2); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 12.5px; color: var(--ink); font-weight: 700; }
+  .flow-strip .arrow { color: var(--accent); font-size: 18px; }
+
+  .def-box { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; box-shadow: 2px 4px 0 var(--shadow); }
+  .def-box b { color: var(--accent-deep); }
+  .def-box p { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-soft); }
+
+  .quote-box { background: var(--green-soft); border: 1px solid var(--green); border-radius: 12px; padding: 14px 16px; text-align: center; }
+  .quote-box p { margin: 0; font-size: 13px; color: var(--ink); font-style: italic; }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §27 · глава VI (часть 2)</p>
+  <h1>Кладовая солнца</h1>
+  <p class="subtitle">Подлежащее — главный член предложения</p>
+
+  <div class="def-box">
+    <b>Подлежащее</b> — отвечает на вопросы <b>кто? что?</b>; называет то, о
+    чём сообщается в предложении.
+    <p>Выражается существительным или местоимением в именительном падеже.
+    Связано со сказуемым по смыслу и грамматически.</p>
+  </div>
+
+  <div class="flow-strip">
+    <span class="step">Солнце</span><span class="arrow">→</span>
+    <span class="step">Растения</span><span class="arrow">→</span>
+    <span class="step">Болото (торф)</span><span class="arrow">→</span>
+    <span class="step">Человек</span>
+  </div>
+
+  <div class="quote-box">
+    <p>«Всё Блудово болото… есть кладовая солнца» — М. М. Пришвин,
+    сказка-быль «Кладовая солнца»</p>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §27, стр. 38–44</footer>
+</div>
+</body>
+</html>
