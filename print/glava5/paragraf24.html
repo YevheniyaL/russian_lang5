@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Печать карточек — §24. Волшебный мир слов</title>
+<style>
+  body { font-family: 'PT Sans', Arial, sans-serif; color: #222; max-width: 800px; margin: 20px auto; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .instructions { background: #f2f5fa; border: 1px solid #c7d3e3; border-radius: 6px; padding: 14px 18px; font-size: 14px; line-height: 1.6; }
+  .instructions b { color: #1a3a66; }
+  .page-label { font-size: 13px; color: #888; margin: 26px 0 6px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 40mm; border: 1px solid #333; page-break-before: always; }
+  .cell { border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px 14px; }
+  .cell.term { font-size: 16px; font-weight: bold; color: #1a3a66; }
+  .cell.def { font-size: 12px; line-height: 1.4; }
+  @media print { .instructions { display: block; } .page-label { display: none; } }
+</style>
+</head>
+<body>
+
+<h1>Карточки §24. Волшебный мир слов — печать для вырезания (стр. 15–20)</h1>
+<div class="instructions">
+  <p><b>Если принтер печатает с двух сторон (дуплекс):</b> в диалоге печати
+  включите "Печать на двух сторонах" / "Two-sided" и переплёт по
+  <b>длинному краю</b>. Термин и определение окажутся на разных сторонах
+  одной карточки. Разрежьте лист по пунктирным линиям.</p>
+  <p><b>Если принтер печатает только с одной стороны:</b> напечатайте
+  первый лист (термины), переверните эту же стопку и вставьте в лоток снова,
+  чтобы напечатать второй лист (определения) на обратной стороне.</p>
+</div>
+
+<p class="page-label">Лист 1 — термины (лицевая сторона)</p>
+<div class="grid">
+  <div class="cell term">Эссе-рассуждение</div>
+  <div class="cell term">Однокоренные слова</div>
+  <div class="cell term">Формы слова</div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+</div>
+
+<p class="page-label">Лист 2 — определения (обратная сторона, тот же порядок ячеек)</p>
+<div class="grid">
+  <div class="cell def">Состоит из тезиса, аргументов (доказательств) и вывода.</div>
+  <div class="cell def">Разные слова с общим корнем, связанные по смыслу: серебро — серебряный — серебристый.</div>
+  <div class="cell def">Изменения одного и того же слова (по числам, падежам): земля — земли — землю.</div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+</div>
+
+</body>
+</html>

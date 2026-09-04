@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Эссе: три типа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f4; --paper-raised: #ffffff; --ink: #332a1f; --ink-soft: #7a6c56;
+    --accent: #c17a2f; --accent-deep: #8f5620; --accent-soft: #f5e3cc; --accent-soft2: #fbf0e1;
+    --violet: #7a5aa8; --violet-soft: #e9e1f5; --line: #ecdcc0; --shadow: rgba(110, 70, 20, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #241f18; --paper-raised: #302923; --ink: #f6eee0; --ink-soft: #cbb99b;
+      --accent: #eab567; --accent-deep: #f5ce97; --accent-soft: #3c2f1e; --accent-soft2: #332821;
+      --violet: #b298d9; --violet-soft: #2c2438; --line: #4a3a2a; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #241f18; --paper-raised: #302923; --ink: #f6eee0; --ink-soft: #cbb99b;
+    --accent: #eab567; --accent-deep: #f5ce97; --accent-soft: #3c2f1e; --accent-soft2: #332821;
+    --violet: #b298d9; --violet-soft: #2c2438; --line: #4a3a2a; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 24px; }
+
+  .type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 620px) { .type-grid { grid-template-columns: 1fr; } }
+  .type { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: 2px 4px 0 var(--shadow); }
+  .type b { display: block; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 15px; color: var(--accent-deep); margin-bottom: 6px; }
+  .type p { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .type.active { border-color: var(--accent); background: var(--accent-soft2); }
+
+  .flow-strip { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .flow-strip .step { background: var(--violet-soft); border: 1px solid var(--violet); border-radius: 999px; padding: 6px 14px; font-size: 12.5px; color: var(--ink); font-weight: 700; }
+  .flow-strip .arrow { color: var(--ink-soft); font-size: 16px; }
+
+  .word-box { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; box-shadow: 2px 4px 0 var(--shadow); text-align: center; }
+  .word-box p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+  .word-box b { color: var(--accent-deep); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §22 · глава V (часть 2)</p>
+  <h1>Эссе: три типа</h1>
+  <p class="subtitle">Мир детства — что такое эссе-повествование</p>
+
+  <div class="type-grid">
+    <div class="type active"><b>Эссе-повествование</b><p>Рассказ о событиях по порядку: завязка → развитие действия → кульминация → развязка</p></div>
+    <div class="type"><b>Эссе-рассуждение</b><p>Тезис → аргументы → вывод (см. §24)</p></div>
+    <div class="type"><b>Эссе-описание</b><p>Описание предмета, явления, впечатления</p></div>
+  </div>
+
+  <div class="flow-strip">
+    <span class="step">Завязка</span><span class="arrow">→</span>
+    <span class="step">Развитие действия</span><span class="arrow">→</span>
+    <span class="step">Кульминация</span><span class="arrow">→</span>
+    <span class="step">Развязка</span>
+  </div>
+
+  <div class="word-box">
+    <p>«Чудетство» (М. Яснов) = <b>чудо</b> + <b>детство</b> — пример того, как из двух слов рождается новое, волшебное.</p>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §22, стр. 5–9</footer>
+</div>
+</body>
+</html>

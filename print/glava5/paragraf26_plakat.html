@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Прямая речь: все 8 схем</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5f7fa; --paper-raised: #ffffff; --ink: #1e2733; --ink-soft: #566276;
+    --accent: #3a6ea5; --accent-deep: #234a75; --accent-soft: #dbe7f3; --accent-soft2: #eef3f9;
+    --amber: #b3872c; --amber-soft: #f6ecd3; --line: #d5e0ec; --shadow: rgba(20, 40, 70, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #161b23; --paper-raised: #1f2631; --ink: #e8edf4; --ink-soft: #a5b1c4;
+      --accent: #7ea8db; --accent-deep: #a4c4ec; --accent-soft: #24344a; --accent-soft2: #1e2938;
+      --amber: #dcb75f; --amber-soft: #3a2f18; --line: #2b3849; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #161b23; --paper-raised: #1f2631; --ink: #e8edf4; --ink-soft: #a5b1c4;
+    --accent: #7ea8db; --accent-deep: #a4c4ec; --accent-soft: #24344a; --accent-soft2: #1e2938;
+    --amber: #dcb75f; --amber-soft: #3a2f18; --line: #2b3849; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 820px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 30px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 22px; }
+
+  .scheme-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+  @media (max-width: 700px) { .scheme-grid { grid-template-columns: repeat(2, 1fr); } }
+  .scheme-card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 10px; padding: 10px 8px; box-shadow: 1px 3px 0 var(--shadow); text-align: center; }
+  .scheme-card .n { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 10.5px; color: var(--ink-soft); display: block; margin-bottom: 3px; }
+  .scheme-card .formula { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 14px; color: var(--accent-deep); }
+  .scheme-card:nth-child(4n+1), .scheme-card:nth-child(4n+2) { background: var(--accent-soft2); }
+
+  .word-box { background: var(--amber-soft); border: 1px solid var(--amber); border-radius: 12px; padding: 14px 16px; text-align: center; }
+  .word-box p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+  .word-box b { color: var(--amber); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §26 · конец главы V</p>
+  <h1>Прямая речь: все 8 схем</h1>
+  <p class="subtitle">Почему их так назвали? — повторение §23, §25, §26</p>
+
+  <div class="scheme-grid">
+    <div class="scheme-card"><span class="n">1</span><div class="formula">А: «П».</div></div>
+    <div class="scheme-card"><span class="n">2</span><div class="formula">А: «П?»</div></div>
+    <div class="scheme-card"><span class="n">3</span><div class="formula">А: «П!»</div></div>
+    <div class="scheme-card"><span class="n">4</span><div class="formula">«П», — а.<br>— «П».</div></div>
+    <div class="scheme-card"><span class="n">5</span><div class="formula">«П», — а.</div></div>
+    <div class="scheme-card"><span class="n">6</span><div class="formula">«П?» — а.</div></div>
+    <div class="scheme-card"><span class="n">7</span><div class="formula">«П!» — а.</div></div>
+    <div class="scheme-card"><span class="n">8</span><div class="formula">«П, — а, — п».</div></div>
+  </div>
+
+  <div class="word-box">
+    <p>Слова тоже «называют не просто так»: <b>выключатель</b> ← то, при помощи чего выключают, <b>подосиновик</b> ← растёт под осиной, <b>вторник</b> ← второй день недели.</p>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §26, стр. 31–36</footer>
+</div>
+</body>
+</html>
