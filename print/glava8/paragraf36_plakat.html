@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Полярная звезда</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eef1f4; --paper-raised: #ffffff; --ink: #23262e; --ink-soft: #5c6270;
+    --accent: #b4712f; --accent-deep: #7c4a17; --accent-soft: #ecd8bd; --accent-soft2: #f5ebdb;
+    --steel: #3a4a63; --steel-soft: #dde3ec; --line: #dcd2c2; --shadow: rgba(40, 40, 30, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #191c22; --paper-raised: #23262f; --ink: #eceef2; --ink-soft: #a9afbc;
+      --accent: #d99a55; --accent-deep: #f0bc84; --accent-soft: #40331f; --accent-soft2: #342a19;
+      --steel: #8fa3c2; --steel-soft: #232c3c; --line: #423a2a; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #191c22; --paper-raised: #23262f; --ink: #eceef2; --ink-soft: #a9afbc;
+    --accent: #d99a55; --accent-deep: #f0bc84; --accent-soft: #40331f; --accent-soft2: #342a19;
+    --steel: #8fa3c2; --steel-soft: #232c3c; --line: #423a2a; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 22px; }
+
+  .rule-box { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
+  @media (min-width: 560px) { .rule-box { grid-template-columns: 1fr 1fr; } }
+  .rule-box .cell { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 14px; padding: 14px 16px; box-shadow: 2px 4px 0 var(--shadow); }
+  .rule-box .cell b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-size: 14px; }
+  .rule-box .cell p { margin: 6px 0 0; font-size: 12.5px; color: var(--ink-soft); }
+  .rule-box .cell .ex { color: var(--ink); font-style: italic; }
+
+  .mini-box { background: var(--steel-soft); border: 1px solid var(--steel); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
+  .mini-box b { color: var(--steel); }
+  .mini-box p { margin: 6px 0 0; font-size: 13px; color: var(--ink); }
+
+  .quote-box { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 12px; padding: 14px 16px; text-align: center; }
+  .quote-box p { margin: 0; font-size: 13px; color: var(--ink); font-style: italic; }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §36 · глава VIII (часть 2)</p>
+  <h1>Полярная звезда</h1>
+  <p class="subtitle">Правописание не с глаголами</p>
+
+  <div class="rule-box">
+    <div class="cell">
+      <b>Раздельно</b>
+      <p>в большинстве случаев</p>
+      <p class="ex">не мечтать, не светить, не видеть</p>
+    </div>
+    <div class="cell">
+      <b>Слитно</b>
+      <p>если без не глагол не употребляется</p>
+      <p class="ex">ненавидеть, негодовать, недоумевать, нездоровиться</p>
+    </div>
+  </div>
+
+  <div class="mini-box">
+    <b>Темір-Қазық («Железный кол»)</b>
+    <p>Казахское название Полярной звезды. Древние тюрки представляли
+    Большую Медведицу арканом, привязанным к колу и надетым на шею
+    коня (Малой Медведицы) — звёзды-кони пасутся вокруг, не покидая
+    своего места.</p>
+  </div>
+
+  <div class="mini-box">
+    <b>Большая и Малая Медведица</b>
+    <p>Каллисто превратила в медведицу завистливая Гера; её сын Аркад
+    чуть не убил мать, не узнав её, — Зевс поместил обоих на небо.</p>
+  </div>
+
+  <div class="quote-box">
+    <p>«Ты, безвосходная, ты, беззакатная — солнце ночное ему!» —
+    В. Г. Бенедиктов</p>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §36, стр. 100–104</footer>
+</div>
+</body>
+</html>
