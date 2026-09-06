@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Печать карточек — §34. Звёздное небо</title>
+<style>
+  body { font-family: 'PT Sans', Arial, sans-serif; color: #222; max-width: 800px; margin: 20px auto; }
+  .instructions { background: #f2f5fa; border: 1px solid #c7d3e3; border-radius: 6px; padding: 14px 18px; font-size: 14px; line-height: 1.6; }
+  .instructions b { color: #1a3a66; }
+  .page-label { font-size: 13px; color: #888; margin: 26px 0 6px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 40mm; border: 1px solid #333; }
+  .grid.p2 { page-break-before: always; }
+  .cell { border: 1px dashed #999; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px 14px; }
+  .cell.term { font-size: 16px; font-weight: bold; color: #1a3a66; }
+  .cell.def { font-size: 12px; line-height: 1.4; }
+  @media print { .instructions { display: none; } .page-label { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="instructions">
+  <p><b>Если принтер печатает с двух сторон (дуплекс):</b> в диалоге печати
+  включите "Печать на двух сторонах" / "Two-sided" и переплёт по
+  <b>длинному краю</b>. Термин и определение окажутся на разных сторонах
+  одной карточки. Разрежьте лист по пунктирным линиям.</p>
+  <p><b>Если принтер печатает только с одной стороны:</b> напечатайте
+  первый лист (термины), переверните эту же стопку и вставьте в лоток снова,
+  чтобы напечатать второй лист (определения) на обратной стороне.</p>
+</div>
+
+<p class="page-label">Лист 1 — термины (лицевая сторона)</p>
+<div class="grid">
+  <div class="cell term">1-е склонение</div>
+  <div class="cell term">2-е склонение</div>
+  <div class="cell term">3-е склонение</div>
+  <div class="cell term">Окончания прилагательных</div>
+  <div class="cell term">«Послушайте!» (Маяковский)</div>
+  <div class="cell"></div>
+</div>
+
+<p class="page-label">Лист 2 — определения (обратная сторона, ячейки в каждом ряду зеркальны — для совпадения при печати)</p>
+<div class="grid p2">
+  <div class="cell def">М.р. без окончания, ср.р. на -о/-е. В П.п. — обычно -е: в небе. Искл.: на -ие/-ий → -и (о созвездии).</div>
+  <div class="cell def">Ж./м. род на -а/-я. В Д.п./П.п. — обычно -е: о звезде. Искл.: на -ия → -и (о линии).</div>
+  <div class="cell def">Согласуются с существительным в роде, числе и падеже: в тёмной глубине, с лёгкой зыбью.</div>
+  <div class="cell def">Ж.р. с ь на конце. В Р./Д./П.п. — всегда -и: о ночи.</div>
+  <div class="cell"></div>
+  <div class="cell def">Ведь если звёзды зажигают — значит — это кому-нибудь нужно?</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Звёздное небо</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eef0fb; --paper-raised: #ffffff; --ink: #1c2140; --ink-soft: #565f8c;
+    --accent: #d9a02a; --accent-deep: #8f6712; --accent-soft: #f4e5bd; --accent-soft2: #faf1dc;
+    --deep: #2b3376; --deep-soft: #dfe2f5; --line: #d6d9ee; --shadow: rgba(30, 35, 80, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14172c; --paper-raised: #1f2340; --ink: #e9ebfa; --ink-soft: #a9b0d8;
+      --accent: #f0c25a; --accent-deep: #f6d585; --accent-soft: #3a3218; --accent-soft2: #302914;
+      --deep: #7f8ce0; --deep-soft: #232a52; --line: #33396a; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14172c; --paper-raised: #1f2340; --ink: #e9ebfa; --ink-soft: #a9b0d8;
+    --accent: #f0c25a; --accent-deep: #f6d585; --accent-soft: #3a3218; --accent-soft2: #302914;
+    --deep: #7f8ce0; --deep-soft: #232a52; --line: #33396a; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 22px; }
+
+  .decl-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
+  @media (min-width: 560px) { .decl-row { grid-template-columns: repeat(3, 1fr); } }
+  .decl-box { background: var(--paper-raised); border: 2px solid var(--deep); border-radius: 14px; padding: 14px 16px; box-shadow: 2px 4px 0 var(--shadow); }
+  .decl-box b { color: var(--deep); font-family: 'Nunito', sans-serif; font-size: 14px; }
+  .decl-box p { margin: 6px 0 0; font-size: 12.5px; color: var(--ink-soft); }
+  .decl-box .ex { color: var(--ink); font-style: italic; }
+
+  .def-box { background: var(--accent-soft2); border: 1px solid var(--accent); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
+  .def-box b { color: var(--accent-deep); }
+  .def-box p { margin: 6px 0 0; font-size: 13px; color: var(--ink); }
+
+  .quote-box { background: var(--deep-soft); border: 1px solid var(--deep); border-radius: 12px; padding: 14px 16px; text-align: center; }
+  .quote-box p { margin: 0; font-size: 13px; color: var(--ink); font-style: italic; }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §34 · глава VIII (часть 2)</p>
+  <h1>Звёздное небо</h1>
+  <p class="subtitle">Правописание окончаний существительных и прилагательных</p>
+
+  <div class="decl-row">
+    <div class="decl-box">
+      <b>1-е склонение</b>
+      <p>ж./м. род на -а/-я. Д.п./П.п. — обычно -е.</p>
+      <p class="ex">о звезде<br>искл.: о линии (на -ия)</p>
+    </div>
+    <div class="decl-box">
+      <b>2-е склонение</b>
+      <p>м.р. без окончания, ср.р. на -о/-е. П.п. — обычно -е.</p>
+      <p class="ex">в небе<br>искл.: о созвездии (на -ие)</p>
+    </div>
+    <div class="decl-box">
+      <b>3-е склонение</b>
+      <p>ж.р. с ь на конце. Р./Д./П.п. — всегда -и.</p>
+      <p class="ex">о ночи</p>
+    </div>
+  </div>
+
+  <div class="def-box">
+    <b>Окончания прилагательных</b> согласуются с существительным в
+    <b>роде, числе и падеже</b>.
+    <p>В тёмной глубине, с лёгкой зыбью — оба слова в женском роде,
+    единственном числе, творительном падеже.</p>
+  </div>
+
+  <div class="quote-box">
+    <p>«Ведь если звёзды зажигают — значит — это кому-нибудь нужно?» —
+    В. В. Маяковский</p>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §34, стр. 88–93</footer>
+</div>
+</body>
+</html>
