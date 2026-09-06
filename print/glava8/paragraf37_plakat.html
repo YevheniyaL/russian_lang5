@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пусть всегда будет солнце!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fff3e6; --paper-raised: #ffffff; --ink: #3d2410; --ink-soft: #8a5a2e;
+    --accent: #e8672a; --accent-deep: #a83f12; --accent-soft: #fad3ae; --accent-soft2: #fdeadb;
+    --gold: #d9a017; --gold-soft: #f7ecc9; --line: #f2d8b8; --shadow: rgba(160, 70, 10, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #241609; --paper-raised: #301e10; --ink: #fbe9d6; --ink-soft: #e0ab77;
+      --accent: #f1885a; --accent-deep: #f7b087; --accent-soft: #4a2c14; --accent-soft2: #3d2410;
+      --gold: #f0c33f; --gold-soft: #3a2f10; --line: #4a3618; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #241609; --paper-raised: #301e10; --ink: #fbe9d6; --ink-soft: #e0ab77;
+    --accent: #f1885a; --accent-deep: #f7b087; --accent-soft: #4a2c14; --accent-soft2: #3d2410;
+    --gold: #f0c33f; --gold-soft: #3a2f10; --line: #4a3618; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 32px 16px 48px; }
+  .poster { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; font-weight: 900; text-wrap: balance; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); text-align: center; margin: 0 0 6px; }
+  h1 { font-size: 32px; text-align: center; margin: 0 0 4px; color: var(--ink); line-height: 1.1; }
+  .subtitle { text-align: center; font-size: 14.5px; color: var(--ink-soft); margin: 0 0 22px; }
+
+  .rule-table { width: 100%; border-collapse: collapse; background: var(--paper-raised); border-radius: 12px; overflow: hidden; box-shadow: 2px 4px 0 var(--shadow); margin-bottom: 18px; }
+  .rule-table th, .rule-table td { padding: 10px 12px; text-align: left; font-size: 12.5px; border-bottom: 1px solid var(--line); }
+  .rule-table th { background: var(--accent); color: #fff; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .rule-table tr:last-child td { border-bottom: none; }
+  .rule-table td.case { font-weight: 700; color: var(--accent-deep); white-space: nowrap; }
+  .rule-table td.ex { font-style: italic; color: var(--ink-soft); }
+
+  .def-box { background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
+  .def-box b { color: var(--accent-deep); }
+  .def-box p { margin: 6px 0 0; font-size: 13px; color: var(--ink); }
+
+  .quote-box { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 12px; padding: 14px 16px; text-align: center; }
+  .quote-box p { margin: 0; font-size: 13px; color: var(--ink); font-style: italic; }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 20px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §37 · глава VIII (часть 2)</p>
+  <h1>Пусть всегда будет солнце!</h1>
+  <p class="subtitle">Спряжение и правописание личных окончаний глаголов</p>
+
+  <table class="rule-table">
+    <tr><th>Спряжение</th><th>Какие глаголы</th></tr>
+    <tr><td class="case">II</td><td class="ex">все на -ить (кроме брить, стелить); терпеть, вертеть, обидеть, зависеть, ненавидеть, видеть, смотреть; держать, слышать, дышать, гнать</td></tr>
+    <tr><td class="case">I</td><td class="ex">все остальные глаголы</td></tr>
+  </table>
+
+  <div class="def-box">
+    <b>Проверка безударного окончания</b> — поставить глагол в
+    неопределённую форму и посмотреть, какая гласная перед <b>-ть</b>.
+    <p>Во 2-м лице единственного числа на конце всегда мягкий знак:
+    вращаешь, горишь.</p>
+  </div>
+
+  <div class="quote-box">
+    <p>«Человек есть Солнце, и его чувства — его планеты» —
+    К. Д. Бальмонт</p>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 2 · §37, стр. 105–112</footer>
+</div>
+</body>
+</html>
