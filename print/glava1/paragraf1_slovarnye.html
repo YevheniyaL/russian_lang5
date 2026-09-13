@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Словарные слова §1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #ffffff; --ink: #111111; --ink-soft: #555555; --line: #999999; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --paper: #1b1f1e; --ink: #f1f1f1; --ink-soft: #b5b5b5; --line: #777777; }
+  }
+  :root[data-theme="dark"] { --paper: #1b1f1e; --ink: #f1f1f1; --ink-soft: #b5b5b5; --line: #777777; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; padding: 24px 16px 40px; }
+  .page { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 14px; }
+
+  ol { margin: 0; padding-left: 26px; font-size: 16px; line-height: 1.9; }
+  ol b { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  ol .pg { font-size: 11.5px; color: var(--ink-soft); margin-left: 10px; }
+  .card { border: 1.5px dashed var(--line); border-radius: 8px; padding: 14px 18px; display: inline-block; min-width: 260px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+  <h1>Словарные слова — §1</h1>
+  <p class="sub">📖 Жирные подчёркнутые буквы — как в учебнике. Их нужно запомнить.</p>
+  <ol>
+    <li>д<b>иа</b>лог<span class="pg">стр. 6</span></li>
+    <li>м<b>о</b>н<b>о</b>лог<span class="pg">стр. 6</span></li>
+    <li><b>а</b>сп<b>и</b>рин<span class="pg">стр. 10</span></li>
+    <li>в<b>о</b>кал<span class="pg">стр. 11</span></li>
+    <li>кл<b>и</b>ент<span class="pg">стр. 11</span></li>
+    <li>ч<b>е</b>л<b>о</b>век<span class="pg">стр. 13</span></li>
+    <li>м<b>илли</b>ард<span class="pg">стр. 13</span></li>
+    <li>м<b>и</b>ндаль<span class="pg">стр. 14</span></li>
+    <li>п<b>а</b>труль<span class="pg">стр. 14</span></li>
+    <li>х<b>о</b>зя<b>и</b>н<span class="pg">стр. 16</span></li>
+  </ol>
+  </div>
+</div>
+</body>
+</html>
