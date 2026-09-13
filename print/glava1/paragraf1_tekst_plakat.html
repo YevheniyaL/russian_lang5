@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Текст, тема, основная мысль</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0;
+    --paper-raised: #ffffff;
+    --ink: #23342f;
+    --ink-soft: #56655f;
+    --accent: #16866f;
+    --accent-deep: #0d5c4c;
+    --accent-soft: #d7f0e9;
+    --accent-soft2: #eef8f5;
+    --amber: #c9860f;
+    --amber-deep: #8a5c07;
+    --amber-soft: #fbe9c8;
+    --violet: #6b4fa0;
+    --violet-soft: #ece6f6;
+    --red: #c0463b;
+    --red-soft: #f8e1de;
+    --line: #cfe3dc;
+    --shadow: rgba(22, 58, 48, 0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16;
+      --violet: #b9a2e6; --violet-soft: #2c2540; --red: #ef8a7f; --red-soft: #3d2320;
+      --line: #2c4a42; --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16;
+    --violet: #b9a2e6; --violet-soft: #2c2540; --red: #ef8a7f; --red-soft: #3d2320;
+    --line: #2c4a42; --shadow: rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.45;
+    padding: 32px 16px 48px;
+  }
+  .poster { max-width: 760px; margin: 0 auto; }
+  h1, h3 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 6px;
+  }
+  h1 { font-weight: 900; font-size: 38px; text-align: center; margin: 0 0 4px; line-height: 1.05; }
+  .subtitle { text-align: center; font-size: 14px; color: var(--ink-soft); margin: 0 0 20px; }
+  p { margin: 0 0 6px; }
+  .ex { color: var(--ink-soft); font-style: italic; }
+  .src { font-size: 11px; opacity: .9; }
+
+  .card {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; box-shadow: 2px 4px 0 var(--shadow);
+  }
+  .card h3 { font-weight: 800; font-size: 17px; margin: 0 0 6px; color: var(--accent-deep); }
+  .def { font-size: 14.5px; }
+  .def b { color: var(--accent-deep); }
+
+  .hint {
+    font-size: 12.5px; line-height: 1.45; color: var(--ink-soft); margin: 6px 0 0;
+    padding: 1px 0 1px 9px; border-left: 3px solid var(--amber);
+  }
+  .hint b { color: var(--ink); }
+
+  /* 1. Текст */
+  .tekst { margin-bottom: 16px; }
+  .tekst-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  @media (max-width: 620px) { .tekst-grid { grid-template-columns: 1fr; } }
+  .sample { border-radius: 10px; padding: 8px 11px; font-size: 13px; }
+  .sample .tag { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12.5px; display: block; margin-bottom: 3px; }
+  .sample.yes { background: var(--accent-soft2); border: 1px solid var(--accent); }
+  .sample.yes .tag { color: var(--accent-deep); }
+  .sample.no { background: var(--red-soft); border: 1px solid var(--red); }
+  .sample.no .tag { color: var(--red); }
+  .sample .why { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+  .link { color: var(--accent-deep); font-weight: 700; border-bottom: 2px solid var(--accent); }
+
+  /* 2. Тема vs основная мысль */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  @media (max-width: 620px) { .duo { grid-template-columns: 1fr; } }
+  .duo .card { border-top: 5px solid var(--accent); }
+  .duo .card.idea { border-top-color: var(--violet); }
+  .duo .card.idea h3 { color: var(--violet); }
+  .ask {
+    display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px;
+    border-radius: 999px; padding: 4px 14px; margin: 2px 0 8px;
+    background: var(--accent-soft); color: var(--accent-deep);
+  }
+  .idea .ask { background: var(--violet-soft); color: var(--violet); }
+  .rows { margin: 0; padding: 0; list-style: none; font-size: 13px; }
+  .rows li { padding: 4px 0; border-top: 1px dashed var(--line); }
+  .rows li:first-child { border-top: 0; }
+  .rows .k { font-weight: 700; color: var(--ink); }
+  .phrase { font-style: italic; color: var(--ink-soft); }
+
+  /* 3. Разбор примера */
+  .razbor { margin-bottom: 16px; }
+  .razbor h3 { margin-bottom: 8px; }
+  .flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  @media (max-width: 620px) { .flow { grid-template-columns: 1fr; } }
+  .par { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 12.5px; background: var(--paper); }
+  .par .pn { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; }
+  .par .lab { display: inline-block; margin-top: 6px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; border-radius: 6px; padding: 1px 7px; }
+  .par.t { border-color: var(--accent); }
+  .par.t .lab { background: var(--accent-soft); color: var(--accent-deep); }
+  .par.m { border-color: var(--violet); }
+  .par.m .lab { background: var(--violet-soft); color: var(--violet); }
+  .answer { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; font-size: 13px; }
+  @media (max-width: 620px) { .answer { grid-template-columns: 1fr; } }
+  .answer div { border-radius: 8px; padding: 6px 10px; }
+  .answer .a-t { background: var(--accent-soft2); }
+  .answer .a-m { background: var(--violet-soft); }
+
+  /* 4. Ловушка + заголовок */
+  .bottom { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12px; margin-bottom: 10px; }
+  @media (max-width: 620px) { .bottom { grid-template-columns: 1fr; } }
+  .trap { background: var(--amber-soft); border: 1px solid var(--amber); border-radius: 12px; padding: 12px 14px; font-size: 13px; }
+  .trap h3 { font-weight: 800; font-size: 15px; margin: 0 0 5px; color: var(--amber-deep); }
+  .zag { font-size: 13px; }
+  .zag h3 { font-size: 15px; }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="kicker">Русский язык · 5 класс · §1</p>
+  <h1>Текст, тема, основная мысль</h1>
+  <p class="subtitle">О чём текст — и чему он учит</p>
+
+  <!-- 1. ТЕКСТ -->
+  <div class="card tekst">
+    <h3>Текст</h3>
+    <p class="def">📖 <b>Текст</b> — это сочетание предложений, связанных <b>по смыслу</b> и <b>грамматически</b>.</p>
+    <p class="hint">📖 Как доказать, что это текст: во-первых, предложения <b>объединены в целое</b>; во-вторых, <b>связаны по смыслу и грамматически</b>.<br>
+    ✏️ «По смыслу» — все предложения об одном. «Грамматически» — предложения сцеплены словами: <i>он, она, они, это, потом</i>, повтор слова.</p>
+    <div class="tekst-grid">
+      <div class="sample yes">
+        <span class="tag">✏️ Это текст ✓</span>
+        Наступила осень. <span class="link">Листья</span> на берёзе пожелтели. <span class="link">Они</span> тихо падают на землю.
+        <span class="why">одна тема; «они» = листья — предложения сцеплены</span>
+      </div>
+      <div class="sample no">
+        <span class="tag">✏️ Это не текст ✗</span>
+        Наступила осень. Мой брат любит футбол. В магазине продают хлеб.
+        <span class="why">каждое предложение о своём — ничем не связаны</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ТЕМА и ОСНОВНАЯ МЫСЛЬ -->
+  <div class="duo">
+    <div class="card">
+      <h3>Тема текста</h3>
+      <p class="def">📖 Это то, <b>о чём, о ком</b> в нём говорится.</p>
+      <span class="ask">О чём? О ком?</span>
+      <ul class="rows">
+        <li><span class="k">📖 Где искать:</span> очень часто тема отражена в <b>заголовке</b>.</li>
+        <li><span class="k">✏️ Как ответить:</span> коротко — <b>одним словом или словосочетанием</b>: <i>осень, дети-маугли</i>.</li>
+        <li><span class="k">📖 Фраза-помощник:</span> <span class="phrase">Тема этого текста — …</span></li>
+      </ul>
+    </div>
+    <div class="card idea">
+      <h3>Основная мысль (идея)</h3>
+      <p class="def">📖 Это то, <b>к чему призывает</b> текст, <b>чему он учит</b>.</p>
+      <span class="ask">Чему учит? Зачем написано?</span>
+      <ul class="rows">
+        <li><span class="k">📖 Где искать:</span> может быть в <b>заголовке</b> или в <b>одном из предложений</b>. Но чаще всего её надо <b>сформулировать самому</b>.</li>
+        <li><span class="k">✏️ Как ответить:</span> <b>целым предложением</b> — что хотел сказать автор.</li>
+        <li><span class="k">📖 Фраза-помощник:</span> <span class="phrase">Основной мыслью текста является …</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. РАЗБОР ПРИМЕРА -->
+  <div class="card razbor">
+    <h3>📖 Как это устроено: текст «Дети-маугли» из учебника</h3>
+    <div class="flow">
+      <div class="par t"><span class="pn">Заголовок и начало</span><br>заголовок «Дети-маугли» называет тему; начало: человек учится говорить в первые годы жизни<br><span class="lab">← тема</span></div>
+      <div class="par"><span class="pn">Середина</span><br>случаи, когда дети вырастали среди животных, — их называют «дети-маугли»</div>
+      <div class="par m"><span class="pn">Конец</span><br>они росли среди зверей, а не среди людей, поэтому не научились говорить<br><span class="lab">← основная мысль</span></div>
+    </div>
+    <div class="answer">
+      <div class="a-t"><b>Тема:</b> дети-маугли <span class="src">(о ком?)</span></div>
+      <div class="a-m"><b>Основная мысль:</b> научиться говорить можно только среди людей <span class="src">(чему учит?)</span></div>
+    </div>
+    <p class="hint">✏️ Подсказка: тему часто называют в <b>начале</b> текста, а основная мысль нередко звучит как <b>вывод в конце</b>.</p>
+  </div>
+
+  <!-- 4. ЛОВУШКА + ЗАГОЛОВОК -->
+  <div class="bottom">
+    <div class="trap">
+      <h3>✏️ Не путай тему и основную мысль</h3>
+      <p><b>Тема</b> — короткий ответ «о чём?»: <i>дети-маугли</i>.<br>
+      <b>Основная мысль</b> — ответ «ну и что? чему это учит?»: <i>научиться говорить можно только среди людей</i>.</p>
+      <p style="margin:0">Проверка: если ответ — одно-два слова без вывода, это ещё <b>тема</b>, а не мысль.</p>
+    </div>
+    <div class="card zag">
+      <h3>✏️ Заголовок бывает двух видов</h3>
+      <p>называет <b>тему</b>: <span class="ex">«Осенний лес»</span></p>
+      <p style="margin:0">выражает <b>основную мысль</b>: <span class="ex">«Берегите лес!»</span></p>
+    </div>
+  </div>
+
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §1, стр. 5–8 · 📖 — из учебника · ✏️ — подсказки не из учебника</footer>
+</div>
+</body>
+</html>
