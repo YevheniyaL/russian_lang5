@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Повторяем: орфограммы начальной школы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0;
+    --paper-raised: #ffffff;
+    --ink: #23342f;
+    --ink-soft: #56655f;
+    --accent: #16866f;
+    --accent-deep: #0d5c4c;
+    --accent-soft: #d7f0e9;
+    --accent-soft2: #eef8f5;
+    --amber: #c9860f;
+    --amber-deep: #8a5c07;
+    --amber-soft: #fbe9c8;
+    --red: #c0463b;
+    --blue: #2f6690;
+    --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --red: #ef8a7f; --blue: #7fb1de;
+      --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --red: #ef8a7f; --blue: #7fb1de;
+    --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.45;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 4px;
+  }
+  h1 { font-weight: 900; font-size: 30px; text-align: center; margin: 0 0 4px; line-height: 1.15; }
+  .subtitle { text-align: center; color: var(--ink-soft); margin: 0 0 14px; }
+
+  .groups { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 0 0 8px; }
+  .groups span {
+    background: var(--accent-soft); color: var(--accent-deep); border-radius: 999px; padding: 4px 11px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px;
+  }
+  .note { text-align: center; font-size: 12px; color: var(--ink-soft); margin: 0 0 18px; }
+
+  section { margin: 0 0 14px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 16px; color: var(--accent-deep); margin: 0 0 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .n {
+    flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 13px;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 12px; color: var(--ink-soft); }
+  .body { padding-left: 32px; }
+  p { margin: 0 0 6px; }
+  ul { margin: 0 0 6px; padding-left: 18px; }
+  li { margin-bottom: 2px; }
+  .ex { color: var(--ink-soft); font-style: italic; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 6px; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 6px; }
+  @media (max-width: 620px) { .cols, .cols3 { grid-template-columns: 1fr; } .body { padding-left: 0; } }
+  .box { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; }
+  .box h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; margin: 0 0 3px; color: var(--accent-deep); }
+  .box p:last-child, .box ul:last-child { margin-bottom: 0; }
+
+  .how { background: var(--accent-soft2); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 6px 11px; margin: 0 0 6px; }
+  .how b.t, .trap b.t { font-family: 'Nunito', sans-serif; font-weight: 800; }
+  .how b.t { color: var(--accent-deep); }
+  .trap { background: var(--amber-soft); border-left: 4px solid var(--amber); border-radius: 0 8px 8px 0; padding: 6px 11px; margin: 0 0 6px; }
+  .trap b.t { color: var(--amber-deep); }
+  .orf { display: inline-block; background: var(--red); color: #fff; border-radius: 5px; padding: 0 6px; font-size: 11px; font-weight: 700; margin-right: 4px; vertical-align: 1px; }
+  .ref { font-size: 12px; color: var(--blue); }
+
+  .tbl-wrap { overflow-x: auto; margin: 0 0 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; }
+  .e { color: var(--red); font-weight: 700; }
+
+  footer { text-align: center; font-size: 11.5px; color: var(--ink-soft); margin-top: 12px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.88; }
+    .pb { break-before: page; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · повторяем начальную школу</p>
+  <h1>Орфограммы начальной школы — все правила</h1>
+  <p class="subtitle">17 орфограмм по группам: буквосочетания → гласные и согласные в корне → приставки → окончания</p>
+
+  <div class="groups">
+    <span>буквосочетания</span><span>гласные корня</span><span>согласные корня</span>
+    <span>Ъ, Ь</span><span>приставки</span><span>глагол</span><span>прилагательное</span>
+  </div>
+  <p class="note">✏️ Весь свод составлен мной по программе начальной школы, это не текст учебника 5 класса. Программы бывают разные — если чего-то не проходили, пропускайте. Красная метка <span class="orf">орфограмма</span> — правило написания. Полный разбор имени существительного — в своде «Имя существительное», полные личные окончания глаголов — на странице §37.</p>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="n">1</span>Жи-ши, ча-ща, чу-щу</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> После <b>ж, ш</b> пишем <b>И</b> (не Ы); после <b>ч, щ</b> пишем <b>А</b> (не Я) и <b>У</b> (не Ю) — даже если слышится по-другому.</p>
+      <p class="ex">жираф, шило, машина · чаща, роща, час · чудо, щука, чувство</p>
+      <div class="trap"><b class="t">Исключения:</b> в заимствованных словах бывает <b>Ю</b>: <span class="ex">жюри, брошюра, парашют</span> — их только запомнить.</div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="n">2</span>Чк, чн, нч, нщ, щн — без мягкого знака</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> В сочетаниях <b>чк, чн, нч, нщ, щн</b> мягкий знак никогда не пишется, даже если согласная слышится мягко.</p>
+      <p class="ex">ночка, речка, кончик, венчик, каменщик, банщик</p>
+      <div class="trap"><b class="t">Ловушка:</b> «доченька» и «печенье» и правда с Ь — но там сочетание не чк/чн, а <span class="ex">чень, ченьк</span>. Смотри, какие именно буквы идут подряд.</div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="n">3</span>Большая буква в именах собственных <small>— подробнее в своде «Имя существительное»</small></h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> С большой буквы: имена, отчества, фамилии, клички животных, географические названия, названия стран и городов. Первое слово предложения — тоже с большой буквы.</p>
+      <p class="ex">Айгерим, Мурка, Алматы, Иртыш, Казахстан. Наступила осень.</p>
+      <div class="trap"><b class="t">Ловушка:</b> общее слово рядом с именем остаётся маленьким: <span class="ex">город Алматы, река Иртыш, кот Мурзик</span>.</div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="n">4</span>Перенос слов</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Слово переносится по слогам. Нельзя оставлять на строке или переносить одну букву. Буквы <b>Й, Ь, Ъ</b> не отрываются от предыдущей буквы.</p>
+      <p class="ex">паль-цы (не пал-ьцы), май-ка (не ма-йка), подъ-езд (не под-ъезд), о-сина (не осин-а)</p>
+      <div class="trap"><b class="t">Ловушка:</b> слово из одного слога («шкаф», «class») вообще не переносится.</div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="pb">
+    <h2><span class="n">5</span>Проверяемые безударные гласные в корне</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Чтобы проверить безударную гласную в корне, измени слово или подбери однокоренное так, чтобы эта гласная стала <b>ударной</b>.</p>
+      <p class="ex">в[а]да → в<b>о́</b>ды (о) · л[и]сной → л<b>е́</b>с (е) · сл[и]зинка → сл<b>ё</b>зы (ё)</p>
+      <div class="how"><b class="t">Как проверить:</b> ① найди корень ② подбери слово с тем же корнем, где на эту гласную падает ударение ③ пиши ту же букву.</div>
+      <div class="trap"><b class="t">Ловушка:</b> «примерять» (одежду, от слова мера) и «примирять» (друзей, от слова мир) — проверочное слово меняет смысл, будь внимателен, какое слово по смыслу нужно.</div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="n">6</span>Непроверяемые безударные гласные (словарные слова)</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Если ударением проверить нельзя — гласную нужно запомнить или посмотреть в орфографическом словаре.</p>
+      <p class="ex">с<span class="e">о</span>бака, к<span class="e">о</span>рова, м<span class="e">а</span>шина, в<span class="e">о</span>кзал, м<span class="e">е</span>тро, к<span class="e">а</span>рандаш</p>
+      <div class="how"><b class="t">Как быть:</b> для таких слов подобрать проверочное однокоренное слово невозможно — только запоминание и словарь.</div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2><span class="n">7</span>Парные звонкие/глухие согласные в корне</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Парную согласную на конце слова или перед другой согласной проверяют так, чтобы после неё стояла гласная или <b>Н, Л, М, Р</b>.</p>
+      <p class="ex">ду[п] → дуб<b>ы</b> (б) · ло[ш]ка → лож<b>е</b>чка (ж) · гри[п] → гриб<b>ы</b> (б) · лё[т] → льд<b>ы</b> (д)</p>
+      <div class="how"><b class="t">Пары:</b> б–п, в–ф, г–к, д–т, ж–ш, з–с.</div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="n">8</span>Непроизносимые согласные в корне</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> В сочетаниях <b>стн, здн, рдц, лнц</b> и похожих один звук не произносится, но буква пишется, если есть однокоренное слово, где этот звук слышен.</p>
+      <p class="ex">со[?]нце → солн<b>ы</b>шко (л слышен) · серд[?]це → серд<b>е</b>чко (д слышен) · мес[?]ный → м<b>е</b>сто (т слышен)</p>
+      <div class="trap"><b class="t">Ловушка:</b> «опасный», «ужасный», «вкусный», «чудесный», «прекрасный» — непроизносимой согласной там <b>нет</b> (проверь: опасен, ужасен, вкусен) — лишнюю Т не вставляй. А «чувство», «лестница», «праздник» — исключения, их непроизносимая согласная вообще не проверяется, только запоминается.</div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="pb">
+    <h2><span class="n">9</span>Удвоенные согласные</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Часто это словарные слова — нужно запомнить. Ещё удвоение бывает на стыке приставки и корня, если приставка заканчивается на ту же букву, с которой начинается корень.</p>
+      <p class="ex">кла<span class="e">сс</span>, гру<span class="e">пп</span>а, шоссе, алл<span class="e">ея</span>, субб<span class="e">от</span>а — словарные</p>
+      <p class="ex">ра<span class="e">сс</span>казать (рас- + сказ-), бе<span class="e">сс</span>ловесный (бес- + слов-), по<span class="e">дд</span>ержать (под- + держ-) — на стыке</p>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2><span class="n">10</span>Разделительные Ъ и Ь</h2>
+    <div class="body">
+      <div class="cols">
+        <div class="box"><h3>Ъ (твёрдый знак)</h3><p>после приставки на согласную, перед Е, Ё, Ю, Я</p><p class="ex">въезд, подъём, объявление, съёмка</p></div>
+        <div class="box"><h3>Ь (мягкий знак)</h3><p>внутри корня или перед окончанием, перед Е, Ё, И, Ю, Я — без приставки</p><p class="ex">вьюга, семья, соловьи, пьеса</p></div>
+      </div>
+      <div class="how"><b class="t">Как отличить:</b> есть приставка, кончающаяся на согласную, прямо перед этой буквой? → Ъ. Нет приставки (буква внутри корня)? → Ь.</div>
+      <div class="trap"><b class="t">Ловушка:</b> «разъяснить» (приставка раз- + корень -ясн-, Ъ) и «деревья» (нет приставки на согласную перед корнем, Ь) выглядят похоже, но пишутся по-разному.</div>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <h2><span class="n">11</span>Мягкий знак после шипящих</h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th>Часть речи</th><th>Правило</th><th>Пример</th></tr>
+        <tr><td>Сущ. ж.р., ед.ч.</td><td>Ь пишем</td><td class="ex">ночь, мышь, рожь</td></tr>
+        <tr><td>Сущ. м.р.</td><td>без Ь</td><td class="ex">врач, нож, товарищ</td></tr>
+        <tr><td>Сущ. мн.ч., Р.п.</td><td>без Ь</td><td class="ex">много туч, дач, рощ</td></tr>
+        <tr><td>Глагол, 2-е л., ед.ч.</td><td>Ь пишем всегда</td><td class="ex">пишешь, читаешь, идёшь</td></tr>
+        <tr><td>Наречие</td><td>обычно Ь пишем</td><td class="ex">настежь, наотмашь, прочь</td></tr>
+        <tr><td>Краткое прилагательное</td><td>без Ь</td><td class="ex">горяч, могуч, свеж</td></tr>
+      </table></div>
+      <div class="trap"><b class="t">Исключения-наречия без Ь:</b> <span class="ex">уж, замуж, невтерпёж</span> — только запомнить.</div>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section class="pb">
+    <h2><span class="n">12</span>Правописание приставок: на З/С и неизменяемые</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Приставки <b>без-/бес-, из-/ис-, воз-/вос-, раз-/рас-, низ-/нис-</b>: перед звонкой согласной (и перед гласной) пишем <b>З</b>, перед глухой — <b>С</b>.</p>
+      <p class="ex">бе<b>з</b>domный (перед звонкой д) · бе<b>с</b>полезный (перед глухой п) · ра<b>з</b>бежаться / ра<b>с</b>писание</p>
+      <div class="how"><b class="t">Остальные приставки — неизменяемые:</b> в-, на-, за-, над-, под-, от-, про-, до-, по-, пере- и др. пишутся <b>всегда одинаково</b>, как бы ни слышались.</div>
+      <p class="ex">по<b>д</b>ставка (не потставка), о<b>т</b>дать (не оддать), на<b>д</b>писать</p>
+      <div class="trap"><b class="t">Ловушка:</b> приставка <b>с-</b> тоже неизменяемая — пишется С даже перед звонкой: <span class="ex">сделать, сбежать, сгореть</span>. А «здесь», «здание», «здоровье» — там З вообще не приставка, это часть корня, слова-исключения.</div>
+    </div>
+  </section>
+
+  <!-- 13 -->
+  <section>
+    <h2><span class="n">13</span>Предлог и приставка — раздельно и слитно</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Предлог с существительным или местоимением пишется <b>раздельно</b>, приставка с глаголом (и другими словами) — <b>слитно</b>.</p>
+      <p class="ex">в доме, до школы, от него (предлог) — войти, дойти, отойти (приставка)</p>
+      <div class="how"><b class="t">Как проверить:</b> между предлогом и словом можно вставить другое слово или вопрос: <span class="ex">в (тёмном) лесу</span>. Между приставкой и корнем вставить ничего нельзя.</div>
+    </div>
+  </section>
+
+  <!-- 14 -->
+  <section>
+    <h2><span class="n">14</span>НЕ с глаголами</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> С глаголами НЕ пишется <b>раздельно</b>.</p>
+      <p class="ex">не знаю, не пришёл, не хочу</p>
+      <div class="trap"><b class="t">Исключение:</b> если без НЕ слово не употребляется — пишем слитно: <span class="ex">ненавидеть, негодовать, недоумевать, нездоровится</span>.</div>
+    </div>
+  </section>
+
+  <!-- 15 -->
+  <section>
+    <h2><span class="n">15</span>-ТСЯ и -ТЬСЯ в глаголах</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Задай вопрос к глаголу: <b>что делает?</b> → -ТСЯ (без Ь, в вопросе нет Ь); <b>что делать?</b> → -ТЬСЯ (с Ь, в вопросе есть Ь).</p>
+      <p class="ex">он (что делает?) учи<b>тся</b> — без Ь · хочет (что делать?) учи<b>ться</b> — с Ь</p>
+      <div class="how"><b class="t">Как проверить:</b> задай вопрос — какой вопрос, такое и окончание (есть Ь в вопросе — есть Ь в глаголе).</div>
+    </div>
+  </section>
+
+  <!-- 16 -->
+  <section class="pb">
+    <h2><span class="n">16</span>Безударные окончания прилагательных</h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Чтобы проверить безударное окончание прилагательного, задай вопрос от существительного к прилагательному — окончание вопроса подскажет окончание слова.</p>
+      <p class="ex">в син... небе → в как<b>ом</b>? небе → в син<b>ем</b> небе</p>
+      <div class="trap"><b class="t">Ловушка:</b> окончания <b>-ого, -его</b> (Р.п., м./ср.р.) произносятся как [ово]/[ево], а пишутся через <b>Г</b>: <span class="ex">добр<span class="e">ого</span>, син<span class="e">его</span></span>.</div>
+    </div>
+  </section>
+
+  <!-- 17 -->
+  <section>
+    <h2><span class="n">17</span>Безударные личные окончания глаголов <small>— основы; полный разбор с исключениями — на странице §37</small></h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> Чтобы узнать букву в безударном личном окончании, определи спряжение глагола: поставь его в неопределённую форму и посмотри, какая гласная перед <b>-ть</b>.</p>
+      <div class="cols">
+        <div class="box"><h3>I спряжение</h3><p>окончания <b>-ешь, -ет, -ем, -ете, -ут/-ют</b></p><p class="ex">игра<b>ть</b> → игра<b>ешь</b></p></div>
+        <div class="box"><h3>II спряжение</h3><p>окончания <b>-ишь, -ит, -им, -ите, -ат/-ят</b></p><p class="ex">вар<b>ить</b> → вар<b>ишь</b></p></div>
+      </div>
+      <p class="ref">Ко II спряжению относятся все глаголы на -ить (кроме брить, стелить) + 7 глаголов на -еть + 4 на -ать — полный список и разбор на странице §37 («Пусть всегда будет солнце!»).</p>
+    </div>
+  </section>
+
+  <footer>✏️ Свод для повторения — составлен по программе начальной школы, не из учебника · дополняет свод «Имя существительное» и §37 учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.)</footer>
+</div>
+</body>
+</html>
