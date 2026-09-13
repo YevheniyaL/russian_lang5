@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Повторяем: имя существительное</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0;
+    --paper-raised: #ffffff;
+    --ink: #23342f;
+    --ink-soft: #56655f;
+    --accent: #16866f;
+    --accent-deep: #0d5c4c;
+    --accent-soft: #d7f0e9;
+    --accent-soft2: #eef8f5;
+    --amber: #c9860f;
+    --amber-deep: #8a5c07;
+    --amber-soft: #fbe9c8;
+    --red: #c0463b;
+    --blue: #2f6690;
+    --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --red: #ef8a7f; --blue: #7fb1de;
+      --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --red: #ef8a7f; --blue: #7fb1de;
+    --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.45;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 4px;
+  }
+  h1 { font-weight: 900; font-size: 34px; text-align: center; margin: 0 0 4px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); margin: 0 0 14px; }
+
+  /* цепочка-логика */
+  .chain { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin: 0 0 8px; }
+  .chain span {
+    background: var(--accent-soft); color: var(--accent-deep); border-radius: 999px; padding: 4px 11px;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12.5px;
+  }
+  .chain i { color: var(--accent); font-style: normal; font-weight: 700; }
+  .note { text-align: center; font-size: 12px; color: var(--ink-soft); margin: 0 0 18px; }
+
+  section { margin: 0 0 14px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 17px; color: var(--accent-deep); margin: 0 0 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h2 .n {
+    flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 13px;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 12px; color: var(--ink-soft); }
+  .body { padding-left: 32px; }
+  p { margin: 0 0 6px; }
+  ul { margin: 0 0 6px; padding-left: 18px; }
+  li { margin-bottom: 2px; }
+  .ex { color: var(--ink-soft); font-style: italic; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0 0 6px; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 6px; }
+  @media (max-width: 620px) { .cols, .cols3 { grid-template-columns: 1fr; } .body { padding-left: 0; } }
+  .box { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; }
+  .box h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; margin: 0 0 3px; color: var(--accent-deep); }
+  .box p:last-child, .box ul:last-child { margin-bottom: 0; }
+
+  .how { background: var(--accent-soft2); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 6px 11px; margin: 0 0 6px; }
+  .how b.t, .trap b.t { font-family: 'Nunito', sans-serif; font-weight: 800; }
+  .how b.t { color: var(--accent-deep); }
+  .trap { background: var(--amber-soft); border-left: 4px solid var(--amber); border-radius: 0 8px 8px 0; padding: 6px 11px; margin: 0 0 6px; }
+  .trap b.t { color: var(--amber-deep); }
+  .orf { display: inline-block; background: var(--red); color: #fff; border-radius: 5px; padding: 0 6px; font-size: 11px; font-weight: 700; margin-right: 4px; vertical-align: 1px; }
+
+  .tbl-wrap { overflow-x: auto; margin: 0 0 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; }
+  td.c { text-align: center; font-weight: 700; }
+  .e { color: var(--red); font-weight: 700; }
+
+  /* подчёркивания членов предложения */
+  .u1 { border-bottom: 2px solid var(--ink); }
+  .u2 { border-bottom: 2px solid var(--ink); box-shadow: 0 4px 0 -2px var(--ink); padding-bottom: 1px; }
+  .dash { background-image: repeating-linear-gradient(to right, var(--ink) 0 6px, transparent 6px 10px); background-size: 100% 2px; background-repeat: no-repeat; background-position: 0 100%; padding-bottom: 2px; }
+  .dotdash { background-image: repeating-linear-gradient(to right, var(--ink) 0 7px, transparent 7px 10px, var(--ink) 10px 12px, transparent 12px 15px); background-size: 100% 2px; background-repeat: no-repeat; background-position: 0 100%; padding-bottom: 2px; }
+  .wavy { text-decoration: underline wavy var(--ink); text-underline-offset: 3px; }
+  .sent { font-size: 15px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin: 0 0 6px; line-height: 2; }
+
+  .parse { counter-reset: s; list-style: none; padding: 0; margin: 0 0 6px; }
+  .parse li { counter-increment: s; position: relative; padding-left: 24px; margin-bottom: 3px; }
+  .parse li::before {
+    content: counter(s); position: absolute; left: 0; top: 1px; width: 17px; height: 17px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-deep); font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  footer { text-align: center; font-size: 11.5px; color: var(--ink-soft); margin-top: 12px; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .poster, .page { zoom: 0.88; box-shadow: none !important; }
+    .poster *, .page * { box-shadow: none !important; }
+    .u2 { box-shadow: 0 4px 0 -2px #23342f !important; }
+    .pb { break-before: page; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · повторяем начальную школу</p>
+  <h1>Имя существительное — всё по порядку</h1>
+  <p class="subtitle">Каждый шаг опирается на предыдущий: сначала узнаём слово, потом его признаки, потом его роль</p>
+
+  <div class="chain">
+    <span>кто? что?</span><i>→</i>
+    <span>начальная форма</span><i>→</i>
+    <span>постоянные: род, склонение</span><i>→</i>
+    <span>меняются: число, падеж</span><i>→</i>
+    <span>роль в предложении</span>
+  </div>
+  <p class="note">✏️ Весь свод составлен мной по программе начальной школы, это не текст учебника 5 класса. Программы бывают разные — если чего-то не проходили, пропускайте. Красная метка <span class="orf">орфограмма</span> — правило написания.</p>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="n">1</span>Что такое имя существительное</h2>
+    <div class="body">
+      <p><b>Часть речи, которая обозначает предмет</b> и отвечает на вопросы <b>кто? что?</b> «Предмет» в грамматике — не только вещь: <span class="ex">мама, кот, стол, дождь, бег, доброта</span>.</p>
+      <div class="cols">
+        <div class="box"><h3>Одушевлённые — кто?</h3><p>люди и животные: <span class="ex">девочка, врач, кот, рыба, муравей</span></p></div>
+        <div class="box"><h3>Неодушевлённые — что?</h3><p>всё остальное: <span class="ex">парта, река, ветер, радость</span></p></div>
+      </div>
+      <div class="trap"><b class="t">Ловушка:</b> <span class="ex">стадо, толпа, народ</span> — там живые, но слово отвечает на вопрос <b>что?</b>, значит, неодушевлённое. Смотри на вопрос, а не на смысл.</div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="n">2</span>Собственные и нарицательные</h2>
+    <div class="body">
+      <div class="cols">
+        <div class="box"><h3>Собственные</h3><p>имя одного, «личное имя»: <span class="ex">Айгерим, Петров, Мурка, Иртыш, Алматы, Казахстан</span></p></div>
+        <div class="box"><h3>Нарицательные</h3><p>общее название для многих: <span class="ex">девочка, кошка, река, город, страна</span></p></div>
+      </div>
+      <div class="how"><b class="t">Как отличить:</b> так можно назвать <b>любой</b> предмет из группы? <span class="ex">река</span> — любая → нарицательное; <span class="ex">Иртыш</span> — только одна → собственное.</div>
+      <p><span class="orf">орфограмма</span> <b>Собственные пишутся с большой буквы:</b> имена, отчества, фамилии, клички животных, названия городов, рек, стран. Названия книг, фильмов, газет — ещё и <b>в кавычках</b>: <span class="ex">сказка «Колобок»</span>.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="n">3</span>Род <small>— постоянный признак: у слова не меняется</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th>Род</th><th>Подставь</th><th>Окончание (обычно)</th><th>Примеры</th></tr>
+        <tr><td><b>мужской</b></td><td>он, мой</td><td>нулевое; реже -а, -я</td><td class="ex">стол, конь, папа, дядя</td></tr>
+        <tr><td><b>женский</b></td><td>она, моя</td><td>-а, -я, -ь</td><td class="ex">мама, земля, ночь</td></tr>
+        <tr><td><b>средний</b></td><td>оно, моё</td><td>-о, -е</td><td class="ex">окно, море, солнце</td></tr>
+      </table></div>
+      <div class="how"><b class="t">Как определить:</b> самый надёжный способ — подставить <b>мой / моя / моё</b>. По окончанию — только подсказка: <span class="ex">папа</span> на -а, но <b>мой</b> папа (м.р.); <span class="ex">конь</span> и <span class="ex">ночь</span> оба на -ь, но <b>мой</b> конь (м.р.), <b>моя</b> ночь (ж.р.).</div>
+      <div class="how"><b class="t">Слово во множественном числе?</b> Сначала поставь его в единственное: <span class="ex">столы → стол (м.р.), книги → книга (ж.р.), окна → окно (ср.р.), дети → ребёнок (м.р.)</span>.</div>
+      <div class="trap"><b class="t">Когда род не определяется:</b> у слов, которые бывают <b>только во множественном числе</b> — <span class="ex">ножницы, очки, сани, брюки, сутки, каникулы</span>. Единственного числа нет — и род узнать нельзя.</div>
+      <div class="trap"><b class="t">Общий род</b> <span class="ex">(умница, сирота, плакса)</span> — не четвёртый род: слово бывает м.р. или ж.р. — смотря о ком речь: <span class="ex">он такой умница / она такая умница</span>.</div>
+      <p><span class="orf">орфограмма</span> <b>Ь после шипящих (ж, ш, ч, щ) на конце</b> зависит от рода: <b>ж.р. — пишем ь</b> <span class="ex">(ночь, мышь, рожь, помощь)</span>, <b>м.р. — без ь</b> <span class="ex">(врач, нож, камыш, товарищ)</span>.<br>
+      <span style="font-size:12.5px">Ловушка: у тех же слов ж.р. во мн.ч. («много чего?») ь не пишем — <span class="ex">много туч, дач, рощ</span>.</span></p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="pb">
+    <h2><span class="n">4</span>Число <small>— меняется: слово изменяется по числам</small></h2>
+    <div class="body">
+      <p><b>Единственное</b> — один предмет (<span class="ex">книга</span>), <b>множественное</b> — много (<span class="ex">книги</span>).</p>
+      <div class="cols">
+        <div class="box"><h3>Только ед. число</h3><p class="ex">молоко, сахар, листва, молодёжь, дружба, тишина</p></div>
+        <div class="box"><h3>Только мн. число</h3><p class="ex">ножницы, очки, сани, брюки, сутки, каникулы</p></div>
+      </div>
+      <p style="font-size:12.5px">У таких слов число не меняется, но всё равно называется: <span class="ex">молоко — ед.ч., ножницы — мн.ч.</span></p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="n">5</span>Склонение <small>— постоянный признак; зависит от рода и окончания</small></h2>
+    <div class="body">
+      <div class="cols3">
+        <div class="box"><h3>1-е склонение</h3><p>ж.р. и м.р. на <b>-а, -я</b></p><p class="ex">мама, земля, папа, дядя</p></div>
+        <div class="box"><h3>2-е склонение</h3><p>м.р. с <b>нулевым</b> окончанием и ср.р. на <b>-о, -е</b></p><p class="ex">стол, конь, окно, поле</p></div>
+        <div class="box"><h3>3-е склонение</h3><p>ж.р. на <b>-ь</b></p><p class="ex">ночь, мышь, степь, тетрадь</p></div>
+      </div>
+      <div class="how"><b class="t">Как определить:</b> ① поставь слово в <b>начальную форму</b> — ед. число, И.п. (<span class="ex">на ветках → ветка, у коней → конь</span>) ② определи <b>род</b> (шаг 3) ③ посмотри на <b>окончание</b> ④ найди строку в таблице.</div>
+      <div class="trap"><b class="t">Ловушка:</b> <span class="ex">конь</span> и <span class="ex">степь</span> оба на -ь, но <span class="ex">конь</span> — м.р. → 2-е скл., <span class="ex">степь</span> — ж.р. → 3-е скл. Без рода склонение не определить.<br>
+      Не склоняются и склонения не имеют: <span class="ex">пальто, кофе, метро, кино</span> (подробнее — §8 учебника 5 кл.).</div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="n">6</span>Падеж <small>— меняется: слово изменяется по падежам</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th>Падеж</th><th>Вопросы</th><th>Слово-помощник</th><th>Предлоги</th><th>Пример</th></tr>
+        <tr><td><b>И</b>менительный</td><td>кто? что?</td><td>(есть)</td><td>без предлогов</td><td class="ex">мама, стол</td></tr>
+        <tr><td><b>Р</b>одительный</td><td>кого? чего?</td><td>нет</td><td>у, от, до, из, без, для, около, с, после</td><td class="ex">нет мамы, стола</td></tr>
+        <tr><td><b>Д</b>ательный</td><td>кому? чему?</td><td>дать</td><td>к, по</td><td class="ex">к маме, столу</td></tr>
+        <tr><td><b>В</b>инительный</td><td>кого? что?</td><td>вижу</td><td>в, на, за, про, через</td><td class="ex">вижу маму, стол</td></tr>
+        <tr><td><b>Т</b>ворительный</td><td>кем? чем?</td><td>доволен</td><td>с, за, над, под, перед, между</td><td class="ex">с мамой, столом</td></tr>
+        <tr><td><b>П</b>редложный</td><td>о ком? о чём?</td><td>думаю</td><td>о, об, в, на, при</td><td class="ex">о маме, о столе</td></tr>
+      </table></div>
+      <div class="how"><b class="t">Как определить падеж:</b> ① найди слово, от которого зависит существительное ② задай от него вопрос ③ по вопросу и предлогу найди падеж. <span class="ex">Мальчик читает (что?) книгу → В.п. · Мальчик подошёл (к чему?) к окну → Д.п.</span></div>
+      <div class="trap"><b class="t">Ловушка И.п. / В.п.</b> — у обоих вопрос «что?». И.п. — это <b>подлежащее</b> и без предлога: <span class="ex">Мяч упал.</span> В.п. — зависит от другого слова, часто с предлогом: <span class="ex">Вижу мяч. Смотрю на мяч.</span></div>
+      <div class="trap"><b class="t">Ловушка Р.п. / В.п.</b> — у обоих вопрос «кого?». Подставь слово 1-го скл., например <i>мама</i>: <span class="ex">нет брата → нет мам<b>ы</b></span> (Р.п.), <span class="ex">вижу брата → вижу мам<b>у</b></span> (В.п.).</div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="pb">
+    <h2><span class="n">7</span>Орфограммы в окончаниях <small>— здесь нужны склонение (5) и падеж (6)</small></h2>
+    <div class="body">
+      <p><span class="orf">орфограмма</span> <b>Безударные падежные окончания в ед. числе: -е или -и?</b> Определи склонение и падеж → подставь слово-помощник той же склонности с <b>ударным</b> окончанием (<span class="ex">земля, конь, степь</span>).</p>
+      <div class="tbl-wrap"><table>
+        <tr><th>Падеж</th><th>1-е скл. (земля)</th><th>2-е скл. (конь)</th><th>3-е скл. (степь)</th></tr>
+        <tr><td><b>Р.п.</b> нет кого? чего?</td><td>земл<span class="e">и</span></td><td>кон<span class="e">я</span></td><td>степ<span class="e">и</span></td></tr>
+        <tr><td><b>Д.п.</b> к кому? к чему?</td><td>к земл<span class="e">е</span></td><td>к кон<span class="e">ю</span></td><td>к степ<span class="e">и</span></td></tr>
+        <tr><td><b>П.п.</b> о ком? о чём?</td><td>о земл<span class="e">е</span></td><td>о кон<span class="e">е</span></td><td>о степ<span class="e">и</span></td></tr>
+      </table></div>
+      <div class="how"><b class="t">Короче:</b> <b>-е</b> — в Д.п. и П.п. 1-го скл. и в П.п. 2-го скл.; <b>-и</b> — в Р.п. 1-го скл. и в Р., Д., П. 3-го скл. <span class="ex">(к берёзе, о берёзе, о лесе; у деревни, к тетради, о тетради)</span></div>
+      <p><span class="orf">орфограмма</span> <b>Слова на -ия, -ий, -ие:</b> там, где у обычного слова было бы <b>-е</b>, пишем <b>-и</b>: <span class="ex">о лили<span class="e">и</span> (о липе), к Мари<span class="e">и</span> (к Маше), в здани<span class="e">и</span> (в поле), о гени<span class="e">и</span> (о коне)</span>.</p>
+      <p><span class="orf">орфограмма</span> <b>После ж, ш, ч, щ, ц в окончании:</b> под ударением — <b>о</b>, без ударения — <b>е</b>: <span class="ex">свеч<span class="e">о</span>й — туч<span class="e">е</span>й, отц<span class="e">о</span>м — месяц<span class="e">е</span>м</span>.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="n">8</span>Роль в предложении и как подчёркивать</h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th>Член предложения</th><th>Падеж</th><th>Вопросы</th><th>Как подчёркивать</th></tr>
+        <tr><td><b>Подлежащее</b></td><td>только <b>И.п.</b></td><td>кто? что?</td><td><span class="u1">одна черта</span></td></tr>
+        <tr><td><b>Дополнение</b></td><td>все, <b>кроме И.п.</b></td><td>кого? чего? кому? чему? кого? что? кем? чем? о ком? о чём?</td><td><span class="dash">пунктир</span></td></tr>
+        <tr><td><b>Обстоятельство</b></td><td>обычно <b>с предлогом</b></td><td>где? куда? откуда? когда? как?</td><td><span class="dotdash">точка-тире</span></td></tr>
+        <tr><td><b>Определение</b> <span style="font-size:11.5px">(у сущ. редко)</span></td><td>—</td><td>какой? чей?</td><td><span class="wavy">волнистая</span></td></tr>
+      </table></div>
+      <p style="font-size:12.5px"><b>Сказуемое</b> (две черты) — обычно глагол, не существительное.</p>
+      <div class="sent"><span class="dotdash">В саду</span> <span class="u1">Мурка</span> <span class="u2">принесла</span> <span class="dash">котятам</span> <span class="dash">мышку</span>.<br>
+        <span style="font-size:12px; color:var(--ink-soft); line-height:1.4; display:block">Мурка — кто? И.п. → подлежащее · котятам — кому? Д.п. → дополнение · мышку — что? В.п. → дополнение · в саду — где? П.п. с предлогом → обстоятельство</span></div>
+      <div class="trap"><b class="t">Обращение</b> — тоже в И.п., но <b>не член предложения</b>: не подчёркивается, выделяется <b>запятыми</b>. <span class="ex">Мама, купи яблоки!</span> (обращение) — <span class="ex">Мама купила яблоки.</span> (подлежащее). Проверка: к подлежащему вопрос задать можно (<i>кто купил?</i>), к обращению — нельзя.</div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="n">9</span>Итог: разбор существительного по порядку</h2>
+    <div class="body">
+      <div class="cols">
+        <div>
+          <ol class="parse">
+            <li><b>Часть речи</b>, что обозначает, на какой вопрос отвечает</li>
+            <li><b>Начальная форма</b> — ед. число, И.п.</li>
+            <li><b>Постоянные признаки:</b> собственное / нарицательное, одушевлённое / неодушевлённое, род, склонение</li>
+            <li><b>Непостоянные признаки:</b> число, падеж</li>
+            <li><b>Роль в предложении</b></li>
+          </ol>
+          <p style="font-size:12px; color:var(--ink-soft)">В 5 классе (§3 учебника) к постоянным признакам добавляется ещё <b>разряд</b>: конкретное, вещественное и т.д.</p>
+        </div>
+        <div class="box">
+          <h3>Пример: <span class="ex" style="font-weight:400">На ветках сидели птицы.</span></h3>
+          <p><b>(на) ветках</b> — сущ., предмет, (на) чём?<br>н.ф. <i>ветка</i>; нариц., неодуш., ж.р., 1-е скл.; мн.ч., П.п.; обстоятельство (где?)</p>
+          <p><b>птицы</b> — сущ., предмет, кто?<br>н.ф. <i>птица</i>; нариц., одуш., ж.р., 1-е скл.; мн.ч., И.п.; подлежащее</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>✏️ Свод для повторения — составлен по программе начальной школы, не из учебника · к §1–3 учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.)</footer>
+</div>
+</body>
+</html>

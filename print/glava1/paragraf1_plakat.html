@@ -114,6 +114,8 @@
   .obr-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; margin: 0 0 6px; color: #8a5c07; }
   .obr-card p { font-size: 13.5px; margin: 0 0 10px; line-height: 1.5; }
   .obr-ex { background: var(--paper-raised); border-radius: 8px; padding: 10px 12px; font-size: 13.5px; margin-bottom: 8px; }
+  .obr-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 620px) { .obr-pair { grid-template-columns: 1fr; } }
   .obr-ex .quote { font-style: italic; }
   .obr-ex .comma { color: var(--amber); font-weight: 800; }
   .obr-ex .excl { color: #c85a4f; font-weight: 800; }
@@ -124,6 +126,13 @@
   }
   .common-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; margin: 0; color: var(--accent-deep); white-space: nowrap; }
   .common-card .ex-words { font-size: 13.5px; color: var(--ink); }
+
+  .hint {
+    font-size: 12px; line-height: 1.45; color: var(--ink-soft); margin: 8px 0 0;
+    padding: 2px 0 2px 9px; border-left: 3px solid var(--amber); text-align: left;
+  }
+  .hint b { color: var(--ink); }
+  .qbar + .hint { max-width: 620px; margin: -18px auto 26px; }
 
   footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 10px; }
 
@@ -137,6 +146,19 @@
     }
     .poster, .page { zoom: 0.88; box-shadow: none !important; }
     .poster *, .page * { box-shadow: none !important; }
+    /* компактнее — чтобы подсказки ✏️ поместились на один лист */
+    body { padding: 0 !important; }
+    .poster { zoom: 0.8; }
+    h1 { font-size: 34px; }
+    .subtitle { margin-bottom: 12px; }
+    .hub { padding: 9px 26px; font-size: 18px; }
+    .qbar { margin: 8px 0 14px; }
+    .qbar + .hint { margin: -6px auto 14px; }
+    .grid3, .row2 { margin-bottom: 14px; }
+    .obr-card { margin-bottom: 14px !important; padding: 12px 16px; }
+    .obr-card .obr-ex { margin-bottom: 6px; padding: 7px 12px; }
+    .card, .rod-card { padding: 12px 14px; }
+    p.qbar[style] { margin-top: 0 !important; }
   }
 </style>
 </head>
@@ -149,13 +171,15 @@
   <div class="hub-wrap">
     <div class="hub">кто? что?<small>вопросы имени существительного</small></div>
   </div>
-  <p class="qbar"><b>Морфологические признаки:</b> род, склонение, число, падеж &nbsp;·&nbsp; <b>В предложении:</b> подлежащее, дополнение, обстоятельство</p>
+  <p class="qbar"><b>Морфологические признаки:</b> род (м., ж., ср.), склонение (1-е, 2-е, 3-е), число (ед., мн.), падеж (И., Р., Д., В., Т., П.) &nbsp;·&nbsp; <b>В предложении:</b> подлежащее, дополнение, обстоятельство</p>
+  <p class="hint">✏️ <b>Род и склонение</b> у слова не меняются, а по <b>числам и падежам</b> слово изменяется (книга — книги — книгой). ✏️ <b>Подлежащее</b> — всегда в И.п. (кто? что?); <b>дополнение</b> — в других падежах.</p>
 
   <div class="grid3" style="grid-template-columns: repeat(2, 1fr);">
     <div class="card">
       <h3>Разряды: собственные</h3>
       <ul><li>называют единичные предметы</li></ul>
       <p class="ex">Астана, Абай, Иртыш</p>
+      <p class="hint">✏️ Пишутся с <b>большой буквы</b>; названия книг, фильмов — ещё и в кавычках: «Колобок».</p>
     </div>
     <div class="card">
       <h3>Разряды: нарицательные</h3>
@@ -166,6 +190,7 @@
         <li>собирательные — множество как одно</li>
       </ul>
       <p class="ex">ученик · сыр · радость · листва</p>
+      <p class="hint">✏️ Проверка: так можно назвать <b>любой</b> предмет из группы? <i>река</i> — любая (нарицательное), <i>Иртыш</i> — одна (собственное).</p>
     </div>
   </div>
 
@@ -183,12 +208,16 @@
         <li>подставь местоимение: <b>мой</b> тополь, <b>моё</b> такси</li>
         <li>если не помогло — смотри в словарь: <b>какао</b> — ср.р.</li>
       </ol>
+      <p class="hint">✏️ Слово во <b>мн. числе</b>? Сначала поставь в ед. число: окна → окно (ср.р.), дети → ребёнок (м.р.). У слов только мн. числа (ножницы, сутки) род не определяется.</p>
+      <p class="hint">✏️ На <b>-ь</b> окончание не подскажет: <b>мой</b> конь (м.р.), <b>моя</b> ночь (ж.р.) — подставляй местоимение.</p>
     </div>
     <div class="card">
       <h3>Общий род ↔</h3>
       <p style="font-size: 13.5px; line-height: 1.5; margin: 0 0 8px;">Называет и мальчика, и девочку одним и тем же словом. Окончания <b>-а, -я</b>.</p>
       <p class="ex">тихоня · умница · плакса · задира</p>
       <p class="ex">Он так<b>ой</b> умница. Она так<b>ая</b> умница.</p>
+      <p class="hint">✏️ Это не четвёртый род: слово бывает то м.р., то ж.р. — смотря о ком речь.</p>
+      <p class="hint">✏️ Не путай: <b>папа, дедушка</b> — тоже на -а, но только м.р. (про девочку так не скажешь).</p>
     </div>
   </div>
 
@@ -197,15 +226,18 @@
     <p>Называет того, к кому обращаются с речью. Не член предложения — вопрос к нему не задать.</p>
     <p style="font-size: 13.5px; margin: 0 0 10px;">Одно слово — <b>нераспространённое</b> (Мама!). Несколько слов — <b>распространённое</b> (Милая мамочка!).</p>
     <p style="font-size: 13.5px; margin: 0 0 8px;"><b>Обращение всегда выделяется запятой</b> — в начале, середине или в конце предложения.</p>
+    <div class="obr-pair">
     <div class="obr-ex"><b>Мамочка</b>, купи яблоки!<br><span class="ex" style="color:var(--ink-soft)">запятая — обращение в начале</span></div>
     <div class="obr-ex"><span class="quote">Смилуйся, <b>государыня рыбка</b></span><span class="comma">.</span><br><span class="ex" style="color:var(--ink-soft)">запятая — обращение в конце</span></div>
+    </div>
     <p style="font-size: 13.5px; margin: 10px 0 8px;">Исключение: если обращение стоит в начале и произносится с особым чувством — вместо запятой ставится <b>восклицательный знак</b>.</p>
     <div class="obr-ex"><span class="quote">Свет наш <b>солнышко</b></span><span class="excl">!</span> Ты ходишь круглый год по небу.<br><span class="ex" style="color:var(--ink-soft)">восклицательный знак — особая интонация</span></div>
+    <p class="hint">✏️ Обращение тоже стоит в И.п., но это <b>не подлежащее</b> и не подчёркивается: <b>Мама</b>, купи яблоки! (обращение, запятая) — <b>Мама</b> купила яблоки. (подлежащее). Проверка: к подлежащему вопрос задать можно (<i>кто купил?</i> — мама), к обращению — нельзя.</p>
   </div>
 
   <p class="qbar" style="margin-top: -14px;">Существительное также изменяется по <b>числам</b> (книга — книги) и <b>падежам</b> — подробнее об этом в §2 и §3.</p>
 
-  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §1, стр. 5–19</footer>
+  <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, часть 1 · §1, стр. 5–19 · ✏️ — подсказки не из учебника</footer>
 </div>
 
 </body>
