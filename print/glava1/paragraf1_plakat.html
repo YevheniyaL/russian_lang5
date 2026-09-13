@@ -79,6 +79,27 @@
 
   .qbar { text-align: center; font-size: 13px; color: var(--ink-soft); margin: 10px 0 26px; }
   .qbar b { color: var(--ink); }
+  .qbar + .qbar { margin-top: -22px; }
+  .u1, .udash, .udotdash { color: var(--ink); padding-bottom: 2px; }
+  .u1 { border-bottom: 2px solid var(--ink); }
+  /* пунктир и точка-тире — SVG-плитки: градиенты криво печатаются при zoom */
+  :root {
+    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%2323342f'/%3E%3Crect x='12' width='2' height='2' fill='%2323342f'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%23eaf3ef'/%3E%3Crect x='12' width='2' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    }
+  }
+  :root[data-theme="dark"] {
+    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%23eaf3ef'/%3E%3Crect x='12' width='2' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+  }
+  .udash, .udotdash { background-repeat: repeat-x; background-position: 0 100%; }
+  .udash { background-image: var(--u-dash); background-size: 10px 2px; }
+  .udotdash { background-image: var(--u-dotdash); background-size: 18px 2px; }
 
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 26px; }
   @media (max-width: 620px) { .grid3 { grid-template-columns: 1fr; } }
@@ -132,6 +153,7 @@
     padding: 2px 0 2px 9px; border-left: 3px solid var(--amber); text-align: left;
   }
   .hint b { color: var(--ink); }
+  .li-hint { display: block; font-size: 11.5px; line-height: 1.35; color: var(--ink-soft); font-style: italic; }
   .qbar + .hint { max-width: 620px; margin: -18px auto 26px; }
 
   footer { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 10px; }
@@ -148,17 +170,26 @@
     .poster *, .page * { box-shadow: none !important; }
     /* компактнее — чтобы подсказки ✏️ поместились на один лист */
     body { padding: 0 !important; }
-    .poster { zoom: 0.8; }
+    .poster { zoom: 0.78; }
     h1 { font-size: 34px; }
     .subtitle { margin-bottom: 12px; }
     .hub { padding: 9px 26px; font-size: 18px; }
     .qbar { margin: 8px 0 14px; }
+    .qbar + .qbar { margin-top: -10px; }
     .qbar + .hint { margin: -6px auto 14px; }
     .grid3, .row2 { margin-bottom: 14px; }
     .obr-card { margin-bottom: 14px !important; padding: 12px 16px; }
     .obr-card .obr-ex { margin-bottom: 6px; padding: 7px 12px; }
     .card, .rod-card { padding: 12px 14px; }
-    p.qbar[style] { margin-top: 0 !important; }
+    p.qbar[style] { margin-top: 0 !important; margin-bottom: 6px; }
+    body .u1, body .udash, body .udotdash { color: #23342f; }
+    .u1 { border-bottom-color: #23342f; }
+    .udash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
+    .udotdash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%2323342f'/%3E%3Crect x='12' width='2' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
+    .obr-card p { margin-bottom: 6px; }
+    .card ul { line-height: 1.4; }
+    .rod-grid { margin-bottom: 8px; }
+    footer { margin-top: 4px; }
   }
 </style>
 </head>
@@ -171,7 +202,8 @@
   <div class="hub-wrap">
     <div class="hub">кто? что?<small>вопросы имени существительного</small></div>
   </div>
-  <p class="qbar"><b>Морфологические признаки:</b> род (м., ж., ср.), склонение (1-е, 2-е, 3-е), число (ед., мн.), падеж (И., Р., Д., В., Т., П.) &nbsp;·&nbsp; <b>В предложении:</b> подлежащее, дополнение, обстоятельство</p>
+  <p class="qbar"><b>Морфологические признаки:</b> род (м., ж., ср.), склонение (1-е, 2-е, 3-е), число (ед., мн.), падеж (И., Р., Д., В., Т., П.)</p>
+  <p class="qbar"><b>В предложении:</b> <span class="u1">подлежащее</span> (одна черта), <span class="udash">дополнение</span> (пунктир), <span class="udotdash">обстоятельство</span> (точка-тире)</p>
   <p class="hint">✏️ <b>Род и склонение</b> у слова не меняются, а по <b>числам и падежам</b> слово изменяется (книга — книги — книгой). ✏️ <b>Подлежащее</b> — всегда в И.п. (кто? что?); <b>дополнение</b> — в других падежах.</p>
 
   <div class="grid3" style="grid-template-columns: repeat(2, 1fr);">
@@ -184,10 +216,10 @@
     <div class="card">
       <h3>Разряды: нарицательные</h3>
       <ul>
-        <li>конкретные — лица, предметы, события</li>
-        <li>вещественные — вещества</li>
-        <li>отвлечённые — явления, качества</li>
-        <li>собирательные — множество как одно</li>
+        <li>конкретные — лица, предметы, события <span class="li-hint">✏️ можно сосчитать: один, два, три</span></li>
+        <li>вещественные — вещества <span class="li-hint">✏️ не считают, а измеряют: нельзя «два молока»</span></li>
+        <li>отвлечённые — явления, качества <span class="li-hint">✏️ нельзя потрогать, только почувствовать</span></li>
+        <li>собирательные — множество как одно <span class="li-hint">✏️ много, но слово в ед. ч.: нельзя «две молодёжи»</span></li>
       </ul>
       <p class="ex">ученик · сыр · радость · листва</p>
       <p class="hint">✏️ Проверка: так можно назвать <b>любой</b> предмет из группы? <i>река</i> — любая (нарицательное), <i>Иртыш</i> — одна (собственное).</p>
