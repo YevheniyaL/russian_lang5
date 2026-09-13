@@ -26,11 +26,10 @@
   .day-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; margin-bottom: 4px; }
   .day-head b { font-size: 15px; }
   .day-head .date { color: var(--ink-soft); }
-  .words { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 14px; row-gap: 0; }
+  .words { display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; column-gap: 18px; row-gap: 0; }
   .w { font-size: 21px; line-height: 2.3; white-space: nowrap; letter-spacing: .02em; }
   .gap { display: inline-block; width: 1.45em; height: 1.2em; border-bottom: 1.5px solid var(--ink); margin: 0 2px; vertical-align: -0.2em; }
-  .cut { text-align: center; font-size: 11px; color: var(--ink-soft); margin: -8px 0 0; }
-  @media (max-width: 620px) { .words { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .words { grid-template-columns: repeat(2, auto); } }
 
   @media print {
     @page { size: A4; margin: 10mm; }
