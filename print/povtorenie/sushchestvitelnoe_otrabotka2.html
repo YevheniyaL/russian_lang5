@@ -43,7 +43,8 @@
   .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
   .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
 
-  section { margin: 0 0 11px; }
+  /* блок задания целиком на одном листе — не разрывать */
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
   h2 {
     font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
     display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
@@ -53,30 +54,32 @@
     display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
   }
   h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  h2 .cont { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 13px; color: var(--ink-soft); }
   .body { padding-left: 28px; }
   p { margin: 0 0 4px; }
-  .lab { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--accent-deep); margin: 3px 0 1px; }
+  .lab { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--accent-deep); margin: 4px 0 1px; }
   .lab.tr { color: var(--amber-deep); }
-  .items { line-height: 2.1; }
-  .items span.q { white-space: nowrap; margin-right: 14px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
   .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
   .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
-  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 0 0 5px; break-inside: avoid; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
   .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
-  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 0 0 8px; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
 
-  .tbl-wrap { overflow-x: auto; margin: 0 0 5px; break-inside: avoid; }
+  .tbl-wrap { margin: 0 0 5px; }
   table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
   th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
   th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
-  td.fill { height: 1.9em; }
+  td.fill { height: 1.95em; }
   .e { color: #c0463b; font-weight: 700; }
 
   .sent { font-size: 14.5px; line-height: 2.5; margin: 0 0 3px; }
   .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
-  .parse-line { display: block; border-bottom: 1.4px solid var(--line); height: 1.7em; }
+  .parse-line { display: block; border-bottom: 1.4px solid var(--line); height: 1.75em; }
 
-  /* подчёркивания членов предложения (нужны на листе ответов) */
+  /* подчёркивания членов предложения — нужны на листе ответов */
   .u1 { border-bottom: 2px solid var(--ink); }
   .u2 { border-bottom: 2px solid var(--ink); box-shadow: 0 4px 0 -2px var(--ink); padding-bottom: 1px; }
   :root {
@@ -100,7 +103,9 @@
 
   .ans h2 { font-size: 14px; }
   .ans .body { font-size: 12px; line-height: 1.6; }
-  .ans section { margin: 0 0 7px; }
+  /* на листе ответов секции могут переноситься: это сплошной текст для мамы,
+     а не задание, ради которого стоит держать целый пустой лист */
+  .ans section { margin: 0 0 8px; break-inside: auto; page-break-inside: auto; }
   footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
 
   @media (max-width: 620px) { .body { padding-left: 0; } }
@@ -109,9 +114,8 @@
     @page { size: A4; margin: 10mm; }
     body { background: #fff !important; padding: 0 !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
-    .page { zoom: 0.8; box-shadow: none !important; }
+    .page { zoom: 0.88; box-shadow: none !important; }
     .page * { box-shadow: none !important; }
-    section, .items, .hint, .tbl-wrap { break-inside: avoid; page-break-inside: avoid; }
     .u2 { box-shadow: 0 4px 0 -2px #23342f !important; }
     .u1, .u2 { border-bottom-color: #23342f; }
     .dash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
@@ -125,80 +129,144 @@
 <div class="page">
   <p class="kicker">Русский язык · повторение начальной школы</p>
   <h1>Имя существительное — отработка 2</h1>
-  <p class="subtitle">Орфограммы в окончаниях и в слове, члены предложения, разбор · к листу «Имя существительное — всё по порядку»</p>
+  <p class="subtitle">Те же девять пунктов, что и в отработке 1, но другие слова и предложения · для повторения через время или для слабых мест</p>
   <div class="namebar"><span>Имя: ________________________</span><span>Дата: ____________</span><span>Ошибок: ______</span></div>
 
-  <!-- 1 -->
   <section>
-    <h2><span class="n">1</span>-е или -и? <small>сначала склонение, потом падеж, потом буква</small></h2>
+    <h2><span class="n">1</span>Одушевлённое или неодушевлённое? <small>поставь О или Н</small></h2>
+    <div class="body">
+      <p class="lab">А</p>
+      <p class="items"><span class="q">учитель<span class="w"></span></span><span class="q">книга<span class="w"></span></span><span class="q">бабочка<span class="w"></span></span><span class="q">дождь<span class="w"></span></span><span class="q">конь<span class="w"></span></span><span class="q">смелость<span class="w"></span></span></p>
+      <p class="lab tr">Б — ловушки</p>
+      <p class="items"><span class="q">класс<span class="w"></span></span><span class="q">войско<span class="w"></span></span><span class="q">родня<span class="w"></span></span><span class="q">мебель<span class="w"></span></span><span class="q">молодёжь<span class="w"></span></span><span class="q">щенок<span class="w"></span></span></p>
+      <div class="hint"><b>Помни:</b> смотри на вопрос, а не на смысл.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Собственные и нарицательные <small>+ разряды нарицательных</small></h2>
+    <div class="body">
+      <p class="lab">А — поставь С (собственное) или Н (нарицательное)</p>
+      <p class="items"><span class="q">страна<span class="w"></span></span><span class="q">Астана<span class="w"></span></span><span class="q">горы<span class="w"></span></span><span class="q">Алатау<span class="w"></span></span><span class="q">кот<span class="w"></span></span><span class="q">Барсик<span class="w"></span></span></p>
+      <p class="lab tr">Б — запиши правильно: где нужна большая буква, где кавычки</p>
+      <p class="items"><span class="q">журнал мурзилка<span class="w wide"></span></span><span class="q">рассказ каштанка<span class="w wide"></span></span><span class="q">планета марс<span class="w wide"></span></span><span class="q">пёс дружок<span class="w wide"></span></span><span class="q">верный дружок<span class="w wide"></span></span><span class="q">город туркестан<span class="w wide"></span></span></p>
+      <p class="lab">В — разряд нарицательного: К (конкретное), В (вещественное), О (отвлечённое), С (собирательное)</p>
+      <p class="items"><span class="q">врач<span class="w"></span></span><span class="q">песок<span class="w"></span></span><span class="q">смелость<span class="w"></span></span><span class="q">детвора<span class="w"></span></span></p>
+      <p class="lab tr">Г — ловушки на разряд</p>
+      <p class="items"><span class="q">гроза<span class="w"></span></span><span class="q">мука<span class="w"></span></span><span class="q">доброта<span class="w"></span></span><span class="q">мебель<span class="w"></span></span><span class="q">студенчество<span class="w"></span></span><span class="q">прыжок<span class="w"></span></span><span class="q">серебро<span class="w"></span></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Род <small>м., ж. или ср. — подставляй мой / моя / моё</small></h2>
+    <div class="body">
+      <p class="lab">А</p>
+      <p class="items"><span class="q">город<span class="w"></span></span><span class="q">книга<span class="w"></span></span><span class="q">море<span class="w"></span></span><span class="q">дядя<span class="w"></span></span><span class="q">поле<span class="w"></span></span></p>
+      <p class="lab tr">Б — ловушки</p>
+      <p class="items"><span class="q">рожь<span class="w"></span></span><span class="q">путь<span class="w"></span></span><span class="q">метро<span class="w"></span></span><span class="q">кофе<span class="w"></span></span><span class="q">сэр<span class="w"></span></span><span class="q">плакса<span class="w wide"></span></span><span class="q">брюки<span class="w wide"></span></span><span class="q">люди<span class="w"></span></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Число <small>ЕД — бывает только в единственном, МН — только во множественном</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">сметана<span class="w"></span></span><span class="q">брюки<span class="w"></span></span><span class="q">щипцы<span class="w"></span></span><span class="q">человечество<span class="w"></span></span><span class="q">дружба<span class="w"></span></span><span class="q">шахматы<span class="w"></span></span><span class="q">чернила<span class="w"></span></span><span class="q">тишина<span class="w"></span></span><span class="q">серебро<span class="w"></span></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Склонение <small>сначала начальная форма, потом род, потом склонение: 1, 2 или 3</small></h2>
+    <div class="body">
+      <p class="lab">А</p>
+      <p class="items"><span class="q">сестра<span class="w"></span></span><span class="q">брат<span class="w"></span></span><span class="q">дочь<span class="w"></span></span><span class="q">село<span class="w"></span></span><span class="q">мышь<span class="w"></span></span></p>
+      <p class="lab tr">Б — ловушки: сначала поставь слово в начальную форму</p>
+      <p class="items"><span class="q">в тетради<span class="w"></span></span><span class="q">о дедушке<span class="w"></span></span><span class="q">у лошадей<span class="w"></span></span><span class="q">к двери<span class="w"></span></span><span class="q">юноша<span class="w"></span></span><span class="q">тополь<span class="w"></span></span><span class="q">кино<span class="w wide"></span></span></p>
+      <div class="hint"><b>Помни:</b> <i>путь</i>, <i>тополь</i>, <i>дверь</i> — все на -ь, но род у них разный. У несклоняемых слов склонения нет.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Падеж выделенного слова <small>если путаешь — замени слово на слово другой одушевлённости</small></h2>
+    <div class="body">
+      <p class="lab">А</p>
+      <p class="items sent"><span class="q">Девочка рисует <b>картину</b>.<span class="w wide"></span></span><span class="q">Подарил <b>другу</b> книгу.<span class="w wide"></span></span><span class="q">Гордится <b>сестрой</b>.<span class="w wide"></span></span><span class="q">Мечтаю о <b>море</b>.<span class="w wide"></span></span></p>
+      <p class="lab tr">Б — ловушки: рядом с падежом запиши слово-замену</p>
+      <p class="items sent"><span class="q"><b>Ветер</b> сломал ветку.<span class="w wide"></span></span><span class="q">Вижу <b>ветку</b>.<span class="w wide"></span></span><span class="q">Сестра встретила <b>подругу</b>.<span class="w wide"></span></span><span class="q">Нет <b>подруги</b>.<span class="w wide"></span></span><span class="q">Учитель похвалил <b>ученика</b>.<span class="w wide"></span></span></p>
+      <div class="hint"><b>Замена:</b> было неодушевлённое — подставь <i>брат</i>; было одушевлённое — подставь <i>стол</i>. Форма осталась как в начальной → И.п. (у неодушевлённых — В.п.), форма изменилась → В.п. (у одушевлённых — Р.п.).</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Орфограммы: безударные окончания <small>-е или -и: сначала склонение, потом падеж, потом буква</small></h2>
     <div class="body">
       <div class="tbl-wrap"><table>
-        <tr><th style="width:28%">Слово</th><th style="width:14%">Склонение</th><th style="width:17%">Падеж</th><th style="width:13%">Буква</th><th>Слово-помощник (земля / конь / степь)</th></tr>
-        <tr><td>на ветк<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>к берёз<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>о лес<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>у деревн<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>к тетрад<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>на лошад<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>о сестр<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
-        <tr><td>к дочер<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><th style="width:26%">Слово</th><th style="width:15%">Склонение</th><th style="width:18%">Падеж</th><th style="width:12%">Буква</th><th>Слово-помощник (земля / конь / степь)</th></tr>
+        <tr><td>в книг<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>к сестр<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>о дочер<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>у сирен<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>на двер<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>о дедушк<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>к юнош<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>в мор<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
       </table></div>
-      <p class="lab tr">Ловушки — слова на -ия, -ий, -ие: там, где обычно -е, пишем -и</p>
-      <p class="items"><span class="q">о лили<span class="gap"></span></span><span class="q">в здани<span class="gap"></span></span><span class="q">к Мари<span class="gap"></span></span><span class="q">на экскурси<span class="gap"></span></span><span class="q">в санатори<span class="gap"></span></span><span class="q">об акаци<span class="gap"></span></span><span class="q">о путешестви<span class="gap"></span></span></p>
     </div>
   </section>
 
-  <!-- 2 -->
   <section>
-    <h2><span class="n">2</span>После ж, ш, ч, щ, ц <small>под ударением — о, без ударения — е</small></h2>
+    <h2><span class="n">7</span><span class="cont">продолжение</span> — остальные орфограммы существительного</h2>
     <div class="body">
-      <p class="items"><span class="q">свеч<span class="gap"></span>й</span><span class="q">туч<span class="gap"></span>й</span><span class="q">отц<span class="gap"></span>м</span><span class="q">месяц<span class="gap"></span>м</span><span class="q">плеч<span class="gap"></span>м</span><span class="q">зайц<span class="gap"></span>м</span><span class="q">ключ<span class="gap"></span>м</span><span class="q">полотенц<span class="gap"></span>м</span></p>
-      <div class="hint"><b>Проверка:</b> скажи слово вслух и услышь, падает ли ударение на окончание.</div>
-    </div>
-  </section>
-
-  <!-- 3 -->
-  <section>
-    <h2><span class="n">3</span>НЕ с существительными <small>напиши слитно или раздельно</small></h2>
-    <div class="body">
-      <p class="items"><span class="q">(не)ряха</span><span class="q">(не)взгода</span><span class="q">(не)погода</span><span class="q">(не)правда, а ложь</span><span class="q">(не)друг, а враг</span><span class="q">(не)счастье, а горе</span></p>
-    </div>
-  </section>
-
-  <!-- 4 -->
-  <section>
-    <h2><span class="n">4</span>Суффикс -чик- или -щик- <small>смотри на букву перед суффиксом</small></h2>
-    <div class="body">
-      <p class="items"><span class="q">перевод<span class="gap"></span>ик</span><span class="q">камен<span class="gap"></span>ик</span><span class="q">налад<span class="gap"></span>ик</span><span class="q">набор<span class="gap"></span>ик</span><span class="q">извоз<span class="gap"></span>ик</span><span class="q">лёт<span class="gap"></span>ик</span><span class="q">часов<span class="gap"></span>ик</span><span class="q">убор<span class="gap"></span>ик</span></p>
+      <p class="lab tr">А — слова на -ия, -ий, -ие (и одно обычное слово в придачу: там буква своя)</p>
+      <p class="items"><span class="q">о станци<span class="gap"></span></span><span class="q">о лекци<span class="gap"></span></span><span class="q">в планетари<span class="gap"></span></span><span class="q">о Юли<span class="gap"></span></span><span class="q">в сочинени<span class="gap"></span></span><span class="q">об истори<span class="gap"></span></span><span class="q">на алле<span class="gap"></span></span></p>
+      <p class="lab tr">Б — после ж, ш, ч, щ, ц: под ударением о, без ударения е</p>
+      <p class="items"><span class="q">плащ<span class="gap"></span>м</span><span class="q">товарищ<span class="gap"></span>м</span><span class="q">душ<span class="gap"></span>й</span><span class="q">крыш<span class="gap"></span>й</span><span class="q">огурц<span class="gap"></span>м</span><span class="q">пальц<span class="gap"></span>м</span><span class="q">нож<span class="gap"></span>м</span><span class="q">кольц<span class="gap"></span>м</span></p>
+      <p class="lab">В — НЕ с существительными: напиши слитно или раздельно</p>
+      <p class="items"><span class="q">(не)вежа</span><span class="q">(не)настье</span><span class="q">(не)воля</span><span class="q">(не)удача, а успех</span><span class="q">(не)правда, а обман</span><span class="q">(не)радость, а грусть</span></p>
+      <p class="lab">Г — суффикс -чик- или -щик-</p>
+      <p class="items"><span class="q">смаз<span class="gap"></span>ик</span><span class="q">барабан<span class="gap"></span>ик</span><span class="q">развед<span class="gap"></span>ик</span><span class="q">свар<span class="gap"></span>ик</span><span class="q">груз<span class="gap"></span>ик</span><span class="q">фонар<span class="gap"></span>ик</span><span class="q">рез<span class="gap"></span>ик</span><span class="q">бетон<span class="gap"></span>ик</span></p>
       <div class="hint"><b>Помни:</b> после <b>д, ж, з, с, т</b> — <i>-чик-</i>, во всех остальных случаях — <i>-щик-</i>.</div>
     </div>
   </section>
 
-  <!-- 5 -->
   <section>
-    <h2><span class="n">5</span>Подчеркни члены предложения <small>подлежащее, сказуемое, дополнение, определение, обстоятельство</small></h2>
+    <h2><span class="n">8</span>Подчеркни члены предложения <small>подлежащее, сказуемое, дополнение, определение, обстоятельство</small></h2>
     <div class="body">
-      <p class="sent"><span class="num">1.</span>В саду мальчик читал интересную книгу.</p>
-      <p class="sent"><span class="num">2.</span>Утром бабушка испекла внукам пирог.</p>
-      <p class="sent"><span class="num">3.</span>Я живу в городе.</p>
-      <p class="sent"><span class="num">4.</span>Дети долго думали о лесе.</p>
-      <p class="sent"><span class="num">5.</span>Мама, купи яблоки!</p>
-      <p class="sent"><span class="num">6.</span>Ранние птицы поют в берёзовой роще.</p>
-      <div class="hint"><b>Ловушки:</b> в одном предложении есть обращение — его подчёркивать нельзя. И помни: <i>о лесе</i> — дополнение, <i>в городе</i> — обстоятельство, хотя падеж у них один.</div>
+      <p class="sent"><span class="num">1.</span>Утром рыбаки поймали большую щуку.</p>
+      <p class="sent"><span class="num">2.</span>В степи гуляет свежий ветер.</p>
+      <p class="sent"><span class="num">3.</span>Бабушка живёт в деревне.</p>
+      <p class="sent"><span class="num">4.</span>Дети мечтают о лете.</p>
+      <p class="sent"><span class="num">5.</span>Друзья, помогите малышам!</p>
+      <p class="sent"><span class="num">6.</span>Пушистый снег укрыл поля.</p>
+      <div class="hint"><b>Ловушки:</b> в одном предложении есть обращение — его подчёркивать нельзя. И помни: <i>о лете</i> — дополнение, <i>в деревне</i> — обстоятельство, хотя падеж у них один.</div>
     </div>
   </section>
 
-  <!-- 6 -->
   <section>
-    <h2><span class="n">6</span>Разбери слова по порядку <small>Утром дети собирали в лесу спелые ягоды.</small></h2>
+    <h2><span class="n">9</span>Разбери слова по порядку <small>Осенью школьники сажали в парке молодые деревья.</small></h2>
     <div class="body">
       <p style="font-size:12px; color:var(--ink-soft); margin-bottom:2px">Часть речи → начальная форма → постоянные (собств./нариц., разряд, одуш./неодуш., род, склонение) → непостоянные (число, падеж) → роль в предложении.</p>
-      <p><b>(в) лесу</b> — <span class="parse-line"></span><span class="parse-line"></span></p>
-      <p><b>ягоды</b> — <span class="parse-line"></span><span class="parse-line"></span></p>
+      <p><b>школьники</b> — <span class="parse-line"></span><span class="parse-line"></span><span class="parse-line"></span></p>
+      <p><b>(в) парке</b> — <span class="parse-line"></span><span class="parse-line"></span><span class="parse-line"></span></p>
+      <p><b>деревья</b> — <span class="parse-line"></span><span class="parse-line"></span><span class="parse-line"></span></p>
     </div>
   </section>
 
-  <footer>✏️ Лист отработки составлен мной · правила НЕ с существительными, -чик-/-щик- и падежных окончаний — из учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §8 (стр. 56–64), §10 (стр. 72–85) части 1, §34 части 2 (стр. 88–93)</footer>
+  <section>
+    <h2><span class="n">★</span>Работа над ошибками <small>заполняется после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:22%">Что было не так</th><th style="width:33%">Какое правило работает</th><th>Запиши правильно два раза</th></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+      </table></div>
+      <div class="hint"><b>Зачем:</b> сравни с первым листом отработки — если один и тот же пункт «сыпется» второй раз, значит, повторять надо именно его.</div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист отработки составлен мной · материал учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.): §1–3 — стр. 5–32, §8 — стр. 56–64, §10 — стр. 72–85, §34 части 2 — стр. 88–93 · первый вариант тех же блоков — лист «отработка 1»</footer>
 
   <!-- ОТВЕТЫ -->
   <div class="ans">
@@ -207,54 +275,92 @@
     <p class="subtitle">Лист для мамы. Печатается отдельной страницей.</p>
 
     <section>
-      <h2><span class="n">1</span>-е или -и</h2>
+      <h2><span class="n">1</span>Одушевлённое или неодушевлённое</h2>
       <div class="body">
-        <p>на ветк<span class="e">е</span> — 1 скл., П.п. (о земл<b>е</b>) · к берёз<span class="e">е</span> — 1 скл., Д.п. (к земл<b>е</b>) · о лес<span class="e">е</span> — 2 скл., П.п. (о кон<b>е</b>) · у деревн<span class="e">и</span> — 1 скл., Р.п. (у земл<b>и</b>) · к тетрад<span class="e">и</span> — 3 скл., Д.п. (к степ<b>и</b>) · на лошад<span class="e">и</span> — 3 скл., П.п. (о степ<b>и</b>) · о сестр<span class="e">е</span> — 1 скл., П.п. · к дочер<span class="e">и</span> — 3 скл., Д.п.</p>
-        <p><b>Ловушки:</b> о лили<span class="e">и</span>, в здани<span class="e">и</span>, к Мари<span class="e">и</span>, на экскурси<span class="e">и</span>, в санатори<span class="e">и</span>, об акаци<span class="e">и</span>, о путешестви<span class="e">и</span> — везде <b>-и</b>.</p>
-        <p class="ansbar">Если ошибка — почти всегда сбой на первом шаге: ребёнок не поставил слово в начальную форму и определил склонение по той форме, что в задании (<i>на лошади</i> → кажется 1-м скл., а начальная форма <i>лошадь</i> — 3-е скл.).</p>
+        <p><b>А:</b> учитель — О, книга — Н, бабочка — О, дождь — Н, конь — О, смелость — Н.</p>
+        <p><b>Б:</b> класс, войско, родня, мебель, молодёжь — все <b>Н</b> (вопрос <i>что?</i>); щенок — <b>О</b>.</p>
       </div>
     </section>
 
     <section>
-      <h2><span class="n">2</span>После ж, ш, ч, щ, ц</h2>
+      <h2><span class="n">2</span>Собственные и нарицательные, разряды</h2>
       <div class="body">
-        <p>свеч<span class="e">о</span>й · туч<span class="e">е</span>й · отц<span class="e">о</span>м · месяц<span class="e">е</span>м · плеч<span class="e">о</span>м · зайц<span class="e">е</span>м · ключ<span class="e">о</span>м · полотенц<span class="e">е</span>м.</p>
+        <p><b>А:</b> страна — Н, Астана — С, горы — Н, Алатау — С, кот — Н, Барсик — С.</p>
+        <p><b>Б:</b> журнал «Мурзилка» · рассказ «Каштанка» · планета Марс · пёс Дружок · верный дружок (обычное слово — с маленькой буквы) · город Туркестан.</p>
+        <p><b>В:</b> врач — К, песок — В, смелость — О, детвора — С.</p>
+        <p><b>Г:</b> гроза — <b>К</b> (событие: две грозы), мука — В, доброта — О, мебель — <b>С</b> (много предметов, а слово в ед. ч.), студенчество — С, прыжок — <b>К</b>, серебро — В.</p>
       </div>
     </section>
 
     <section>
-      <h2><span class="n">3</span>НЕ с существительными</h2>
+      <h2><span class="n">3</span>Род</h2>
       <div class="body">
-        <p><b>Слитно:</b> неряха (без <i>не</i> не употребляется), невзгода (без <i>не</i> не употребляется), непогода (= плохая погода, есть синоним).<br>
-        <b>Раздельно:</b> не правда, а ложь · не друг, а враг · не счастье, а горе — везде противопоставление с <i>а</i>.</p>
+        <p><b>А:</b> город — м., книга — ж., море — ср., дядя — м., поле — ср.</p>
+        <p><b>Б:</b> рожь — ж. (<i>моя</i>), путь — м. (<i>мой</i>), метро — ср., кофе — м. (по словарю), сэр — м. (по значению), плакса — <b>общий род</b>, брюки — <b>рода нет</b> (только мн. ч.), люди → <i>человек</i> — м.</p>
       </div>
     </section>
 
     <section>
-      <h2><span class="n">4</span>-чик- или -щик-</h2>
+      <h2><span class="n">4</span>Число</h2>
       <div class="body">
-        <p>перево<b>д</b>чик · каме<b>н</b>щик · нала<b>д</b>чик · набо<b>р</b>щик · изво<b>з</b>чик · лё<b>т</b>чик · часо<b>в</b>щик · убо<b>р</b>щик.</p>
+        <p>сметана — ЕД, брюки — МН, щипцы — МН, человечество — ЕД, дружба — ЕД, шахматы — МН, чернила — МН, тишина — ЕД, серебро — ЕД.</p>
       </div>
     </section>
 
     <section>
-      <h2><span class="n">5</span>Члены предложения</h2>
+      <h2><span class="n">5</span>Склонение</h2>
       <div class="body">
-        <p class="sent" style="line-height:2.2"><span class="num">1.</span><span class="dotdash">В саду</span> <span class="u1">мальчик</span> <span class="u2">читал</span> <span class="wavy">интересную</span> <span class="dash">книгу</span>.</p>
-        <p class="sent" style="line-height:2.2"><span class="num">2.</span><span class="dotdash">Утром</span> <span class="u1">бабушка</span> <span class="u2">испекла</span> <span class="dash">внукам</span> <span class="dash">пирог</span>.</p>
-        <p class="sent" style="line-height:2.2"><span class="num">3.</span><span class="u1">Я</span> <span class="u2">живу</span> <span class="dotdash">в городе</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(можно спросить «в чём?», но выбираем «где?» — обстоятельство)</span></p>
-        <p class="sent" style="line-height:2.2"><span class="num">4.</span><span class="u1">Дети</span> <span class="dotdash">долго</span> <span class="u2">думали</span> <span class="dash">о лесе</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(думали о чём? — вопрос падежа, значит дополнение)</span></p>
-        <p class="sent" style="line-height:2.2"><span class="num">5.</span>Мама, <span class="u2">купи</span> <span class="dash">яблоки</span>! <span style="font-size:11.5px; color:var(--ink-soft)">(«мама» — обращение: не подчёркивается, подлежащего в предложении нет)</span></p>
-        <p class="sent" style="line-height:2.2"><span class="num">6.</span><span class="wavy">Ранние</span> <span class="u1">птицы</span> <span class="u2">поют</span> <span class="dotdash">в берёзовой роще</span>.</p>
+        <p><b>А:</b> сестра — 1, брат — 2, дочь — 3, село — 2, мышь — 3.</p>
+        <p><b>Б:</b> в тетради → <i>тетрадь</i>, ж.р. на -ь — <b>3</b>; о дедушке → <i>дедушка</i>, м.р. на -а — <b>1</b>; у лошадей → <i>лошадь</i>, ж.р. на -ь — <b>3</b>; к двери → <i>дверь</i>, ж.р. на -ь — <b>3</b>; юноша — м.р. на -а — <b>1</b>; тополь — м.р. на -ь — <b>2</b>; кино — несклоняемое, <b>склонения нет</b>.</p>
       </div>
     </section>
 
     <section>
-      <h2><span class="n">6</span>Разбор</h2>
+      <h2><span class="n">6</span>Падеж</h2>
       <div class="body">
-        <p><b>(в) лесу</b> — сущ., предмет, (в) чём? н.ф. <i>лес</i>; нариц., конкретное, неодуш., м.р., 2-е скл.; ед.ч., П.п.; обстоятельство (где?).</p>
-        <p><b>ягоды</b> — сущ., предмет, что? н.ф. <i>ягода</i>; нариц., конкретное, неодуш., ж.р., 1-е скл.; мн.ч., В.п.; дополнение.</p>
-        <p class="ansbar">«Ягоды» — типичная ошибка: форма выглядит как И.п., но собирали (что?) ягоды — это В.п. Проверка заменой: собирали <i>брата</i> → форма изменилась, значит В.п.</p>
+        <p><b>А:</b> картину — В.п., другу — Д.п., сестрой — Т.п., о море — П.п.</p>
+        <p><b>Б:</b> <i>Ветер</i> сломал ветку — <b>И.п.</b> (<i>Брат</i> сломал); Вижу <i>ветку</i> — <b>В.п.</b> (Вижу <i>брата</i>); Сестра встретила <i>подругу</i> — <b>В.п.</b> (встретила <i>стол</i>); Нет <i>подруги</i> — <b>Р.п.</b> (нет <i>стола</i>); Учитель похвалил <i>ученика</i> — <b>В.п.</b> (похвалил <i>стол</i>).</p>
+        <p class="ansbar">У одушевлённых В.п. выглядит как Р.п. (<i>встретила подругу — нет подруги</i>). Замена на <i>стол</i> сразу показывает разницу.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Безударные окончания</h2>
+      <div class="body">
+        <p>в книг<span class="e">е</span> — 1 скл., П.п. · к сестр<span class="e">е</span> — 1 скл., Д.п. · о дочер<span class="e">и</span> — 3 скл., П.п. · у сирен<span class="e">и</span> — 3 скл., Р.п. · на двер<span class="e">и</span> — 3 скл., П.п. · о дедушк<span class="e">е</span> — 1 скл., П.п. · к юнош<span class="e">е</span> — 1 скл., Д.п. · в мор<span class="e">е</span> — 2 скл., П.п.</p>
+        <p class="ansbar">Слова <i>дедушка</i> и <i>юноша</i> — мужского рода, но 1-го склонения (окончание -а/-я). Это частая ошибка: род мужской, а склонение не второе.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span><span class="cont">продолжение</span></h2>
+      <div class="body">
+        <p><b>А:</b> о станци<span class="e">и</span>, о лекци<span class="e">и</span>, в планетари<span class="e">и</span>, о Юли<span class="e">и</span>, в сочинени<span class="e">и</span>, об истори<span class="e">и</span> — везде <b>-и</b>. А <i>на алле<span class="e">е</span></i> — обычное слово 1-го склонения (не на -ия), поэтому в П.п. <b>-е</b>.</p>
+        <p><b>Б:</b> плащ<span class="e">о</span>м · товарищ<span class="e">е</span>м · душ<span class="e">о</span>й · крыш<span class="e">е</span>й · огурц<span class="e">о</span>м · пальц<span class="e">е</span>м · нож<span class="e">о</span>м · кольц<span class="e">о</span>м.</p>
+        <p><b>В:</b> слитно — невежа, ненастье (без <i>не</i> не употребляются), неволя (= плен, есть синоним); раздельно — не удача, а успех · не правда, а обман · не радость, а грусть.</p>
+        <p><b>Г:</b> сма<b>з</b>чик · бараба<b>н</b>щик · разве<b>д</b>чик · сва<b>р</b>щик · гру<b>з</b>чик · фона<b>р</b>щик · ре<b>з</b>чик · бето<b>н</b>щик.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>Члены предложения</h2>
+      <div class="body">
+        <p class="sent" style="line-height:2.2"><span class="num">1.</span><span class="dotdash">Утром</span> <span class="u1">рыбаки</span> <span class="u2">поймали</span> <span class="wavy">большую</span> <span class="dash">щуку</span>.</p>
+        <p class="sent" style="line-height:2.2"><span class="num">2.</span><span class="dotdash">В степи</span> <span class="u2">гуляет</span> <span class="wavy">свежий</span> <span class="u1">ветер</span>.</p>
+        <p class="sent" style="line-height:2.2"><span class="num">3.</span><span class="u1">Бабушка</span> <span class="u2">живёт</span> <span class="dotdash">в деревне</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(живёт где? — обстоятельство)</span></p>
+        <p class="sent" style="line-height:2.2"><span class="num">4.</span><span class="u1">Дети</span> <span class="u2">мечтают</span> <span class="dash">о лете</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(мечтают о чём? — вопрос падежа, значит дополнение)</span></p>
+        <p class="sent" style="line-height:2.2"><span class="num">5.</span>Друзья, <span class="u2">помогите</span> <span class="dash">малышам</span>! <span style="font-size:11.5px; color:var(--ink-soft)">(«друзья» — обращение: не подчёркивается, подлежащего нет)</span></p>
+        <p class="sent" style="line-height:2.2"><span class="num">6.</span><span class="wavy">Пушистый</span> <span class="u1">снег</span> <span class="u2">укрыл</span> <span class="dash">поля</span>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">9</span>Разбор</h2>
+      <div class="body">
+        <p><b>школьники</b> — сущ., предмет, кто? н.ф. <i>школьник</i>; нариц., конкретное, одуш., м.р., 2-е скл.; мн.ч., И.п.; подлежащее.</p>
+        <p><b>(в) парке</b> — сущ., предмет, (в) чём? н.ф. <i>парк</i>; нариц., конкретное, неодуш., м.р., 2-е скл.; ед.ч., П.п.; обстоятельство (где?).</p>
+        <p><b>деревья</b> — сущ., предмет, что? н.ф. <i>дерево</i>; нариц., конкретное, неодуш., ср.р., 2-е скл.; мн.ч., В.п.; дополнение.</p>
+        <p class="ansbar">«Деревья» — та же ловушка, что и «ягоды» в отработке 1: форма похожа на И.п., но сажали (что?) деревья — это В.п.</p>
       </div>
     </section>
   </div>

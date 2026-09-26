@@ -43,7 +43,8 @@
   .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
   .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
 
-  section { margin: 0 0 11px; }
+  /* блок задания целиком на одном листе — не разрывать */
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
   h2 {
     font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
     display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
@@ -53,24 +54,58 @@
     display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
   }
   h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  h2 .cont { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 13px; color: var(--ink-soft); }
   .body { padding-left: 28px; }
   p { margin: 0 0 4px; }
-  .lab { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--accent-deep); margin: 3px 0 1px; }
+  .lab { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--accent-deep); margin: 4px 0 1px; }
   .lab.tr { color: var(--amber-deep); }
-  .items { line-height: 2.1; }
-  .items span.q { white-space: nowrap; margin-right: 14px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
   .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
   .w.wide { width: 4.6em; }
-  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.55em; }
-  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 0 0 5px; break-inside: avoid; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
   .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
-  .sent { line-height: 2.2; }
-  .sent b { font-weight: 700; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
 
-  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 0 0 8px; }
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.95em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14.5px; line-height: 2.5; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+  .parse-line { display: block; border-bottom: 1.4px solid var(--line); height: 1.75em; }
+
+  /* подчёркивания членов предложения — нужны на листе ответов */
+  .u1 { border-bottom: 2px solid var(--ink); }
+  .u2 { border-bottom: 2px solid var(--ink); box-shadow: 0 4px 0 -2px var(--ink); padding-bottom: 1px; }
+  :root {
+    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%2323342f'/%3E%3Crect x='12' width='2' height='2' fill='%2323342f'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%23eaf3ef'/%3E%3Crect x='12' width='2' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    }
+  }
+  :root[data-theme="dark"] {
+    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%23eaf3ef'/%3E%3Crect x='12' width='2' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+  }
+  .dash, .dotdash { background-repeat: repeat-x; background-position: 0 100%; padding-bottom: 2px; }
+  .dash { background-image: var(--u-dash); background-size: 10px 2px; }
+  .dotdash { background-image: var(--u-dotdash); background-size: 18px 2px; }
+  .wavy { text-decoration: underline wavy var(--ink); text-underline-offset: 3px; }
+
   .ans h2 { font-size: 14px; }
-  .ans .body { font-size: 12px; line-height: 1.55; }
-  .ans section { margin: 0 0 7px; }
+  .ans .body { font-size: 12px; line-height: 1.6; }
+  /* на листе ответов секции могут переноситься: это сплошной текст для мамы,
+     а не задание, ради которого стоит держать целый пустой лист */
+  .ans section { margin: 0 0 8px; break-inside: auto; page-break-inside: auto; }
   footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
 
   @media (max-width: 620px) { .body { padding-left: 0; } }
@@ -79,9 +114,12 @@
     @page { size: A4; margin: 10mm; }
     body { background: #fff !important; padding: 0 !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
-    .page { zoom: 0.95; box-shadow: none !important; }
+    .page { zoom: 0.88; box-shadow: none !important; }
     .page * { box-shadow: none !important; }
-    section, .items, .hint { break-inside: avoid; page-break-inside: avoid; }
+    .u2 { box-shadow: 0 4px 0 -2px #23342f !important; }
+    .u1, .u2 { border-bottom-color: #23342f; }
+    .dash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
+    .dotdash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%2323342f'/%3E%3Crect x='12' width='2' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
     /* ответы — всегда с новой страницы, чтобы ребёнок не видел их при работе */
     .ans { break-before: page; page-break-before: always; }
   }
@@ -91,10 +129,9 @@
 <div class="page">
   <p class="kicker">Русский язык · повторение начальной школы</p>
   <h1>Имя существительное — отработка 1</h1>
-  <p class="subtitle">Признаки слова: одушевлённость, разряд, род, число, склонение, падеж · к листу «Имя существительное — всё по порядку»</p>
+  <p class="subtitle">Все девять пунктов свода «Имя существительное — всё по порядку» · в каждом сначала простое задание, потом ловушки</p>
   <div class="namebar"><span>Имя: ________________________</span><span>Дата: ____________</span><span>Ошибок: ______</span></div>
 
-  <!-- 1 -->
   <section>
     <h2><span class="n">1</span>Одушевлённое или неодушевлённое? <small>поставь О или Н</small></h2>
     <div class="body">
@@ -106,18 +143,20 @@
     </div>
   </section>
 
-  <!-- 2 -->
   <section>
-    <h2><span class="n">2</span>Разряд нарицательного <small>К — конкретное, В — вещественное, О — отвлечённое, С — собирательное</small></h2>
+    <h2><span class="n">2</span>Собственные и нарицательные <small>+ разряды нарицательных</small></h2>
     <div class="body">
-      <p class="lab">А</p>
+      <p class="lab">А — поставь С (собственное) или Н (нарицательное)</p>
+      <p class="items"><span class="q">город<span class="w"></span></span><span class="q">Алматы<span class="w"></span></span><span class="q">река<span class="w"></span></span><span class="q">Иртыш<span class="w"></span></span><span class="q">собака<span class="w"></span></span><span class="q">Мурка<span class="w"></span></span></p>
+      <p class="lab tr">Б — запиши правильно: где нужна большая буква, где кавычки</p>
+      <p class="items"><span class="q">газета известия<span class="w wide"></span></span><span class="q">сказка колобок<span class="w wide"></span></span><span class="q">планета земля<span class="w wide"></span></span><span class="q">земля в огороде<span class="w wide"></span></span><span class="q">собака шарик<span class="w wide"></span></span><span class="q">воздушный шарик<span class="w wide"></span></span></p>
+      <p class="lab">В — разряд нарицательного: К (конкретное), В (вещественное), О (отвлечённое), С (собирательное)</p>
       <p class="items"><span class="q">ученик<span class="w"></span></span><span class="q">молоко<span class="w"></span></span><span class="q">радость<span class="w"></span></span><span class="q">листва<span class="w"></span></span></p>
-      <p class="lab tr">Б — ловушки</p>
+      <p class="lab tr">Г — ловушки на разряд</p>
       <p class="items"><span class="q">дождь<span class="w"></span></span><span class="q">сахар<span class="w"></span></span><span class="q">тишина<span class="w"></span></span><span class="q">молодёжь<span class="w"></span></span><span class="q">выборы<span class="w"></span></span><span class="q">человечество<span class="w"></span></span><span class="q">шаг<span class="w"></span></span></p>
     </div>
   </section>
 
-  <!-- 3 -->
   <section>
     <h2><span class="n">3</span>Род <small>м., ж. или ср. — подставляй мой / моя / моё</small></h2>
     <div class="body">
@@ -128,7 +167,6 @@
     </div>
   </section>
 
-  <!-- 4 -->
   <section>
     <h2><span class="n">4</span>Число <small>ЕД — бывает только в единственном, МН — только во множественном</small></h2>
     <div class="body">
@@ -136,19 +174,17 @@
     </div>
   </section>
 
-  <!-- 5 -->
   <section>
     <h2><span class="n">5</span>Склонение <small>сначала начальная форма, потом род, потом склонение: 1, 2 или 3</small></h2>
     <div class="body">
       <p class="lab">А</p>
       <p class="items"><span class="q">мама<span class="w"></span></span><span class="q">стол<span class="w"></span></span><span class="q">ночь<span class="w"></span></span><span class="q">окно<span class="w"></span></span><span class="q">степь<span class="w"></span></span></p>
-      <p class="lab tr">Б — ловушки: сначала поставь в начальную форму</p>
+      <p class="lab tr">Б — ловушки: сначала поставь слово в начальную форму</p>
       <p class="items"><span class="q">на ветках<span class="w"></span></span><span class="q">у коней<span class="w"></span></span><span class="q">о тетради<span class="w"></span></span><span class="q">к площади<span class="w"></span></span><span class="q">папа<span class="w"></span></span><span class="q">конь<span class="w"></span></span><span class="q">пальто<span class="w wide"></span></span></p>
       <div class="hint"><b>Помни:</b> <i>конь</i> и <i>степь</i> оба на -ь — решает род. У несклоняемых слов склонения нет.</div>
     </div>
   </section>
 
-  <!-- 6 -->
   <section>
     <h2><span class="n">6</span>Падеж выделенного слова <small>если путаешь — замени слово на слово другой одушевлённости</small></h2>
     <div class="body">
@@ -156,11 +192,81 @@
       <p class="items sent"><span class="q">Мальчик читает <b>книгу</b>.<span class="w wide"></span></span><span class="q">Подошёл к <b>окну</b>.<span class="w wide"></span></span><span class="q">Доволен <b>работой</b>.<span class="w wide"></span></span><span class="q">Думаю о <b>лете</b>.<span class="w wide"></span></span></p>
       <p class="lab tr">Б — ловушки: рядом с падежом запиши слово-замену</p>
       <p class="items sent"><span class="q"><b>Мяч</b> разбил окно.<span class="w wide"></span></span><span class="q">Вижу <b>мяч</b>.<span class="w wide"></span></span><span class="q">Брат встретил <b>друга</b>.<span class="w wide"></span></span><span class="q">Нет <b>друга</b>.<span class="w wide"></span></span><span class="q">Мама зовёт <b>сына</b>.<span class="w wide"></span></span></p>
-      <div class="hint"><b>Замена:</b> было неодушевлённое — подставь <i>брат</i>; было одушевлённое — подставь <i>стол</i>. Форма осталась как в начальной → И.п. (или В.п. у неодушевлённых), форма изменилась → В.п. (или Р.п.).</div>
+      <div class="hint"><b>Замена:</b> было неодушевлённое — подставь <i>брат</i>; было одушевлённое — подставь <i>стол</i>. Форма осталась как в начальной → И.п. (у неодушевлённых — В.п.), форма изменилась → В.п. (у одушевлённых — Р.п.).</div>
     </div>
   </section>
 
-  <footer>✏️ Лист отработки составлен мной · разряды, несклоняемые и косвенные падежи — из учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §1–3 (стр. 5–32), §8 (стр. 56–64)</footer>
+  <section>
+    <h2><span class="n">7</span>Орфограммы: безударные окончания <small>-е или -и: сначала склонение, потом падеж, потом буква</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26%">Слово</th><th style="width:15%">Склонение</th><th style="width:18%">Падеж</th><th style="width:12%">Буква</th><th>Слово-помощник (земля / конь / степь)</th></tr>
+        <tr><td>на ветк<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>к берёз<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>о лес<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>у деревн<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>к тетрад<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>на лошад<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>о сестр<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>к дочер<span class="gap"></span></td><td class="fill"></td><td></td><td></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span><span class="cont">продолжение</span> — остальные орфограммы существительного</h2>
+    <div class="body">
+      <p class="lab tr">А — слова на -ия, -ий, -ие: там, где обычно -е, пишем -и</p>
+      <p class="items"><span class="q">о лили<span class="gap"></span></span><span class="q">в здани<span class="gap"></span></span><span class="q">к Мари<span class="gap"></span></span><span class="q">на экскурси<span class="gap"></span></span><span class="q">в санатори<span class="gap"></span></span><span class="q">об акаци<span class="gap"></span></span><span class="q">о путешестви<span class="gap"></span></span></p>
+      <p class="lab tr">Б — после ж, ш, ч, щ, ц: под ударением о, без ударения е</p>
+      <p class="items"><span class="q">свеч<span class="gap"></span>й</span><span class="q">туч<span class="gap"></span>й</span><span class="q">отц<span class="gap"></span>м</span><span class="q">месяц<span class="gap"></span>м</span><span class="q">плеч<span class="gap"></span>м</span><span class="q">зайц<span class="gap"></span>м</span><span class="q">ключ<span class="gap"></span>м</span><span class="q">полотенц<span class="gap"></span>м</span></p>
+      <p class="lab">В — НЕ с существительными: напиши слитно или раздельно</p>
+      <p class="items"><span class="q">(не)ряха</span><span class="q">(не)взгода</span><span class="q">(не)погода</span><span class="q">(не)правда, а ложь</span><span class="q">(не)друг, а враг</span><span class="q">(не)счастье, а горе</span></p>
+      <p class="lab">Г — суффикс -чик- или -щик-</p>
+      <p class="items"><span class="q">перевод<span class="gap"></span>ик</span><span class="q">камен<span class="gap"></span>ик</span><span class="q">налад<span class="gap"></span>ик</span><span class="q">набор<span class="gap"></span>ик</span><span class="q">извоз<span class="gap"></span>ик</span><span class="q">лёт<span class="gap"></span>ик</span><span class="q">часов<span class="gap"></span>ик</span><span class="q">убор<span class="gap"></span>ик</span></p>
+      <div class="hint"><b>Помни:</b> после <b>д, ж, з, с, т</b> — <i>-чик-</i>, во всех остальных случаях — <i>-щик-</i>.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">8</span>Подчеркни члены предложения <small>подлежащее, сказуемое, дополнение, определение, обстоятельство</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span>В саду мальчик читал интересную книгу.</p>
+      <p class="sent"><span class="num">2.</span>Утром бабушка испекла внукам пирог.</p>
+      <p class="sent"><span class="num">3.</span>Я живу в городе.</p>
+      <p class="sent"><span class="num">4.</span>Дети долго думали о лесе.</p>
+      <p class="sent"><span class="num">5.</span>Мама, купи яблоки!</p>
+      <p class="sent"><span class="num">6.</span>Ранние птицы поют в берёзовой роще.</p>
+      <div class="hint"><b>Ловушки:</b> в одном предложении есть обращение — его подчёркивать нельзя. И помни: <i>о лесе</i> — дополнение, <i>в городе</i> — обстоятельство, хотя падеж у них один.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">9</span>Разбери слова по порядку <small>Утром дети собирали в лесу спелые ягоды.</small></h2>
+    <div class="body">
+      <p style="font-size:12px; color:var(--ink-soft); margin-bottom:2px">Часть речи → начальная форма → постоянные (собств./нариц., разряд, одуш./неодуш., род, склонение) → непостоянные (число, падеж) → роль в предложении.</p>
+      <p><b>дети</b> — <span class="parse-line"></span><span class="parse-line"></span><span class="parse-line"></span></p>
+      <p><b>(в) лесу</b> — <span class="parse-line"></span><span class="parse-line"></span><span class="parse-line"></span></p>
+      <p><b>ягоды</b> — <span class="parse-line"></span><span class="parse-line"></span><span class="parse-line"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Работа над ошибками <small>заполняется после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:22%">Что было не так</th><th style="width:33%">Какое правило работает</th><th>Запиши правильно два раза</th></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+      </table></div>
+      <div class="hint"><b>Зачем:</b> если ошибок много в одном пункте — этот пункт и надо повторить по своду, а потом взять второй лист отработки.</div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист отработки составлен мной · материал учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.): §1–3 — стр. 5–32, §8 — стр. 56–64, §10 — стр. 72–85, §34 части 2 — стр. 88–93 · второй вариант тех же блоков — лист «отработка 2»</footer>
 
   <!-- ОТВЕТЫ -->
   <div class="ans">
@@ -177,10 +283,12 @@
     </section>
 
     <section>
-      <h2><span class="n">2</span>Разряд нарицательного</h2>
+      <h2><span class="n">2</span>Собственные и нарицательные, разряды</h2>
       <div class="body">
-        <p><b>А:</b> ученик — К, молоко — В, радость — О, листва — С.</p>
-        <p><b>Б:</b> дождь — <b>К</b> (событие тоже конкретное: можно сосчитать — два дождя), сахар — В, тишина — О, молодёжь — С, выборы — <b>О</b> (действие), человечество — С, шаг — <b>К</b> (действие-событие, можно сосчитать).</p>
+        <p><b>А:</b> город — Н, Алматы — С, река — Н, Иртыш — С, собака — Н, Мурка — С.</p>
+        <p><b>Б:</b> газета «Известия» · сказка «Колобок» · планета Земля · земля в огороде (почва — с маленькой буквы) · собака Шарик · воздушный шарик.</p>
+        <p><b>В:</b> ученик — К, молоко — В, радость — О, листва — С.</p>
+        <p><b>Г:</b> дождь — <b>К</b> (событие тоже конкретное: можно сосчитать — два дождя), сахар — В, тишина — О, молодёжь — С, выборы — <b>О</b> (действие), человечество — С, шаг — <b>К</b>.</p>
       </div>
     </section>
 
@@ -188,7 +296,7 @@
       <h2><span class="n">3</span>Род</h2>
       <div class="body">
         <p><b>А:</b> стол — м., мама — ж., окно — ср., земля — ж., солнце — ср.</p>
-        <p><b>Б:</b> ночь — ж. (<i>моя</i>), тополь — м. (<i>мой</i>), такси — ср., какао — ср. (по словарю), мадам — ж. (по значению), умница — <b>общий род</b> (м. или ж. — смотря о ком), ножницы — <b>рода нет</b> (только мн. ч.), дети — ставим в ед. ч.: <i>ребёнок</i> → м.</p>
+        <p><b>Б:</b> ночь — ж. (<i>моя</i>), тополь — м. (<i>мой</i>), такси — ср., какао — ср. (по словарю), мадам — ж. (по значению), умница — <b>общий род</b>, ножницы — <b>рода нет</b> (только мн. ч.), дети → <i>ребёнок</i> — м.</p>
       </div>
     </section>
 
@@ -211,8 +319,48 @@
       <h2><span class="n">6</span>Падеж</h2>
       <div class="body">
         <p><b>А:</b> книгу — В.п., к окну — Д.п., работой — Т.п., о лете — П.п.</p>
-        <p><b>Б:</b> <i>Мяч</i> разбил окно — <b>И.п.</b> (замена: <i>Брат</i> разбил); Вижу <i>мяч</i> — <b>В.п.</b> (Вижу <i>брата</i>); Брат встретил <i>друга</i> — <b>В.п.</b> (встретил <i>стол</i>); Нет <i>друга</i> — <b>Р.п.</b> (нет <i>стола</i>); Мама зовёт <i>сына</i> — <b>В.п.</b> (зовёт <i>стол</i>).</p>
-        <p class="ansbar">Здесь ошибок больше всего: у одушевлённых В.п. выглядит как Р.п. (<i>вижу друга — нет друга</i>). Замена на <i>стол</i> сразу показывает разницу: <i>вижу стол</i> (В.п.) — <i>нет стола</i> (Р.п.).</p>
+        <p><b>Б:</b> <i>Мяч</i> разбил окно — <b>И.п.</b> (<i>Брат</i> разбил); Вижу <i>мяч</i> — <b>В.п.</b> (Вижу <i>брата</i>); Брат встретил <i>друга</i> — <b>В.п.</b> (встретил <i>стол</i>); Нет <i>друга</i> — <b>Р.п.</b> (нет <i>стола</i>); Мама зовёт <i>сына</i> — <b>В.п.</b> (зовёт <i>стол</i>).</p>
+        <p class="ansbar">Здесь ошибок больше всего: у одушевлённых В.п. выглядит как Р.п. (<i>вижу друга — нет друга</i>). Замена на <i>стол</i> сразу показывает разницу.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Безударные окончания</h2>
+      <div class="body">
+        <p>на ветк<span class="e">е</span> — 1 скл., П.п. · к берёз<span class="e">е</span> — 1 скл., Д.п. · о лес<span class="e">е</span> — 2 скл., П.п. · у деревн<span class="e">и</span> — 1 скл., Р.п. · к тетрад<span class="e">и</span> — 3 скл., Д.п. · на лошад<span class="e">и</span> — 3 скл., П.п. · о сестр<span class="e">е</span> — 1 скл., П.п. · к дочер<span class="e">и</span> — 3 скл., Д.п.</p>
+        <p class="ansbar">Если ошибка — почти всегда сбой на первом шаге: склонение определено по той форме, что в задании, а не по начальной (<i>на лошади</i> кажется 1-м скл., а <i>лошадь</i> — 3-е).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span><span class="cont">продолжение</span></h2>
+      <div class="body">
+        <p><b>А:</b> везде <b>-и</b>: о лилии, в здании, к Марии, на экскурсии, в санатории, об акации, о путешествии.</p>
+        <p><b>Б:</b> свеч<span class="e">о</span>й · туч<span class="e">е</span>й · отц<span class="e">о</span>м · месяц<span class="e">е</span>м · плеч<span class="e">о</span>м · зайц<span class="e">е</span>м · ключ<span class="e">о</span>м · полотенц<span class="e">е</span>м.</p>
+        <p><b>В:</b> слитно — неряха, невзгода (без <i>не</i> не употребляются), непогода (= плохая погода); раздельно — не правда, а ложь · не друг, а враг · не счастье, а горе.</p>
+        <p><b>Г:</b> перево<b>д</b>чик · каме<b>н</b>щик · нала<b>д</b>чик · набо<b>р</b>щик · изво<b>з</b>чик · лё<b>т</b>чик · часо<b>в</b>щик · убо<b>р</b>щик.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>Члены предложения</h2>
+      <div class="body">
+        <p class="sent" style="line-height:2.2"><span class="num">1.</span><span class="dotdash">В саду</span> <span class="u1">мальчик</span> <span class="u2">читал</span> <span class="wavy">интересную</span> <span class="dash">книгу</span>.</p>
+        <p class="sent" style="line-height:2.2"><span class="num">2.</span><span class="dotdash">Утром</span> <span class="u1">бабушка</span> <span class="u2">испекла</span> <span class="dash">внукам</span> <span class="dash">пирог</span>.</p>
+        <p class="sent" style="line-height:2.2"><span class="num">3.</span><span class="u1">Я</span> <span class="u2">живу</span> <span class="dotdash">в городе</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(можно спросить «в чём?», но выбираем «где?» — обстоятельство)</span></p>
+        <p class="sent" style="line-height:2.2"><span class="num">4.</span><span class="u1">Дети</span> <span class="dotdash">долго</span> <span class="u2">думали</span> <span class="dash">о лесе</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(думали о чём? — вопрос падежа, значит дополнение)</span></p>
+        <p class="sent" style="line-height:2.2"><span class="num">5.</span>Мама, <span class="u2">купи</span> <span class="dash">яблоки</span>! <span style="font-size:11.5px; color:var(--ink-soft)">(«мама» — обращение: не подчёркивается, подлежащего нет)</span></p>
+        <p class="sent" style="line-height:2.2"><span class="num">6.</span><span class="wavy">Ранние</span> <span class="u1">птицы</span> <span class="u2">поют</span> <span class="dotdash">в берёзовой роще</span>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">9</span>Разбор</h2>
+      <div class="body">
+        <p><b>дети</b> — сущ., предмет, кто? н.ф. <i>ребёнок</i>; нариц., конкретное, одуш., м.р., 2-е скл.; мн.ч., И.п.; подлежащее.</p>
+        <p><b>(в) лесу</b> — сущ., предмет, (в) чём? н.ф. <i>лес</i>; нариц., конкретное, неодуш., м.р., 2-е скл.; ед.ч., П.п.; обстоятельство (где?).</p>
+        <p><b>ягоды</b> — сущ., предмет, что? н.ф. <i>ягода</i>; нариц., конкретное, неодуш., ж.р., 1-е скл.; мн.ч., В.п.; дополнение.</p>
+        <p class="ansbar">«Ягоды» — типичная ошибка: форма выглядит как И.п., но собирали (что?) ягоды — это В.п. Проверка заменой: собирали <i>брата</i> → форма изменилась, значит В.п.</p>
       </div>
     </section>
   </div>
