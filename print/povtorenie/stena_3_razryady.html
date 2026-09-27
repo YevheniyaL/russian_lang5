@@ -73,26 +73,33 @@
   td.c, th.c { text-align: center; }
   .e { color: var(--red); font-weight: 700; }
 
-  /* подчёркивания членов предложения */
-  .u1 { border-bottom: 3px solid var(--ink); }
-  .u2 { border-bottom: 3px solid var(--ink); box-shadow: 0 5px 0 -2px var(--ink); padding-bottom: 2px; }
+  /* подчёркивания членов предложения — SVG-плитки: при печати с zoom
+     градиенты и box-shadow плывут, а две черты сказуемого сливаются в одну */
   :root {
-    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-line:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-double:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3Crect y='6' width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-dash:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%2323342f'/%3E%3C/svg%3E");
     --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%2323342f'/%3E%3Crect x='15' width='3' height='3' fill='%2323342f'/%3E%3C/svg%3E");
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-line:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-double:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3Crect y='6' width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-dash:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
       --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%23eaf3ef'/%3E%3Crect x='15' width='3' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
     }
   }
   :root[data-theme="dark"] {
-    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-line:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-double:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3Crect y='6' width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-dash:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
     --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%23eaf3ef'/%3E%3Crect x='15' width='3' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
   }
-  .dash, .dotdash { background-repeat: repeat-x; background-position: 0 100%; padding-bottom: 3px; }
-  .dash { background-image: var(--u-dash); background-size: 12px 3px; }
-  .dotdash { background-image: var(--u-dotdash); background-size: 22px 3px; }
+  .u1, .u2, .dash, .dotdash { background-repeat: repeat-x; background-position: 0 100%; }
+  .u1 { background-image: var(--u-line); background-size: 4px 3px; padding-bottom: 3px; }
+  .u2 { background-image: var(--u-double); background-size: 4px 9px; padding-bottom: 9px; }
+  .dash { background-image: var(--u-dash); background-size: 12px 3px; padding-bottom: 3px; }
+  .dotdash { background-image: var(--u-dotdash); background-size: 22px 3px; padding-bottom: 3px; }
 
   .arrows { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 14px; }
   .arrow-head {
@@ -103,12 +110,11 @@
   .arrow-head.keep { background: var(--accent); }
   .arrow-head.change { background: var(--blue); }
   .arrow-body { background: var(--paper-raised); border: 2px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; padding: 10px 14px; }
-  .arrow-body ul { margin: 0; padding-left: 20px; font-size: 19px; line-height: 1.55; }
+  .arrow-body ul { margin: 0; padding-left: 20px; font-size: 18px; line-height: 1.5; }
+  .arrow-body li { margin-bottom: 5px; }
   .arrow-tip { text-align: center; font-size: 26px; color: var(--ink-soft); line-height: 1; margin: -4px 0 2px; }
 
-  .sent { background: var(--paper-raised); border: 2px solid var(--line); border-radius: 12px; padding: 12px 16px; font-size: 24px; line-height: 2.1; text-align: center; margin: 0 0 12px; }
-
-  footer { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
+  .sent { background: var(--paper-raised); border: 2px solid var(--line); border-radius: 12px; padding: 14px 16px 18px; font-size: 24px; line-height: 2.3; text-align: center; margin: 0 0 12px; }
 
   @media (max-width: 620px) {
     .cards.c2, .cards.c3, .arrows { grid-template-columns: 1fr; }
@@ -119,10 +125,10 @@
     @page { size: A4; margin: 10mm; }
     body { background: #fff !important; padding: 0 !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
-    .poster { zoom: 1.14; box-shadow: none !important; }
+    .poster { zoom: 1.22; box-shadow: none !important; }
     .poster * { box-shadow: none !important; }
-    .u2 { box-shadow: 0 5px 0 -2px #23342f !important; }
-    .u1, .u2 { border-bottom-color: #23342f; }
+    .u1 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
+    .u2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3Crect y='6' width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
     .dash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
     .dotdash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%2323342f'/%3E%3Crect x='15' width='3' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
     .card, .arrow-body, .sent, table { break-inside: avoid; page-break-inside: avoid; }
@@ -140,13 +146,13 @@
       <h3>СОБСТВЕННЫЕ</h3>
       <p>называют <b>один-единственный</b> предмет</p>
       <p class="ex">Астана, Абай, Иртыш, Мурка</p>
-      <p class="ex">✏️ Пишутся с большой буквы. Названия книг и фильмов — ещё и в кавычках: «Колобок».</p>
+      <p class="ex">Пишутся с большой буквы. Названия книг и фильмов — ещё и в кавычках: «Колобок».</p>
     </div>
     <div class="card" style="border-color: var(--blue)">
       <h3>НАРИЦАТЕЛЬНЫЕ</h3>
       <p>общее название <b>для многих</b> предметов</p>
       <p class="ex">город, поэт, река, кошка</p>
-      <p class="ex">✏️ Проверка: так можно назвать любой предмет из группы? <i>река</i> — любая, <i>Иртыш</i> — одна.</p>
+      <p class="ex">Проверка: так можно назвать любой предмет из группы? <i>река</i> — любая, <i>Иртыш</i> — одна.</p>
     </div>
   </div>
 
@@ -155,28 +161,26 @@
     <div class="card">
       <h3>Конкретные</h3>
       <p>лица, предметы, события <span class="ex">ученик, кот, дождь</span></p>
-      <p class="ex">✏️ Можно сосчитать: один, два, три.</p>
+      <p class="ex">Можно сосчитать: один, два, три.</p>
     </div>
     <div class="card">
       <h3>Вещественные</h3>
       <p>вещества <span class="ex">железо, сыр, песок, молоко</span></p>
-      <p class="ex">✏️ Не считают, а измеряют: нельзя «два молока».</p>
+      <p class="ex">Не считают, а измеряют: нельзя «два молока».</p>
     </div>
     <div class="card">
       <h3>Отвлечённые</h3>
       <p>явления, качества, действия <span class="ex">радость, тишина, выборы</span></p>
-      <p class="ex">✏️ Нельзя потрогать — только почувствовать или представить.</p>
+      <p class="ex">Нельзя потрогать — только почувствовать или представить.</p>
     </div>
     <div class="card">
       <h3>Собирательные</h3>
       <p>множество как одно целое <span class="ex">листва, молодёжь, детвора</span></p>
-      <p class="ex">✏️ Много, а слово в единственном числе: нельзя «две молодёжи».</p>
+      <p class="ex">Много, а слово в единственном числе: нельзя «две молодёжи».</p>
     </div>
   </div>
 
-  <div class="hint"><b>✏️ Зачем это знать:</b> от разряда зависит число. У вещественных, отвлечённых и собирательных пары по числу обычно нет — смотри плакат 4.</div>
-
-  <footer>📖 учебник «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §1, стр. 5–19 · ✏️ — подсказки не из учебника</footer>
+  <div class="hint"><b>Зачем это знать:</b> от разряда зависит число. У вещественных, отвлечённых и собирательных пары по числу обычно нет.</div>
 </div>
 </body>
 </html>

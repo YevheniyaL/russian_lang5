@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Русский · плакат 6 · склонение</title>
+<title>Русский · плакат 6 · склонение и буквы е, и</title>
 <link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,26 +73,33 @@
   td.c, th.c { text-align: center; }
   .e { color: var(--red); font-weight: 700; }
 
-  /* подчёркивания членов предложения */
-  .u1 { border-bottom: 3px solid var(--ink); }
-  .u2 { border-bottom: 3px solid var(--ink); box-shadow: 0 5px 0 -2px var(--ink); padding-bottom: 2px; }
+  /* подчёркивания членов предложения — SVG-плитки: при печати с zoom
+     градиенты и box-shadow плывут, а две черты сказуемого сливаются в одну */
   :root {
-    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-line:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-double:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3Crect y='6' width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-dash:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%2323342f'/%3E%3C/svg%3E");
     --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%2323342f'/%3E%3Crect x='15' width='3' height='3' fill='%2323342f'/%3E%3C/svg%3E");
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-line:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-double:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3Crect y='6' width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-dash:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
       --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%23eaf3ef'/%3E%3Crect x='15' width='3' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
     }
   }
   :root[data-theme="dark"] {
-    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-line:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-double:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%23eaf3ef'/%3E%3Crect y='6' width='4' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-dash:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
     --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%23eaf3ef'/%3E%3Crect x='15' width='3' height='3' fill='%23eaf3ef'/%3E%3C/svg%3E");
   }
-  .dash, .dotdash { background-repeat: repeat-x; background-position: 0 100%; padding-bottom: 3px; }
-  .dash { background-image: var(--u-dash); background-size: 12px 3px; }
-  .dotdash { background-image: var(--u-dotdash); background-size: 22px 3px; }
+  .u1, .u2, .dash, .dotdash { background-repeat: repeat-x; background-position: 0 100%; }
+  .u1 { background-image: var(--u-line); background-size: 4px 3px; padding-bottom: 3px; }
+  .u2 { background-image: var(--u-double); background-size: 4px 9px; padding-bottom: 9px; }
+  .dash { background-image: var(--u-dash); background-size: 12px 3px; padding-bottom: 3px; }
+  .dotdash { background-image: var(--u-dotdash); background-size: 22px 3px; padding-bottom: 3px; }
 
   .arrows { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 14px; }
   .arrow-head {
@@ -103,12 +110,11 @@
   .arrow-head.keep { background: var(--accent); }
   .arrow-head.change { background: var(--blue); }
   .arrow-body { background: var(--paper-raised); border: 2px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; padding: 10px 14px; }
-  .arrow-body ul { margin: 0; padding-left: 20px; font-size: 19px; line-height: 1.55; }
+  .arrow-body ul { margin: 0; padding-left: 20px; font-size: 18px; line-height: 1.5; }
+  .arrow-body li { margin-bottom: 5px; }
   .arrow-tip { text-align: center; font-size: 26px; color: var(--ink-soft); line-height: 1; margin: -4px 0 2px; }
 
-  .sent { background: var(--paper-raised); border: 2px solid var(--line); border-radius: 12px; padding: 12px 16px; font-size: 24px; line-height: 2.1; text-align: center; margin: 0 0 12px; }
-
-  footer { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
+  .sent { background: var(--paper-raised); border: 2px solid var(--line); border-radius: 12px; padding: 14px 16px 18px; font-size: 24px; line-height: 2.3; text-align: center; margin: 0 0 12px; }
 
   @media (max-width: 620px) {
     .cards.c2, .cards.c3, .arrows { grid-template-columns: 1fr; }
@@ -119,10 +125,10 @@
     @page { size: A4; margin: 10mm; }
     body { background: #fff !important; padding: 0 !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
-    .poster { zoom: 1.18; box-shadow: none !important; }
+    .poster { zoom: 1.10; box-shadow: none !important; }
     .poster * { box-shadow: none !important; }
-    .u2 { box-shadow: 0 5px 0 -2px #23342f !important; }
-    .u1, .u2 { border-bottom-color: #23342f; }
+    .u1 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
+    .u2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='9'%3E%3Crect width='4' height='3' fill='%2323342f'/%3E%3Crect y='6' width='4' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
     .dash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='3'%3E%3Crect width='7' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
     .dotdash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='3'%3E%3Crect width='10' height='3' fill='%2323342f'/%3E%3Crect x='15' width='3' height='3' fill='%2323342f'/%3E%3C/svg%3E"); }
     .card, .arrow-body, .sent, table { break-inside: avoid; page-break-inside: avoid; }
@@ -131,22 +137,11 @@
 </head>
 <body>
 <div class="poster">
-  <p class="kicker">Имя существительное · плакат 6 · учебник стр. 27</p>
+  <p class="kicker">Имя существительное · плакат 6</p>
   <h1>Склонение</h1>
-  <p class="lead">📖 Изменение существительных по падежам называется склонением. В русском языке шесть падежей</p>
+  <p class="lead">Изменение существительных по падежам называется склонением</p>
 
-  <table style="margin-bottom:14px">
-    <tr><th style="width:38%%">Падеж</th><th style="width:30%%">Вопросы</th><th>Какой это падеж</th></tr>
-    <tr><td><b>И. п.</b> — именительный</td><td>кто? что?</td><td>📖 начальная форма имени существительного</td></tr>
-    <tr><td><b>Р. п.</b> — родительный</td><td>кого? чего?</td><td rowspan="5" class="c">📖 косвенные падежи</td></tr>
-    <tr><td><b>Д. п.</b> — дательный</td><td>кому? чему?</td></tr>
-    <tr><td><b>В. п.</b> — винительный</td><td>кого? что?</td></tr>
-    <tr><td><b>Т. п.</b> — творительный</td><td>кем? чем?</td></tr>
-    <tr><td><b>П. п.</b> — предложный</td><td>о ком? о чём?</td></tr>
-  </table>
-
-  <p class="kicker" style="text-align:left">📖 Типы склонения имён существительных</p>
-  <table>
+  <table style="margin-bottom:16px">
     <tr><th class="c">1-е склонение</th><th class="c">2-е склонение</th><th class="c">3-е склонение</th></tr>
     <tr>
       <td class="c">существительные <b>женского и мужского</b> рода</td>
@@ -165,9 +160,33 @@
     </tr>
   </table>
 
-  <div class="hint" style="margin-top:12px"><b>✏️ Порядок действий:</b> ① начальная форма ② род ③ окончание ④ строка таблицы. <i>Конь</i> и <i>степь</i> оба на -ь, но <i>конь</i> — м. р. (2-е), <i>степь</i> — ж. р. (3-е). <i>Юноша</i> и <i>дядя</i> — мужского рода, а склонение первое.</div>
+  <div class="hint"><b>Порядок действий:</b> ① начальная форма ② род ③ окончание ④ строка таблицы. <i>Конь</i> и <i>степь</i> оба на -ь, но <i>конь</i> — м. р. (2-е), <i>степь</i> — ж. р. (3-е). <i>Юноша</i> и <i>дядя</i> — мужского рода, а склонение первое.</div>
 
-  <footer>📖 учебник «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §3, стр. 27 · ✏️ — подсказки не из учебника</footer>
+  <h1 style="font-size:32px; margin-top:22px">Буквы <span class="e">е</span> и <span class="e">и</span> в падежных окончаниях</h1>
+
+  <div class="hub" style="padding:10px 16px; margin-bottom:12px">
+    <b style="font-size:26px">земля · конь · степь</b>
+    <span>слова-помощники: у них окончание под ударением, поэтому его хорошо слышно</span>
+  </div>
+
+  <table>
+    <tr>
+      <th rowspan="2" class="c" style="width:12%%">Падеж</th>
+      <th colspan="2" class="c">1-е склонение</th>
+      <th colspan="2" class="c">2-е склонение</th>
+      <th class="c">3-е склонение</th>
+    </tr>
+    <tr>
+      <th class="c ex">мама, дядя</th><th class="c ex">станция, Мария</th>
+      <th class="c ex">музей, море</th><th class="c ex">санаторий, задание</th>
+      <th class="c ex">речь, жизнь</th>
+    </tr>
+    <tr><td class="c"><b>Р. п.</b></td><td class="c"><span class="e">-ы, -и</span></td><td class="c"><span class="e">-и</span></td><td class="c">—</td><td class="c">—</td><td class="c"><span class="e">-и</span></td></tr>
+    <tr><td class="c"><b>Д. п.</b></td><td class="c"><span class="e">-е</span></td><td class="c"><span class="e">-и</span></td><td class="c">—</td><td class="c">—</td><td class="c"><span class="e">-и</span></td></tr>
+    <tr><td class="c"><b>П. п.</b></td><td class="c"><span class="e">-е</span></td><td class="c"><span class="e">-и</span></td><td class="c"><span class="e">-е</span></td><td class="c"><span class="e">-и</span></td><td class="c"><span class="e">-и</span></td></tr>
+  </table>
+
+  <div class="hint" style="margin-top:12px"><b>Короче некуда:</b> <b>-и</b> пишем у всего 3-го склонения и у слов на <b>-ия, -ий, -ие</b>. В остальных случаях в Д. п. и П. п. — <b>-е</b>. Проверка: о берёз<span class="e">е</span> — как о земл<span class="e">е</span> · о лес<span class="e">е</span> — как о кон<span class="e">е</span> · о тетрад<span class="e">и</span> — как о степ<span class="e">и</span>.</div>
 </div>
 </body>
 </html>
