@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · повторение · лист А — сам, 10 минут</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · лист А</p>
+  <h1>Повторяю сам — 10 минут</h1>
+  <p class="subtitle">Только то, что надо довести до автоматизма. Подсказки на листе есть — ими можно пользоваться.</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Время: ______ мин</span><span>Ошибок: ______</span></div>
+
+  <div class="start"><b>Порядок:</b> ① прочитай памятку вслух; ② сделай задания; ③ проверь себя по второй странице и выпиши ошибки.</div>
+
+  <div class="memo">
+    <h3>Читаю вслух каждый раз</h3>
+    <p><b>Постоянные признаки:</b> собственное / нарицательное · одушевлённое / неодушевлённое · разряд · род · склонение.</p>
+    <p><b>Непостоянные:</b> число · падеж.</p>
+    <p><b>Род несклоняемых:</b> <b>м. р.</b> — кофе, рояль, тюль, шампунь, пони, кенгуру, шимпанзе · <b>ср. р.</b> — метро, такси, пальто, какао, шоссе, кино, меню, кафе · <b>ж. р.</b> — мозоль, вермишель, леди, мадам.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>Род <small>закрой памятку ладонью и напиши: м., ж. или ср.</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">кофе<span class="w"></span></span><span class="q">метро<span class="w"></span></span><span class="q">пальто<span class="w"></span></span><span class="q">рояль<span class="w"></span></span><span class="q">мозоль<span class="w"></span></span><span class="q">какао<span class="w"></span></span></p>
+      <p class="items"><span class="q">такси<span class="w"></span></span><span class="q">тюль<span class="w"></span></span><span class="q">шоссе<span class="w"></span></span><span class="q">кенгуру<span class="w"></span></span><span class="q">леди<span class="w"></span></span><span class="q">меню<span class="w"></span></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Число <small>ЕД — только единственное, МН — только множественное</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">щипцы<span class="w"></span></span><span class="q">дружба<span class="w"></span></span><span class="q">качели<span class="w"></span></span><span class="q">сметана<span class="w"></span></span><span class="q">каникулы<span class="w"></span></span><span class="q">листва<span class="w"></span></span><span class="q">брюки<span class="w"></span></span><span class="q">золото<span class="w"></span></span></p>
+      <div class="hint"><b>Проверка:</b> скажи «одна…» или «один…». Нельзя сказать «одна щипца» — значит, слово только множественного числа.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Склонение <small>1, 2, 3 — или «не склоняется»</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">трава<span class="w"></span></span><span class="q">конь<span class="w"></span></span><span class="q">степь<span class="w"></span></span><span class="q">окно<span class="w"></span></span><span class="q">кино<span class="w wide"></span></span><span class="q">пальто<span class="w wide"></span></span><span class="q">мышь<span class="w"></span></span><span class="q">тополь<span class="w"></span></span></p>
+      <div class="hint"><b>Помни:</b> у несклоняемых слов склонения <b>нет совсем</b>. Падеж есть, склонения нет.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Именительный или винительный <small>напиши падеж и слово-замену</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span><b>Ветер</b> открыл окно.<span class="w wide"></span> &nbsp; <span class="num">2.</span>Вижу <b>окно</b>.<span class="w wide"></span></p>
+      <p class="sent"><span class="num">3.</span><b>Снег</b> засыпал дорожки.<span class="w wide"></span> &nbsp; <span class="num">4.</span>Дети лепили <b>снеговика</b>.<span class="w wide"></span></p>
+      <p class="sent"><span class="num">5.</span>Нет <b>снеговика</b>.<span class="w wide"></span> &nbsp; <span class="num">6.</span><b>Мальчик</b> поймал рыбу.<span class="w wide"></span></p>
+      <div class="hint"><b>Замена:</b> неодушевлённое меняй на <i>брат</i>, одушевлённое — на <i>стол</i>. Форма не изменилась → И. п.; изменилась → В. п. (а у одушевлённых — Р. п.).</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Контроль окончаний <small>три слова, по шагам: склонение → падеж → буква</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:30%">Слово</th><th style="width:20%">Склонение</th><th style="width:20%">Падеж</th><th>Буква</th></tr>
+        <tr><td>на тропинк<span class="gap"></span></td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>о матер<span class="gap"></span></td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>в здани<span class="gap"></span></td><td class="fill"></td><td></td><td></td></tr>
+      </table></div>
+      <div class="hint"><b>Слова-помощники:</b> 1-е скл. — <i>земля</i>, 2-е — <i>конь</i>, 3-е — <i>степь</i>.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>выпиши после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Что было не так</th><th>Правило, которое забыл</th></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист для самостоятельного повторения · то, что уже получается (одушевлённость, собственные/нарицательные, подчёркивание), сюда не включено</footer>
+
+  <!-- ОТВЕТЫ -->
+  <div class="ans">
+    <p class="kicker">Русский язык · лист А</p>
+    <h1>Проверь себя</h1>
+    <p class="subtitle">Смотри сюда только после того, как всё сделал</p>
+
+    <section>
+      <h2><span class="n">1</span>Род</h2>
+      <div class="body">
+        <p>кофе — <b>м.</b> · метро — ср. · пальто — ср. · рояль — <b>м.</b> · мозоль — <b>ж.</b> · какао — ср. · такси — ср. · тюль — <b>м.</b> · шоссе — ср. · кенгуру — м. · леди — ж. · меню — ср.</p>
+        <p>Проверка прилагательным: <i>горячий кофе, новое пальто, старая мозоль, красивый тюль</i>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Число</h2>
+      <div class="body">
+        <p>щипцы — <b>МН</b> · дружба — <b>ЕД</b> · качели — МН · сметана — ЕД · каникулы — МН · листва — ЕД · брюки — МН · золото — ЕД.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Склонение</h2>
+      <div class="body">
+        <p>трава — 1 · конь — 2 · степь — 3 · окно — 2 · кино — <b>не склоняется</b> · пальто — <b>не склоняется</b> · мышь — 3 · тополь — 2.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Именительный или винительный</h2>
+      <div class="body">
+        <p>1. <i>Ветер</i> открыл — <b>И. п.</b> (Брат открыл) · 2. Вижу <i>окно</i> — <b>В. п.</b> (Вижу брата) · 3. <i>Снег</i> засыпал — <b>И. п.</b> (Брат засыпал) · 4. лепили <i>снеговика</i> — <b>В. п.</b> (лепили стол) · 5. Нет <i>снеговика</i> — <b>Р. п.</b> (нет стола) · 6. <i>Мальчик</i> поймал — <b>И. п.</b> (стол — форма та же).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Окончания</h2>
+      <div class="body">
+        <p>на тропинк<span class="e">е</span> — 1 скл., П. п. · о матер<span class="e">и</span> — 3 скл., П. п. · в здани<span class="e">и</span> — 2 скл., П. п. (слово на -ие, поэтому <b>-и</b>, а не «-е»).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">★</span>Если ошибок нет</h2>
+      <div class="body">
+        <p>Закрой лист и назови вслух по памяти: пять постоянных признаков и два непостоянных. Это то, что забылось на уроке.</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
