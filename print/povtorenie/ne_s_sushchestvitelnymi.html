@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · повторение · НЕ с существительными</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .steps { counter-reset: st; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: st; position: relative; padding-left: 26px; margin-bottom: 4px; font-size: 13px; }
+  .steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 1px; width: 19px; height: 19px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pair { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; margin: 0 0 6px; }
+  .pair p { margin: 0 0 2px; font-size: 14px; line-height: 2.1; }
+  .pair p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · §8, стр. 56–64</p>
+  <h1>НЕ с существительными</h1>
+  <p class="subtitle">Главное: решает не само слово, а предложение. Одно и то же слово пишется по-разному.</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Ошибок: ______</span></div>
+
+  <div class="start"><b>Частая ошибка:</b> «слово <i>знание</i> есть без <i>не</i>, значит, пишем раздельно». <b>Так нельзя.</b> То, что слово существует без <i>не</i>, ещё ничего не решает — надо пройти три шага.</div>
+
+  <div class="memo">
+    <h3>Три шага по порядку</h3>
+    <ol class="steps">
+      <li><b>Есть ли противопоставление с «а»?</b> <i>Это не правда, а ложь.</i> → пишем <b>раздельно</b>. Если есть — дальше не идём.</li>
+      <li><b>Слово без «не» не употребляется?</b> <i>неряха, невежда, негодование</i> → <b>слитно</b>.</li>
+      <li><b>Можно заменить синонимом без «не»?</b> <i>незнание = невежество, недруг = враг, неправда = ложь</i> → <b>слитно</b>.</li>
+    </ol>
+    <p style="font-size:12.5px; margin-top:5px"><b>Запомни:</b> шаг 1 всегда первый. Сначала смотрим на предложение, и только потом на слово.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>Одно слово — два написания <small>в каждой паре напиши слитно или раздельно</small></h2>
+    <div class="body">
+      <div class="pair">
+        <p>1. (Не)знание закона не освобождает от ответственности. <span class="w wide"></span></p>
+        <p>2. Это (не)знание, а всего лишь догадки. <span class="w wide"></span></p>
+      </div>
+      <div class="pair">
+        <p>3. Он сказал мне (не)правду. <span class="w wide"></span></p>
+        <p>4. Он сказал (не)правду, а чистую ложь. <span class="w wide"></span></p>
+      </div>
+      <div class="pair">
+        <p>5. В трудную минуту он повёл себя как (не)друг. <span class="w wide"></span></p>
+        <p>6. Он мне (не)друг, а просто сосед. <span class="w wide"></span></p>
+      </div>
+      <div class="pair">
+        <p>7. С ним случилось (не)счастье. <span class="w wide"></span></p>
+        <p>8. Это (не)счастье, а большое горе. <span class="w wide"></span></p>
+      </div>
+      <div class="hint"><b>Смотри:</b> слово одно и то же, а написание разное. Решает только предложение — есть в нём противопоставление с «а» или нет.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Без «не» не употребляется? <small>поставь + там, где слова без «не» не существует</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">(не)ряха<span class="w"></span></span><span class="q">(не)вежда<span class="w"></span></span><span class="q">(не)годование<span class="w"></span></span><span class="q">(не)настье<span class="w"></span></span></p>
+      <p class="items"><span class="q">(не)взгода<span class="w"></span></span><span class="q">(не)правда<span class="w"></span></span><span class="q">(не)внимательность<span class="w"></span></span><span class="q">(не)уч<span class="w"></span></span></p>
+      <div class="hint"><b>Проверка:</b> закрой «не» пальцем. Осталось настоящее слово? <i>Ряха</i> — нет такого слова, значит, пишем слитно всегда. <i>Правда</i> — слово есть, значит, этот шаг не сработал и надо идти к шагу 3.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Подбери синоним без «не» <small>если синоним нашёлся — слово пишется слитно</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Слово</th><th>Синоним без «не»</th></tr>
+        <tr><td>незнание</td><td class="fill"></td></tr>
+        <tr><td>неправда</td><td class="fill"></td></tr>
+        <tr><td>недруг</td><td class="fill"></td></tr>
+        <tr><td>неволя</td><td class="fill"></td></tr>
+        <tr><td>невезение</td><td class="fill"></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Выбери написание <small>сначала ищи в предложении союз «а»</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span>Мальчика подвела (не)внимательность. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">2.</span>Это была (не)удача, а случайность. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">3.</span>На улице стояло (не)настье. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">4.</span>Нас встретил (не)приятель, а совсем чужой человек. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">5.</span>Он сгорал от (не)годования. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">6.</span>Ты сказал (не)правду. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">7.</span>Это (не)приятель, а настоящий друг. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">8.</span>Нас ждало (не)везение. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">9.</span>Мы увидели (не)ряху. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">10.</span>Это (не)воля, а настоящий плен. <span class="w wide"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Придумай сам <small>одно и то же слово — два предложения</small></h2>
+    <div class="body">
+      <p style="font-size:12.5px; color:var(--ink-soft)">Составь по два предложения с каждым словом: в первом слово пишется слитно, во втором — раздельно (добавь противопоставление с «а»).</p>
+      <p class="lab">неправда</p>
+      <span class="line"></span><span class="line"></span>
+      <p class="lab">недруг</p>
+      <span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Пишем под диктовку <small>мама читает — ты пишешь</small></h2>
+    <div class="body">
+      <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>выпиши после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Слово и предложение</th><th>На каком шаге ошибся</th></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист отработки · правило — учебник «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §8, стр. 56–64</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · НЕ с существительными</p>
+    <h1>Ответы</h1>
+    <p class="subtitle">Проверяй себя только после того, как всё сделал</p>
+
+    <section>
+      <h2><span class="n">1</span>Одно слово — два написания</h2>
+      <div class="body">
+        <p>1. <b>Незнание</b> закона… — слитно (противопоставления нет, есть синоним: невежество). · 2. Это <b>не знание</b>, а догадки — раздельно (есть «а»).</p>
+        <p>3. сказал <b>неправду</b> — слитно (синоним: ложь). · 4. сказал <b>не правду</b>, а чистую ложь — раздельно (есть «а»).</p>
+        <p>5. повёл себя как <b>недруг</b> — слитно (синоним: враг). · 6. Он мне <b>не друг</b>, а просто сосед — раздельно (есть «а»).</p>
+        <p>7. случилось <b>несчастье</b> — слитно (синоним: беда, горе). · 8. Это <b>не счастье</b>, а большое горе — раздельно (есть «а»).</p>
+        <p class="ansbar">Главное на этом листе: слово в парах одно и то же. Если ребёнок решает по слову («знание есть без не — пишу раздельно»), он ошибётся ровно в половине случаев. Решает предложение.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Без «не» не употребляется</h2>
+      <div class="body">
+        <p><b>+</b> ставим у слов: <b>неряха, невежда, негодование, ненастье, невзгода, неуч</b> — этих слов без «не» нет, они всегда слитно.</p>
+        <p>А <b>неправда</b> и <b>невнимательность</b> — слова <i>правда</i> и <i>внимательность</i> существуют, поэтому шаг 2 не сработал. Идём к шагу 3: синонимы есть (ложь, рассеянность) → слитно, если в предложении нет «а».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Синонимы</h2>
+      <div class="body">
+        <p>незнание — невежество · неправда — ложь, обман · недруг — враг · неволя — плен · невезение — неудача, провал.</p>
+        <p>Подходит любой близкий по смыслу синоним без «не».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Выбери написание</h2>
+      <div class="body">
+        <p>1. <b>невнимательность</b> — слитно (синоним: рассеянность) · 2. <b>не удача</b>, а случайность — раздельно · 3. <b>ненастье</b> — слитно (без «не» нет слова) · 4. <b>не приятель</b>, а чужой человек — раздельно · 5. от <b>негодования</b> — слитно (без «не» нет слова) · 6. сказал <b>неправду</b> — слитно · 7. <b>не приятель</b>, а настоящий друг — раздельно · 8. <b>невезение</b> — слитно (синоним: неудача, провал) · 9. увидели <b>неряху</b> — слитно (без «не» нет слова) · 10. <b>не воля</b>, а настоящий плен — раздельно.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Придумай сам</h2>
+      <div class="body">
+        <p>Пример для проверки: <i>Он сказал мне <b>неправду</b></i> (слитно) — <i>Он сказал <b>не правду</b>, а выдумку</i> (раздельно). <i>Этот человек мне <b>недруг</b></i> — <i>Он мне <b>не друг</b>, а однокласcник</i>.</p>
+        <p class="ansbar">Задание засчитано, если во втором предложении есть противопоставление с «а». Без него раздельного написания не получится.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Текст диктовки</h2>
+      <div class="body">
+        <p>Читайте по одному предложению, не больше двух раз.</p>
+        <p>1. Незнание правил не оправдывает водителя.<br>
+           2. Это не правда, а выдумка.<br>
+           3. Его неряшливость всех удивляла.<br>
+           4. Нас встретило ненастье, но поход не отменили.</p>
+        <p class="ansbar">Что проверяем: 1 — слитно (синоним: невежество, «а» нет); 2 — раздельно («а»); 3 — слитно (без «не» слова нет); 4 — слитно (без «не» слова нет; союз «но» здесь соединяет части предложения, а не противопоставляет слова — это другая история, и на написание «ненастья» он не влияет).</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
