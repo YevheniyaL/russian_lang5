@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · §9 · НЕ с прилагательными</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .steps { counter-reset: st; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: st; position: relative; padding-left: 26px; margin-bottom: 4px; font-size: 13px; }
+  .steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 1px; width: 19px; height: 19px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pair { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; margin: 0 0 6px; }
+  .pair p { margin: 0 0 2px; font-size: 14px; line-height: 2.1; }
+  .pair p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · глава II, §9, стр. 67</p>
+  <h1>НЕ с прилагательными</h1>
+  <p class="subtitle">Правило почти такое же, как у существительных, но добавились четыре слова-сигнала</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Ошибок: ______</span></div>
+
+  <div class="start"><b>Помни про существительные:</b> там решало предложение, а не само слово. Здесь так же — сначала смотрим на предложение.</div>
+
+  <div class="memo">
+    <h3>Четыре шага по порядку <span style="font-weight:400; font-size:12px; color:var(--ink-soft)">(правило — стр. 67, упражнения 111–113)</span></h3>
+    <ol class="steps">
+      <li><b>Есть противопоставление с «а», «но»?</b> <i>Не весёлый, а грустный был у меня день.</i> → <b>раздельно</b>.</li>
+      <li><b>Есть слова далеко не, вовсе не, ничуть не, нисколько не?</b> <i>Нисколько не строгий учитель.</i> → <b>раздельно</b>.</li>
+      <li><b>Слово без «не» не употребляется?</b> <i>ненаглядный, ненастный, небрежный</i> → <b>слитно</b>.</li>
+      <li><b>Можно заменить синонимом без «не»?</b> <i>недобрый = злой, неблизкий = далёкий</i> → <b>слитно</b>.</li>
+    </ol>
+    <p style="font-size:12.5px; margin-top:5px"><b>Новое по сравнению с существительными:</b> шаг 2. Четыре слова-сигнала: <b>далеко не, вовсе не, ничуть не, нисколько не</b>. Увидел их — пиши раздельно, дальше не думай.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>Одно слово — два написания <small>напиши слитно или раздельно</small></h2>
+    <div class="body">
+      <div class="pair">
+        <p>1. Это (не)большой город. <span class="w wide"></span></p>
+        <p>2. Это (не)большой, а маленький город. <span class="w wide"></span></p>
+        <p>3. Это вовсе (не)большой город. <span class="w wide"></span></p>
+      </div>
+      <div class="pair">
+        <p>4. Нас ждал (не)трудный путь. <span class="w wide"></span></p>
+        <p>5. Путь был (не)трудный, но длинный. <span class="w wide"></span></p>
+        <p>6. Путь оказался ничуть (не)трудный. <span class="w wide"></span></p>
+      </div>
+      <div class="hint"><b>Видишь?</b> Слово одно и то же — <i>большой</i>, <i>трудный</i>. Написание меняют только союз «а»/«но» и слова-сигналы.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Без «не» не употребляется? <small>поставь + там, где слова без «не» нет</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">(не)брежный<span class="w"></span></span><span class="q">(не)навистный<span class="w"></span></span><span class="q">(не)настный<span class="w"></span></span><span class="q">(не)лепый<span class="w"></span></span></p>
+      <p class="items"><span class="q">(не)близкий<span class="w"></span></span><span class="q">(не)опасный<span class="w"></span></span><span class="q">(не)обычный<span class="w"></span></span><span class="q">(не)глубокий<span class="w"></span></span></p>
+      <div class="hint"><b>Проверка:</b> закрой «не» пальцем. <i>Брежный</i> — такого слова нет, пишем слитно всегда. <i>Близкий</i> — слово есть, значит, шаг не сработал: иди к шагу 4 и подбери синоним.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Замени синонимом без «не» <small>если синоним нашёлся — пишем слитно</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Прилагательное</th><th>Синоним без «не»</th></tr>
+        <tr><td>недобрый</td><td class="fill"></td></tr>
+        <tr><td>неблизкий</td><td class="fill"></td></tr>
+        <tr><td>неглубокий</td><td class="fill"></td></tr>
+        <tr><td>неопасный</td><td class="fill"></td></tr>
+        <tr><td>невесёлый</td><td class="fill"></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Раскрой скобки <small>сначала ищи союз «а»/«но» и слова-сигналы</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span>Квадроцикл — (не)обычное транспортное средство. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">2.</span>Корабль — это (не)наземный, а водный транспорт. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">3.</span>Велосипед (не)дорогой, но очень прочный. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">4.</span>На дорогах нельзя быть (не)внимательным. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">5.</span>Скутер совсем (не)похож на велосипед. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">6.</span>Движение было далеко (не)спокойное. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">7.</span>Мотоцикл (не)быстрый и (не)медленный. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">8.</span>Нас встретил (не)настный день. <span class="w wide"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Замени прилагательное синонимом с «не» <small>как в упражнении 113</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">нужная вещь →<span class="w wide"></span></span><span class="q">фантастическая машина →<span class="w wide"></span></span></p>
+      <p class="items"><span class="q">неподходящий транспорт →<span class="w wide"></span></span><span class="q">странный маршрут →<span class="w wide"></span></span></p>
+      <p style="font-size:12.5px; color:var(--ink-soft)">Слова для замены: необычный, невиданный, неудобный, необходимый.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Придумай сам <small>одно слово — два предложения</small></h2>
+    <div class="body">
+      <p style="font-size:12.5px; color:var(--ink-soft)">Со словом <b>недорогой</b>: в первом предложении слитно, во втором раздельно (добавь «а» или слово-сигнал).</p>
+      <span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Пишем под диктовку <small>мама читает — ты пишешь</small></h2>
+    <div class="body">
+      <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>выпиши после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Слово и предложение</th><th>На каком шаге ошибся</th></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист отработки · правило — учебник «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §9, стр. 67</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · §9 · НЕ с прилагательными</p>
+    <h1>Ответы</h1>
+    <p class="subtitle">Проверяй себя только после того, как всё сделал</p>
+
+    <section>
+      <h2><span class="n">1</span>Одно слово — два написания</h2>
+      <div class="body">
+        <p>1. <b>небольшой</b> город — слитно (синоним: маленький) · 2. <b>не большой</b>, а маленький — раздельно (союз «а») · 3. вовсе <b>не большой</b> — раздельно (слово-сигнал).</p>
+        <p>4. <b>нетрудный</b> путь — слитно (синоним: лёгкий) · 5. <b>не трудный</b>, но длинный — раздельно (союз «но») · 6. ничуть <b>не трудный</b> — раздельно (слово-сигнал).</p>
+        <p class="ansbar">Если ребёнок во всех шести случаях написал одинаково, он снова решает по слову, а не по предложению. Вернитесь к шагам 1 и 2.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Без «не» не употребляется</h2>
+      <div class="body">
+        <p><b>+</b> у слов: <b>небрежный, ненавистный, ненастный, нелепый</b> — без «не» таких слов нет, всегда слитно.</p>
+        <p><b>Неблизкий, неопасный, необычный, неглубокий</b> — слова <i>близкий, опасный, обычный, глубокий</i> есть. Значит, идём к шагу 4: синоним есть → слитно (если в предложении нет «а», «но» и слов-сигналов).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Синонимы</h2>
+      <div class="body">
+        <p>недобрый — злой · неблизкий — далёкий · неглубокий — мелкий · неопасный — безопасный · невесёлый — грустный. Подойдёт любой близкий по смыслу синоним без «не».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Раскрой скобки</h2>
+      <div class="body">
+        <p>1. <b>необычное</b> (синоним: странное) · 2. <b>не наземный</b>, а водный (союз «а») · 3. <b>недорогой</b>, но прочный — <b>слитно</b>: «но» здесь не противопоставляет, а добавляет признак; противопоставления «не дорогой, а дешёвый» тут нет · 4. <b>невнимательным</b> (синоним: рассеянным) · 5. совсем <b>не похож</b> — раздельно · 6. далеко <b>не спокойное</b> — раздельно (слово-сигнал) · 7. <b>не быстрый</b> и <b>не медленный</b> — раздельно (отрицание двух признаков сразу) · 8. <b>ненастный</b> — слитно (без «не» слова нет).</p>
+        <p class="ansbar">Предложения 3 и 7 — самые трудные, они прямо из упражнений 111–112. Если ошибся — разберите их вслух вместе.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Замена синонимом с «не»</h2>
+      <div class="body">
+        <p>нужная вещь → <b>необходимая</b> вещь · фантастическая машина → <b>невиданная</b> машина · неподходящий транспорт → <b>неудобный</b> транспорт · странный маршрут → <b>необычный</b> маршрут.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Придумай сам</h2>
+      <div class="body">
+        <p>Образец: <i>Мы купили <b>недорогой</b> велосипед</i> (слитно) — <i>Велосипед <b>не дорогой</b>, а дешёвый</i> или <i>вовсе <b>не дорогой</b></i> (раздельно).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Текст диктовки</h2>
+      <div class="body">
+        <p>1. Квадроцикл — необычное, но очень удобное транспортное средство.<br>
+           2. Это не скоростной, а обычный поезд.<br>
+           3. Нас встретил ненастный день и далеко не тёплый ветер.<br>
+           4. Небрежный водитель опасен на дороге.</p>
+        <p class="ansbar">Что проверяем: 1 — слитно (синоним: странное); 2 — раздельно (союз «а»); 3 — «ненастный» слитно, «не тёплый» раздельно (слово-сигнал «далеко»); 4 — слитно (без «не» слова нет).</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

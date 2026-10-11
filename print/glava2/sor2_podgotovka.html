@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · СОР №2 · подготовка</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .steps { counter-reset: st; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: st; position: relative; padding-left: 26px; margin-bottom: 4px; font-size: 13px; }
+  .steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 1px; width: 19px; height: 19px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pair { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; margin: 0 0 6px; }
+  .pair p { margin: 0 0 2px; font-size: 14px; line-height: 2.1; }
+  .pair p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · глава II · СОР №2</p>
+  <h1>Подготовка к СОР №2</h1>
+  <p class="subtitle">Задания в том же наборе, что и цели работы. Перед началом перечитай «Лист правил».</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Время: ______ мин</span><span>Ошибок: ______</span></div>
+
+  <section>
+    <h2><span class="n">1</span>Раскрой скобки <small>5.4.1.1 · НЕ с существительными и прилагательными</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span>Трицикл — (не)обычное транспортное средство. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">2.</span>Это (не)правда, а выдумка журналистов. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">3.</span>Водителя подвела (не)внимательность. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">4.</span>Дорога была вовсе (не)ровная. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">5.</span>Нас встретил (не)настный день. <span class="w wide"></span></p>
+      <p class="sent"><span class="num">6.</span>Это (не)скоростной, а обычный поезд. <span class="w wide"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Вставь буквы <small>5.4.1.1 · гласные и согласные в корне</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">заг<span class="gap"></span>реть</span><span class="q">з<span class="gap"></span>ря</span><span class="q">накл<span class="gap"></span>ниться</span><span class="q">уг<span class="gap"></span>р</span><span class="q">з<span class="gap"></span>рька</span></p>
+      <p class="items"><span class="q">со<span class="gap"></span>нце</span><span class="q">звёз<span class="gap"></span>ный</span><span class="q">опас<span class="gap"></span>ный</span><span class="q">серд<span class="gap"></span>е</span><span class="q">л<span class="gap"></span>са</span></p>
+      <div class="hint"><b>Внимание:</b> в первой строке чередование — проверочное слово не подбирать. Во второй строке, наоборот, подбирай.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Согласуй прилагательное <small>5.4.3.1 · род, число, падеж</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:36%">Словосочетание</th><th style="width:16%">Род</th><th style="width:16%">Число</th><th style="width:16%">Падеж</th><th>Окончание</th></tr>
+        <tr><td>на скоростн<span class="gap"></span> поезде</td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>о городск<span class="gap"></span> инфраструктуре</td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>удобн<span class="gap"></span> транспорта</td><td class="fill"></td><td></td><td></td><td></td></tr>
+        <tr><td>с нов<span class="gap"></span> маршрутами</td><td class="fill"></td><td></td><td></td><td></td></tr>
+      </table></div>
+      <div class="hint"><b>Способ:</b> задай вопрос от существительного — окончание вопроса подскажет окончание прилагательного.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Окончания существительных <small>5.4.1.1 · -е или -и</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">на остановк<span class="gap"></span></span><span class="q">в метр<span class="gap"></span>? <span style="font-size:11px">(подумай!)</span></span><span class="q">о скорост<span class="gap"></span></span><span class="q">к станци<span class="gap"></span></span><span class="q">в автобус<span class="gap"></span></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Прочитай текст и ответь <small>5.1.1.1, 5.1.2.1, 5.2.6.1</small></h2>
+    <div class="body">
+      <p style="font-size:13px; background:var(--paper-raised); border:1px solid var(--line); border-radius:8px; padding:8px 11px">Первый в Казахстане метрополитен открылся в Алматы. Поезда идут глубоко под землёй и не стоят в пробках, поэтому дорога через весь город занимает меньше получаса. Станции украшены мозаикой и национальным орнаментом — многие туристы приходят сюда просто посмотреть. Метро перевозит тысячи людей в день и делает огромный город ближе и понятнее.</p>
+      <p><b>Тема текста:</b> <span class="line"></span></p>
+      <p><b>Основная мысль:</b> <span class="line"></span></p>
+      <p><b>Какое предложение несёт главную информацию?</b> <span class="line"></span></p>
+      <p><b>Придумай заголовок:</b> <span class="line"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Напиши объявление <small>5.3.4.1 · текст-описание с учётом адресата</small></h2>
+    <div class="body">
+      <p style="font-size:12.5px; color:var(--ink-soft)">В школе открывается велопарковка. Напиши объявление для учеников: что открывается, где, с какого числа, какие правила. 3–4 предложения.</p>
+      <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Составь диалог-расспрос <small>5.1.5.1 · три вопроса и ответы</small></h2>
+    <div class="body">
+      <p style="font-size:12.5px; color:var(--ink-soft)">Ты приехал в незнакомый город и спрашиваешь у взрослого прохожего, как добраться до вокзала. Запиши диалог: минимум три твоих вопроса и его ответы, на «вы», с вежливыми словами.</p>
+      <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>заполни после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:30%">Задание</th><th style="width:34%">Что было не так</th><th>Какое правило повторить</th></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+        <tr><td class="fill"></td><td></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Подготовка к СОР №2 · глава II «Мир вокруг нас: транспорт и инфраструктура», учебник стр. 56–93</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · СОР №2</p>
+    <h1>Ответы и критерии проверки</h1>
+    <p class="subtitle">Страница для мамы</p>
+
+    <section>
+      <h2><span class="n">1</span>НЕ с существительными и прилагательными</h2>
+      <div class="body">
+        <p>1. <b>необычное</b> (синоним: странное) · 2. <b>не правда</b>, а выдумка (союз «а») · 3. <b>невнимательность</b> (синоним: рассеянность) · 4. вовсе <b>не ровная</b> (слово-сигнал) · 5. <b>ненастный</b> (без «не» нет слова) · 6. <b>не скоростной</b>, а обычный (союз «а»).</p>
+        <p class="ansbar">6 баллов. Если ошибки в 2, 4, 6 — ребёнок не смотрит на предложение; повторить шаги 1–2 из листа правил.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Гласные и согласные в корне</h2>
+      <div class="body">
+        <p>заг<b>о</b>ре́ть · з<b>а</b>ря́ · накл<b>о</b>ни́ться · уг<b>а</b>р (ударное) · з<b>о</b>рька (ударное) · со<b>л</b>нце · звёз<b>д</b>ный · опас<b>_</b>ный (без буквы!) · серд<b>ц</b>е · л<b>е</b>са́.</p>
+        <p class="ansbar">«Опасный» — любимая ловушка: непроизносимой согласной там нет, проверка <i>опа́сен</i>. Если ребёнок вставил «т» — это типичная ошибка.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Согласование</h2>
+      <div class="body">
+        <p>на скоростн<b>ом</b> поезде — м. р., ед. ч., П. п. · о городск<b>ой</b> инфраструктуре — ж. р., ед. ч., П. п. · удобн<b>ого</b> транспорта — м. р., ед. ч., Р. п. · с нов<b>ыми</b> маршрутами — мн. ч., Т. п. (род не определяется).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Окончания существительных</h2>
+      <div class="body">
+        <p>на остановк<b>е</b> (1 скл., П. п.) · в метро — <b>несклоняемое, окончание не меняется</b> · о скорост<b>и</b> (3 скл., П. п.) · к станци<b>и</b> (на -ия) · в автобус<b>е</b> (2 скл., П. п.).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Работа с текстом</h2>
+      <div class="body">
+        <p><b>Тема:</b> метро в Алматы (о первом метрополитене Казахстана). <b>Основная мысль:</b> метро делает большой город удобнее и ближе. <b>Главная информация:</b> последнее предложение. <b>Заголовок:</b> «Алматинское метро», «Город стал ближе» и подобные.</p>
+        <p class="ansbar">Засчитывайте любой ответ по смыслу. Важно: тема — словосочетание, основная мысль — целое предложение. Если вместо мысли снова названа тема, это самая частая потеря балла.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Объявление — критерии</h2>
+      <div class="body">
+        <p>✓ есть что открывается · ✓ есть где · ✓ есть с какого числа · ✓ есть правило или призыв · ✓ 3–4 предложения, без лишних подробностей · ✓ обращение к ученикам, а не к взрослым.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Диалог — критерии</h2>
+      <div class="body">
+        <p>✓ не меньше трёх вопросов · ✓ есть ответы собеседника, а не только вопросы · ✓ вежливое начало и благодарность · ✓ обращение на «вы» ко взрослому · ✓ есть уточняющий вопрос («А это далеко?»).</p>
+        <p class="ansbar">Цель 5.1.5.1 проверяет смену ролей: ребёнок должен и спрашивать, и реагировать на ответ. Один вопрос и «спасибо» — это не диалог-расспрос.</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · §9 · чередование гар/гор, зар/зор, клан/клон</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .steps { counter-reset: st; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: st; position: relative; padding-left: 26px; margin-bottom: 4px; font-size: 13px; }
+  .steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 1px; width: 19px; height: 19px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pair { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; margin: 0 0 6px; }
+  .pair p { margin: 0 0 2px; font-size: 14px; line-height: 2.1; }
+  .pair p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · глава II, §9, стр. 69–70</p>
+  <h1>Чередование в корне: гар/гор, зар/зор, клан/клон</h1>
+  <p class="subtitle">Три правила, и все три решаются одним вопросом: падает ли ударение на корень</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Ошибок: ______</span></div>
+
+  <div class="start"><b>Самое важное:</b> проверочное слово здесь <b>не работает</b>. «Загорать» нельзя проверить словом «загар» — это чередование, а не безударная гласная. Сначала ставим ударение, потом смотрим правило.</div>
+
+  <div class="memo">
+    <h3>Три правила <span style="font-weight:400; font-size:12px; color:var(--ink-soft)">(стр. 69–70, упражнения 118–121)</span></h3>
+    <p><b>-гар- / -гор-:</b> под ударением <b>а</b>, без ударения <b>о</b>. <i>заг<b>á</b>р — заг<b>о</b>рéть</i></p>
+    <p><b>-зар- / -зор-:</b> под ударением <b>о</b>, без ударения <b>а</b>. <i>з<b>ó</b>рька — з<b>а</b>ря́</i></p>
+    <p><b>-клан- / -клон-:</b> под ударением <b>а</b> или <b>о</b> (как слышится), без ударения <b>только о</b>. <i>укл<b>ó</b>н, кл<b>á</b>няться — скл<b>о</b>нéние, накл<b>о</b>ни́ть</i></p>
+    <p style="font-size:12.5px; margin-top:5px"><b>Как не перепутать гар/гор и зар/зор:</b> они зеркальные. В «гар/гор» под ударением <b>а</b>, в «зар/зор» — <b>о</b>. Подсказка: <i>зага́р</i> и <i>зо́рька</i> — скажи их вслух, они и есть образцы.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>Поставь ударение и вставь букву <small>корень -гар-/-гор-</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">заг<span class="gap"></span>р</span><span class="q">заг<span class="gap"></span>реть</span><span class="q">сг<span class="gap"></span>рать</span><span class="q">г<span class="gap"></span>рячий</span><span class="q">сг<span class="gap"></span>реть</span><span class="q">выг<span class="gap"></span>рать</span></p>
+      <p class="items"><span class="q">приг<span class="gap"></span>реть</span><span class="q">обг<span class="gap"></span>реть</span><span class="q">подг<span class="gap"></span>ревший</span><span class="q">уг<span class="gap"></span>реть</span><span class="q">г<span class="gap"></span>рючий</span><span class="q">уг<span class="gap"></span>р</span></p>
+      <div class="hint"><b>Порядок:</b> ① скажи слово вслух ② услышь, падает ли ударение на корень ③ под ударением — <b>а</b>, без ударения — <b>о</b>.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Корень -зар-/-зор- <small>здесь всё наоборот</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">з<span class="gap"></span>ря</span><span class="q">з<span class="gap"></span>ри</span><span class="q">з<span class="gap"></span>рево</span><span class="q">оз<span class="gap"></span>рить</span><span class="q">з<span class="gap"></span>рька</span><span class="q">оз<span class="gap"></span>рение</span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Корень -клан-/-клон- <small>без ударения — всегда о</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">скл<span class="gap"></span>ниться</span><span class="q">откл<span class="gap"></span>нить</span><span class="q">укл<span class="gap"></span>ниться</span><span class="q">накл<span class="gap"></span>н</span><span class="q">покл<span class="gap"></span>нение</span></p>
+      <p class="items"><span class="q">накл<span class="gap"></span>нение</span><span class="q">укл<span class="gap"></span>н</span><span class="q">скл<span class="gap"></span>нение</span><span class="q">прекл<span class="gap"></span>няться</span><span class="q">кл<span class="gap"></span>няться</span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Всё вперемешку <small>три корня сразу — именно так будет в работе</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">з<span class="gap"></span>рница</span><span class="q">заг<span class="gap"></span>релый</span><span class="q">накл<span class="gap"></span>ниться</span><span class="q">оз<span class="gap"></span>рённый</span><span class="q">г<span class="gap"></span>рение</span></p>
+      <p class="items"><span class="q">кл<span class="gap"></span>няться</span><span class="q">з<span class="gap"></span>рька</span><span class="q">уг<span class="gap"></span>рел</span><span class="q">скл<span class="gap"></span>нение</span><span class="q">з<span class="gap"></span>рево</span></p>
+      <div class="hint"><b>Ловушка:</b> не хватай первое похожее слово. <i>Горе</i>, <i>гора</i>, <i>загородный</i> — обычные корни, там чередования нет и работает проверочное слово. Чередование только там, где корень значит «гореть».</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Найди лишнее <small>в каждой строке одно слово — не с чередующимся корнем</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span>загорать · гореть · гора · угореть <span class="w wide"></span></p>
+      <p class="sent"><span class="num">2.</span>заря · зорька · зарево · зеркало <span class="w wide"></span></p>
+      <p class="sent"><span class="num">3.</span>склонить · поклон · клоун · наклонение <span class="w wide"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Пишем под диктовку <small>мама читает — ты пишешь</small></h2>
+    <div class="body">
+      <span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>выпиши после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Слово</th><th>Какой корень и почему ошибся</th></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист отработки · правила — учебник «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §9, стр. 69–70</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · §9 · чередование в корне</p>
+    <h1>Ответы</h1>
+    <p class="subtitle">Проверяй себя только после того, как всё сделал</p>
+
+    <section>
+      <h2><span class="n">1</span>-гар- / -гор-</h2>
+      <div class="body">
+        <p>заг<b>á</b>р (а, под ударением) · заг<b>о</b>рéть · сг<b>о</b>рáть · г<b>о</b>ря́чий · сг<b>о</b>рéть · выг<b>о</b>рáть · приг<b>о</b>рéть · обг<b>о</b>рéть · подг<b>о</b>рéвший · уг<b>о</b>рéть · г<b>о</b>рю́чий · уг<b>á</b>р (а, под ударением).</p>
+        <p class="ansbar">Под ударением «а» только в двух словах: <i>зага́р</i> и <i>уга́р</i>. Во всех остальных ударение уходит с корня — пишем «о».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>-зар- / -зор-</h2>
+      <div class="body">
+        <p>з<b>а</b>ря́ · з<b>а</b>ри́ · з<b>á</b>рево · оз<b>а</b>ри́ть · з<b>ó</b>рька · оз<b>а</b>рéние.</p>
+        <p class="ansbar">Внимание на <i>зáрево</i>: ударение падает на корень, но пишется «а». Это слово лучше просто запомнить вместе с <i>зóрька</i> — остальные без ударения, значит «а».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>-клан- / -клон-</h2>
+      <div class="body">
+        <p>скл<b>о</b>ни́ться · откл<b>о</b>ни́ть · укл<b>о</b>ни́ться · накл<b>ó</b>н · покл<b>о</b>нéние · накл<b>о</b>нéние · укл<b>ó</b>н · скл<b>о</b>нéние · прекл<b>о</b>ня́ться · кл<b>á</b>няться.</p>
+        <p class="ansbar">Здесь проще всего: без ударения — всегда «о». Под ударением бывает и «а» (<i>кла́няться</i>), и «о» (<i>укло́н, накло́н</i>) — как слышится.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Вперемешку</h2>
+      <div class="body">
+        <p>з<b>а</b>рни́ца · заг<b>о</b>рéлый · накл<b>о</b>ни́ться · оз<b>а</b>рённый · г<b>о</b>рéние · кл<b>á</b>няться · з<b>ó</b>рька · уг<b>о</b>рéл · скл<b>о</b>нéние · з<b>á</b>рево.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Найди лишнее</h2>
+      <div class="body">
+        <p>1. <b>гора</b> — обычный корень, проверяется словом <i>го́ры</i> · 2. <b>зеркало</b> — другой корень · 3. <b>клоун</b> — другой корень, к чередованию отношения не имеет.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Текст диктовки</h2>
+      <div class="body">
+        <p>1. На утренней заре загорелся первый луч солнца.<br>
+           2. Дрова в печи быстро сгорели, остался только угар.<br>
+           3. Деревья склонились под тяжестью снега.<br>
+           4. Зорька осветила зарево над городом.</p>
+        <p class="ansbar">Что проверяем: 1 — заре́ (без ударения «а»), загоре́лся (без ударения «о»); 2 — сгоре́ли («о»), уга́р (под ударением «а»); 3 — склони́лись («о»); 4 — зо́рька («о» под ударением), за́рево (запомнить).</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
