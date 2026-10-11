@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · повторение · прилагательное — отработка 2</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  /* блок задания целиком на одном листе — не разрывать */
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .lab { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--accent-deep); margin: 4px 0 1px; }
+  .lab.tr { color: var(--amber-deep); }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.8em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.95em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14.5px; line-height: 2.5; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+  .parse-line { display: block; border-bottom: 1.4px solid var(--line); height: 1.75em; }
+
+  /* подчёркивания членов предложения — нужны на листе ответов */
+  .u1 { border-bottom: 2px solid var(--ink); }
+  .u2 { border-bottom: 2px solid var(--ink); box-shadow: 0 4px 0 -2px var(--ink); padding-bottom: 1px; }
+  :root {
+    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E");
+    --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%2323342f'/%3E%3Crect x='12' width='2' height='2' fill='%2323342f'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+      --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%23eaf3ef'/%3E%3Crect x='12' width='2' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    }
+  }
+  :root[data-theme="dark"] {
+    --u-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+    --u-dotdash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%23eaf3ef'/%3E%3Crect x='12' width='2' height='2' fill='%23eaf3ef'/%3E%3C/svg%3E");
+  }
+  .dash, .dotdash { background-repeat: repeat-x; background-position: 0 100%; padding-bottom: 2px; }
+  .dash { background-image: var(--u-dash); background-size: 10px 2px; }
+  .dotdash { background-image: var(--u-dotdash); background-size: 18px 2px; }
+  .wavy { text-decoration: underline wavy var(--ink); text-underline-offset: 3px; }
+
+  /* ответы должны умещаться на один лист */
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11px; line-height: 1.4; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans .sent { font-size: 11.5px; line-height: 1.85; margin: 0; }
+  .ans .ansbar { padding: 3px 8px; font-size: 10.5px; margin: 2px 0 3px; }
+  .ans section { margin: 0 0 5px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.88; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .u2 { box-shadow: 0 4px 0 -2px #23342f !important; }
+    .u1, .u2 { border-bottom-color: #23342f; }
+    .dash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='2'%3E%3Crect width='6' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
+    .dotdash { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='2'%3E%3Crect width='8' height='2' fill='%2323342f'/%3E%3Crect x='12' width='2' height='2' fill='%2323342f'/%3E%3C/svg%3E"); }
+    /* ответы — всегда с новой страницы */
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · повторение</p>
+  <h1>Имя прилагательное — отработка 2</h1>
+  <p class="subtitle">Те же умения, другие слова · плюс новое: буквы о и е в окончании после шипящих</p>
+  <div class="namebar"><span>Имя: ________________________</span><span>Дата: ____________</span><span>Ошибок: ______</span></div>
+
+  <section>
+    <h2><span class="n">1</span>Найди прилагательные <small>выпиши пару «существительное + прилагательное» и поставь вопрос</small></h2>
+    <div class="body">
+      <p class="lab">А</p>
+      <p class="sent"><span class="num">1.</span>По узкой тропинке мы вышли к тихому озеру. <span class="parse-line"></span></p>
+      <p class="sent"><span class="num">2.</span>Над городом плыли тяжёлые тучи. <span class="parse-line"></span></p>
+      <p class="lab tr">Б — ловушка: не все слова, отвечающие на «какой?», прилагательные</p>
+      <p class="sent"><span class="num">3.</span>Третий вагон оказался наш. <span class="parse-line"></span></p>
+      <p class="sent"><span class="num">4.</span>Твоя старшая сестра ждёт у входа. <span class="parse-line"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Род, число и падеж <small>смотри по существительному</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Словосочетание</th><th style="width:22%">Род</th><th style="width:22%">Число</th><th>Падеж</th></tr>
+        <tr><td>в тёмном лесу</td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>о летней поездке</td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>со старшим братом</td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>к дальней деревне</td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>у соседнего дома</td><td class="fill"></td><td></td><td></td></tr>
+        <tr><td>про интересные книги</td><td class="fill"></td><td></td><td></td></tr>
+      </table></div>
+      <div class="hint"><b>Внимание на последнюю строку:</b> во множественном числе род у прилагательного <b>не определяется</b>.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Вставь окончание <small>задай вопрос — его окончание подскажет</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">в соседн<span class="gap"></span> дворе</span><span class="q">о летн<span class="gap"></span> поездке</span><span class="q">с ранн<span class="gap"></span> утра</span><span class="q">на дальн<span class="gap"></span> берегу</span></p>
+      <p class="items"><span class="q">тёпл<span class="gap"></span> море</span><span class="q">зимн<span class="gap"></span> дорога</span><span class="q">высок<span class="gap"></span> дерево</span><span class="q">весенн<span class="gap"></span> день</span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Буквы о и е после шипящих <small>новое: ж, ш, ч, щ, ц в конце основы</small></h2>
+    <div class="body">
+      <p style="font-size:12.5px; color:var(--ink-soft); margin-bottom:3px">Здесь вопрос не поможет — решает ударение: под ударением <b>о</b>, без ударения <b>е</b>.</p>
+      <p class="items"><span class="q">больш<span class="gap"></span>е окно</span><span class="q">хорош<span class="gap"></span>е место</span><span class="q">свеж<span class="gap"></span>е молоко</span><span class="q">чуж<span class="gap"></span>й человек</span></p>
+      <p class="items"><span class="q">горяч<span class="gap"></span>е солнце</span><span class="q">о больш<span class="gap"></span>м доме</span><span class="q">рыж<span class="gap"></span>го кота</span><span class="q">колюч<span class="gap"></span>го ежа</span></p>
+      <div class="hint"><b>Проверка:</b> скажи вслух. <i>Больш<b>о́</b>е</i> — ударение на окончании, пишем «о». <i>Хоро́ш<b>е</b>е</i> — ударение на корне, пишем «е».</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Просклоняй словосочетание <small>летний день</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26%">Падеж</th><th style="width:30%">Вопрос</th><th>Словосочетание</th></tr>
+        <tr><td><b>И. п.</b></td><td>какой? что?</td><td class="fill">летний день</td></tr>
+        <tr><td><b>Р. п.</b></td><td class="fill"></td><td></td></tr>
+        <tr><td><b>Д. п.</b></td><td class="fill"></td><td></td></tr>
+        <tr><td><b>В. п.</b></td><td class="fill"></td><td></td></tr>
+        <tr><td><b>Т. п.</b></td><td class="fill"></td><td></td></tr>
+        <tr><td><b>П. п.</b></td><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Подчеркни прилагательные <small>определение — волнистой, сказуемое — двумя чертами</small></h2>
+    <div class="body">
+      <p class="sent"><span class="num">1.</span>К вечеру подул холодный ветер.</p>
+      <p class="sent"><span class="num">2.</span>Ветер был холодный и резкий.</p>
+      <p class="sent"><span class="num">3.</span>Мы шли по узкой тропинке.</p>
+      <p class="sent"><span class="num">4.</span>Эта дорога длинная.</p>
+      <p class="sent"><span class="num">5.</span>Бабушка испекла вкусные пирожки.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Несклоняемые существительные <small>подбери прилагательное и определи род</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">крепк<span class="gap"></span> кофе<span class="w wide"></span></span><span class="q">нов<span class="gap"></span> метро<span class="w wide"></span></span><span class="q">уютн<span class="gap"></span> кафе<span class="w wide"></span></span></p>
+      <p class="items"><span class="q">модн<span class="gap"></span> пальто<span class="w wide"></span></span><span class="q">весёл<span class="gap"></span> пони<span class="w wide"></span></span><span class="q">больн<span class="gap"></span> мозоль<span class="w wide"></span></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">8</span>Разбери прилагательные <small>На свежем воздухе дети играли в шумные игры.</small></h2>
+    <div class="body">
+      <p style="font-size:12px; color:var(--ink-soft); margin-bottom:2px">Часть речи → начальная форма (ед. ч., м. р., И. п.) → род, число, падеж → роль в предложении.</p>
+      <p><b>(на) свежем</b> — <span class="parse-line"></span><span class="parse-line"></span></p>
+      <p><b>шумные</b> — <span class="parse-line"></span><span class="parse-line"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>выпиши после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:34%">Что было не так</th><th>Правило, которое забыл</th></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Лист отработки, вариант 2 · материал учебника «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §5 — стр. 40–45, §8 — стр. 56–64</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · прилагательное</p>
+    <h1>Отработка 2 — ответы</h1>
+    <p class="subtitle">Лист для мамы. Печатается отдельной страницей.</p>
+
+    <section>
+      <h2><span class="n">1</span>Найди прилагательные</h2>
+      <div class="body">
+        <p><b>А:</b> по тропинке (какой?) узкой · к озеру (какому?) тихому · тучи (какие?) тяжёлые.</p>
+        <p><b>Б:</b> вагон (какой?) <b>третий</b> — это <b>числительное</b> (который по счёту?); сестра (какая?) <b>старшая</b> — прилагательное, а <i>твоя</i> — <b>местоимение</b>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Род, число, падеж</h2>
+      <div class="body">
+        <p>в тёмном лесу — м. р., ед. ч., П. п. · о летней поездке — ж. р., ед. ч., П. п. · со старшим братом — м. р., ед. ч., Т. п. · к дальней деревне — ж. р., ед. ч., Д. п. · у соседнего дома — м. р., ед. ч., Р. п. · про интересные книги — <b>род не определяется</b>, мн. ч., В. п.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Окончания</h2>
+      <div class="body">
+        <p>в соседн<span class="e">ем</span> дворе · о летн<span class="e">ей</span> поездке · с ранн<span class="e">его</span> утра · на дальн<span class="e">ем</span> берегу · тёпл<span class="e">ое</span> море · зимн<span class="e">яя</span> дорога · высок<span class="e">ое</span> дерево · весенн<span class="e">ий</span> день.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>О и е после шипящих</h2>
+      <div class="body">
+        <p>больш<span class="e">о</span>е окно (ударение на окончании) · хорош<span class="e">е</span>е место · свеж<span class="e">е</span>е молоко · чуж<span class="e">о</span>й человек · горяч<span class="e">е</span>е солнце · о больш<span class="e">о</span>м доме · рыж<span class="e">е</span>го кота · колюч<span class="e">е</span>го ежа.</p>
+        <p class="ansbar">Под ударением «о» только там, где голос падает на само окончание: больш<b>о́</b>е, чуж<b>о́</b>й, о больш<b>о́</b>м. Во всех остальных — «е». Это то же правило, что у существительных (свеч<b>о́</b>й — ту́ч<b>е</b>й), плакат 6.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Склонение словосочетания</h2>
+      <div class="body">
+        <p>И. п. летний день · Р. п. летн<span class="e">его</span> дня · Д. п. летн<span class="e">ему</span> дню · В. п. летний день · Т. п. летн<span class="e">им</span> днём · П. п. о летн<span class="e">ем</span> дне.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Роль в предложении</h2>
+      <div class="body">
+        <p class="sent"><span class="num">1.</span><span class="dotdash">К вечеру</span> <span class="u2">подул</span> <span class="wavy">холодный</span> <span class="u1">ветер</span>.</p>
+        <p class="sent"><span class="num">2.</span><span class="u1">Ветер</span> <span class="u2">был холодный</span> и <span class="u2">резкий</span>. <span style="font-size:11.5px; color:var(--ink-soft)">(прилагательные вошли в сказуемое)</span></p>
+        <p class="sent"><span class="num">3.</span><span class="u1">Мы</span> <span class="u2">шли</span> <span class="dotdash">по <span class="wavy">узкой</span> тропинке</span>.</p>
+        <p class="sent"><span class="num">4.</span>Эта <span class="u1">дорога</span> <span class="u2">длинная</span>.</p>
+        <p class="sent"><span class="num">5.</span><span class="u1">Бабушка</span> <span class="u2">испекла</span> <span class="wavy">вкусные</span> <span class="dash">пирожки</span>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Несклоняемые</h2>
+      <div class="body">
+        <p>крепк<span class="e">ий</span> кофе — м. р. · нов<span class="e">ое</span> метро — ср. р. · уютн<span class="e">ое</span> кафе — ср. р. · модн<span class="e">ое</span> пальто — ср. р. · весёл<span class="e">ый</span> пони — м. р. · больн<span class="e">ая</span> мозоль — ж. р.</p>
+        <p class="ansbar">Четыре правила про род несклоняемых — на плакате 8.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>Разбор</h2>
+      <div class="body">
+        <p><b>(на) свежем</b> — прил., признак предмета, на воздухе (каком?) свежем; н. ф. <i>свежий</i>; м. р., ед. ч., П. п.; определение.</p>
+        <p><b>шумные</b> — прил., признак предмета, игры (какие?) шумные; н. ф. <i>шумный</i>; мн. ч., В. п. (род не определяется); определение.</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
