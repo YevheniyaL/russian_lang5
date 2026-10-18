@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · СОЧ за 1 четверть · плакат</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+    --red: #c0463b; --red-soft: #fbe3df;
+    --c1: #2f6fb3; --c1-soft: #e2edf8; --c2: #16866f; --c2-soft: #dcf2ec; --c3: #9a4fb0; --c3-soft: #f1e4f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+      --red: #f08a7e; --red-soft: #3d2420;
+      --c1: #7fb2e8; --c1-soft: #1d2e42; --c2: #4fcbb0; --c2-soft: #1c3630; --c3: #d29be3; --c3-soft: #33223a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    --red: #f08a7e; --red-soft: #3d2420;
+    --c1: #7fb2e8; --c1-soft: #1d2e42; --c2: #4fcbb0; --c2-soft: #1c3630; --c3: #d29be3; --c3-soft: #33223a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.45;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 800px; margin: 0 auto; }
+  .sheet + .sheet { margin-top: 36px; padding-top: 24px; border-top: 2px dashed var(--line); }
+  h1, h2, h3 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 10px; }
+
+  .teacher { border: 2px solid var(--red); border-radius: 10px; padding: 7px 12px; margin: 0 0 12px; background: var(--paper-raised); }
+  .teacher h3 { margin: 0 0 4px; font-size: 13.5px; color: var(--red); font-weight: 900; }
+  .teacher ol { margin: 0; padding-left: 20px; font-size: 12.5px; }
+  .teacher li { margin: 0 0 1px; }
+  .teacher .code { font-family: 'Nunito', sans-serif; font-weight: 800; color: var(--ink-soft); font-size: 11.5px; }
+  .teacher .note { font-size: 11.5px; color: var(--ink-soft); margin: 4px 0 0; }
+
+  section { margin: 0 0 12px; }
+  h2 {
+    font-weight: 800; font-size: 16px; color: var(--accent-deep); margin: 0 0 5px;
+    display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12.5px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  p { margin: 0 0 4px; }
+  .box { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 9px; padding: 6px 10px; break-inside: avoid; page-break-inside: avoid; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 4px 0 0; break-inside: avoid; }
+  .trap { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 4px 0 0; break-inside: avoid; }
+  .trap b:first-child { color: var(--amber-deep); }
+  .q { display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 900; background: var(--accent-soft); color: var(--accent-deep); border-radius: 6px; padding: 0 6px; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .col { border-radius: 9px; padding: 6px 9px; border: 2px solid; break-inside: avoid; page-break-inside: avoid; font-size: 12.5px; }
+  .col h3 { margin: 0 0 2px; font-size: 14.5px; font-weight: 900; }
+  .col .ask { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 15px; margin: 0 0 4px; }
+  .col .chain { display: flex; flex-direction: column; gap: 2px; margin: 0 0 4px; }
+  .col .chain span { background: var(--paper-raised); border-radius: 5px; padding: 1px 6px; font-size: 12px; }
+  .col .chain span + span::before { content: "↓ "; color: var(--ink-soft); }
+  .col .ex { font-style: italic; font-size: 12px; margin: 3px 0 0; }
+  .t1 { border-color: var(--c1); background: var(--c1-soft); } .t1 h3, .t1 .ask { color: var(--c1); }
+  .t2 { border-color: var(--c2); background: var(--c2-soft); } .t2 h3, .t2 .ask { color: var(--c2); }
+  .t3 { border-color: var(--c3); background: var(--c3-soft); } .t3 h3, .t3 .ask { color: var(--c3); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); break-inside: avoid; page-break-inside: avoid; }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.k { font-weight: 700; white-space: nowrap; }
+  .tag { display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px; border-radius: 5px; padding: 0 5px; }
+  .tag.r { background: var(--amber-soft); color: var(--amber-deep); }
+  .tag.k { background: var(--c1-soft); color: var(--c1); }
+
+  .steps { counter-reset: st; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: st; position: relative; padding-left: 25px; margin-bottom: 3px; font-size: 12.5px; }
+  .steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 11.5px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .stress { text-decoration: none; }
+  b.l { color: var(--red); text-decoration: underline; text-underline-offset: 2px; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 8px; }
+
+  @media (max-width: 620px) {
+    .two, .three { grid-template-columns: 1fr; }
+    td.k { white-space: normal; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 9mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .sheet { zoom: 0.8; }
+    .s1 section { margin-bottom: 8px; }
+    .s1 .teacher { margin-bottom: 8px; padding: 5px 10px; }
+    .s1 .teacher ol { columns: 1; }
+    .sheet.s2 { zoom: 0.97; }
+    .sheet + .sheet { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; border-top: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═════════════ ЛИСТ 1 — РАБОТА С ТЕКСТОМ ═════════════ -->
+<div class="sheet s1">
+  <p class="kicker">Русский язык · СОЧ за 1 четверть · главы I–II, §1–11 · лист 1 из 2</p>
+  <h1>Что спросят на СОЧ: текст</h1>
+  <p class="subtitle">📖 — правило учебника · ✏️ — подсказка не из учебника</p>
+
+  <div class="teacher">
+    <h3>📌 Что проверяют на СОЧ (список учителя)</h3>
+    <ol>
+      <li>Найти <b>тему и основную мысль</b> текста, отвечая на вопрос <span class="code">5.1.2.1</span> → блок 1</li>
+      <li>Прочитать текст <b>ознакомительно</b>: быстро понять, о чём он <span class="code">5.2.6.1</span> → блок 2</li>
+      <li>Узнать <b>тип текста</b> (повествование, описание, рассуждение) и <b>стиль</b> (книжный или разговорный) <span class="code">5.2.4.1</span> → блоки 3–4</li>
+      <li>Согласовать прилагательное с существительным: <b>род, число, падеж</b> <span class="code">5.4.3.1</span> → лист 2, блок 5</li>
+      <li>Написать без ошибок: <b>корни, НЕ, окончания</b> <span class="code">5.4.1.1</span> → лист 2, блок 6</li>
+    </ol>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>Тема и основная мысль <small>5.1.2.1 · §1, стр. 5–19</small></h2>
+    <div class="two">
+      <div class="box">
+        <p><span class="q">О чём? О ком?</span> → <b>тема</b></p>
+        <p>📖 Тема — то, о чём (о ком) говорится в тексте. Часто видна в <b>заголовке</b>.</p>
+        <p>✏️ Отвечай <b>коротко, словосочетанием</b>: «о том, как научиться писать».</p>
+      </div>
+      <div class="box">
+        <p><span class="q">Чему учит? К чему призывает?</span> → <b>основная мысль</b></p>
+        <p>📖 Основная мысль — то, к чему призывает текст, чему он учит. Чаще всего её надо сформулировать <b>самому</b>.</p>
+        <p>✏️ Отвечай <b>целым предложением</b>: «Чтобы научиться писать, надо писать».</p>
+      </div>
+    </div>
+    <div class="hint">✏️ <b>Где искать мысль:</b> заголовок → первое предложение → <b>последнее</b> предложение (там часто вывод). Пример: стр. 50, текст Д. С. Лихачёва.</div>
+    <div class="trap"><b>Не путай:</b> тема — это не пересказ. «Мальчик пошёл в лес и увидел лису» — пересказ, тема — «встреча с лисой».</div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Ознакомительное чтение <small>5.2.6.1</small></h2>
+    <div class="box">
+      <p>✏️ <b>Зачем:</b> быстро понять, <b>о чём текст в целом</b>, не запоминая всех подробностей.</p>
+      <ol class="steps">
+        <li>Прочитай <b>заголовок</b>: о чём, скорее всего, будет текст?</li>
+        <li>Прочитай текст <b>один раз целиком</b>, не останавливаясь на незнакомых словах.</li>
+        <li>Ответь себе: <span class="q">О чём текст?</span> и <span class="q">Что в нём главное?</span></li>
+        <li>Главная информация — то, без чего текст теряет смысл. ✏️ Проверка: убери предложение — если смысл не пострадал, это была деталь.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Типы текстов <small>5.2.4.1 · §4, §8, §10</small></h2>
+    <div class="three">
+      <div class="col t1">
+        <h3>Повествование</h3>
+        <p class="ask">что произошло?</p>
+        <p>📖 События и действия <b>по порядку</b>. <small>§4, стр. 33–39</small></p>
+        <div class="chain"><span>завязка</span><span>развитие события</span><span>кульминация</span><span>развязка</span></div>
+        <p>✏️ Много <b>глаголов</b>; слова <i>сначала, потом, вдруг, наконец</i>.</p>
+        <p class="ex">Утром мы вышли из дома. Вдруг начался дождь…</p>
+      </div>
+      <div class="col t2">
+        <h3>Описание</h3>
+        <p class="ask">какой предмет?</p>
+        <p>📖 Описывает предмет, человека, природу. <small>§8, стр. 61</small></p>
+        <div class="chain"><span>общее представление</span><span>описание деталей</span><span>вывод, оценка</span></div>
+        <p>✏️ Много <b>прилагательных</b>; ничего не происходит.</p>
+        <p class="ex">Автобус большой, жёлтый, с широкими окнами…</p>
+      </div>
+      <div class="col t3">
+        <h3>Рассуждение</h3>
+        <p class="ask">почему?</p>
+        <p>📖 Доказывает мысль. <small>§10</small></p>
+        <div class="chain"><span>тезис — что доказываем</span><span>доказательства: <i>потому что…</i></span><span>вывод: <i>поэтому…</i></span></div>
+        <p>✏️ Слова <i>потому что, так как, во-первых, итак</i>.</p>
+        <p class="ex">Велосипед полезен, потому что…</p>
+      </div>
+    </div>
+    <div class="hint">✏️ <b>Как определить:</b> задай тексту три вопроса — на какой он отвечает, такой и тип.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Стили: книжный или разговорный <small>5.2.4.1 · §3, §6, стр. 49</small></h2>
+    <div class="two">
+      <div class="col t1" style="border-color:var(--amber); background:var(--amber-soft)">
+        <h3 style="color:var(--amber-deep)">Разговорный</h3>
+        <p>📖 Стиль <b>устного общения в неофициальной обстановке</b>. Характерны эмоциональность, образность, конкретность, простота; разговорные и просторечные слова; большую роль играют жесты и мимика. <small>стр. 49</small></p>
+        <p class="ex">Мам, привет! Ну ты представляешь, мы сегодня вообще классно сходили!</p>
+      </div>
+      <div class="col t1">
+        <h3>Книжный</h3>
+        <p>✏️ Стиль <b>письменной, официальной</b> речи: полные предложения, точные слова, без «ну», «классно», «мам».</p>
+        <p>📖 Сюда входит <b>художественный стиль</b> — стиль художественной литературы: образность, эмоциональность, выражает мысли и чувства автора. <small>§3</small></p>
+        <p class="ex">Уважаемые пассажиры! С 1 ноября автобус № 12 ходит по новому маршруту.</p>
+      </div>
+    </div>
+    <table style="margin-top:6px">
+      <tr><th>Жанр</th><th>Стиль</th><th>✏️ Почему</th></tr>
+      <tr><td class="k">Письмо другу, дневник</td><td><span class="tag r">разговорный</span></td><td>пишу для себя или близкого, просто и с чувством, как говорю</td></tr>
+      <tr><td class="k">Объявление</td><td><span class="tag k">книжный</span></td><td>для всех, коротко и официально: что, где, когда</td></tr>
+      <tr><td class="k">Рекламный текст</td><td><span class="tag k">книжный</span></td><td>для многих людей, ярко, с призывом; разговорные слова бывают, но как приём</td></tr>
+      <tr><td class="k">Стихотворение, сказка</td><td><span class="tag k">книжный (художественный)</span></td><td>это литература, автор рисует картину словами</td></tr>
+    </table>
+    <div class="trap"><b>Как решать:</b> спроси себя: <b>кому</b> и <b>где</b>? Близкому и неофициально — разговорный. Всем, официально или это литература — книжный.</div>
+  </section>
+
+  <footer>Учебник «Русский язык», 5 класс, часть 1 (Сабитова З. К., Скляренко К. С.), главы I–II · ✏️ — подсказки не из учебника</footer>
+</div>
+
+<!-- ═════════════ ЛИСТ 2 — ГРАММАТИКА И ОРФОГРАФИЯ ═════════════ -->
+<div class="sheet s2">
+  <p class="kicker">Русский язык · СОЧ за 1 четверть · главы I–II, §1–11 · лист 2 из 2</p>
+  <h1>Что спросят на СОЧ: грамотность</h1>
+  <p class="subtitle">📖 — правило учебника · ✏️ — подсказка не из учебника</p>
+
+  <section>
+    <h2><span class="n">5</span>Согласование: прилагательное ← существительное <small>5.4.3.1 · §5, §7, §8</small></h2>
+    <div class="box">
+      <p>📖 Прилагательное <b>согласуется</b> с существительным в <b>роде, числе и падеже</b>: всё это определяем <b>по существительному</b>. <small>§5, стр. 40–45</small></p>
+      <p>✏️ <b>Окончание</b> подскажет вопрос от существительного: <i>транспорта (как<b>ого</b>?) удобн<b>ого</b> · о море (как<b>ом</b>?) больш<b>ом</b> · у дороги (как<b>ой</b>?) широк<b>ой</b></i>.</p>
+    </div>
+    <div class="two" style="margin-top:6px">
+      <div class="trap" style="margin:0"><b>Во множественном числе</b> род не определяется: <i>новые автобусы, новые машины</i>.</div>
+      <div class="trap" style="margin:0"><b>Несклоняемые</b> (§8): род бывает, падеж есть, но слово не меняется. <i>Горяч<b>ий</b> кофе</i> (м. р.) · <i>нов<b>ое</b> метро, тёпл<b>ое</b> пальто</i> (ср. р.) · <i>широк<b>ая</b> авеню</i> (ж. р. — это улица).</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Правописание <small>5.4.1.1 · §1–3, §8–11</small></h2>
+
+    <table>
+      <tr><th style="width:24%">Что</th><th>📖 Правило</th><th style="width:28%">Пример</th></tr>
+      <tr><td class="k">НЕ с существительными<br><small>§8, стр. 62</small></td>
+        <td><b>Слитно:</b> без <i>не</i> не употребляется · можно заменить синонимом без <i>не</i>.<br><b>Раздельно:</b> есть противопоставление с <b>а, но</b>.</td>
+        <td><i>неряха · неприятель = враг</i><br><i>не счастье, а горе</i></td></tr>
+      <tr><td class="k">НЕ с прилагательными<br><small>§9, стр. 67</small></td>
+        <td><b>Слитно:</b> те же два случая.<br><b>Раздельно:</b> противопоставление с <b>а, но</b> · есть слова <b>далеко не, вовсе не, ничуть не, нисколько не</b>.</td>
+        <td><i>ненастный · недобрый = злой</i><br><i>не весёлый, а грустный · вовсе не большой</i></td></tr>
+      <tr><td class="k">Безударная гласная в корне<br><small>§10</small></td>
+        <td>Измени слово или подбери однокоренное, чтобы гласная стала <b>ударной</b>.</td>
+        <td><i>л<b class="l">е</b>са́ — лес</i></td></tr>
+      <tr><td class="k">Парные согласные, непроизносимые<br><small>§10</small></td>
+        <td>Подбери слово, где после согласной стоит <b>гласная</b>.</td>
+        <td><i>зу<b class="l">б</b> — зубы · се<b class="l">р</b>дце — серде́чный · звё<b class="l">з</b>дный — звезда́</i></td></tr>
+    </table>
+
+    <p style="margin:7px 0 3px"><b>📖 Чередующиеся гласные</b> <small style="color:var(--ink-soft)">§9–11, стр. 69–70, 75, 82, 87–89</small> — ✏️ проверочное слово <b>не работает</b>, смотри на условие:</p>
+    <div class="three">
+      <div class="col t1">
+        <h3>① ударение</h3>
+        <p>-гар-/-гор-: под ударением <b>а</b>, без — <b>о</b><br><i>зага́р — загоре́ть</i></p>
+        <p>-зар-/-зор-: под ударением <b>о</b>, без — <b>а</b><br><i>зо́рька — заря́</i></p>
+        <p>-клан-/-клон-: без ударения только <b>о</b><br><i>покло́н — склоня́ть</i></p>
+      </div>
+      <div class="col t2">
+        <h3>② буква после корня</h3>
+        <p>-лаг-/-лож-: перед <b>г</b> — <b>а</b>, перед <b>ж</b> — <b>о</b><br><i>предлагать — предложить</i></p>
+        <p>-раст-/-ращ-/-рос-: перед <b>ст, щ</b> — <b>а</b>, иначе <b>о</b><br><i>расти, выращивать — вырос</i></p>
+        <p style="font-size:11.5px">исключения: <i>росток, отрасль, на вырост</i></p>
+      </div>
+      <div class="col t3">
+        <h3>③ суффикс -а-</h3>
+        <p>-кас-/-кос-: есть <b>-а-</b> → <b>а</b>, нет → <b>о</b><br><i>касаться — коснуться</i></p>
+        <p>-бер-/-бир-, -мер-/-мир-, -тер-/-тир-, -пер-/-пир-, -дер-/-дир-, -блест-/-блист-, -стел-/-стил-: есть <b>-а-</b> → <b>и</b>, нет → <b>е</b><br><i>собирать — соберу</i></p>
+      </div>
+    </div>
+
+    <table style="margin-top:7px">
+      <tr><th style="width:24%">Окончания</th><th>📖 Правило</th><th style="width:28%">Пример</th></tr>
+      <tr><td class="k">е / и у существительных<br><small>§3</small></td>
+        <td>1-е скл.: Д. и П. п. <b>-е</b> · 2-е скл.: П. п. <b>-е</b> · 3-е скл.: Р., Д., П. п. <b>-и</b>. На <b>-ия, -ий, -ие</b> — везде <b>-и</b>.<br>✏️ Слова-помощники: <i>земля́, конь, степь</i>.</td>
+        <td><i>к земл<b>е</b> — к станци<b>и</b><br>в санатори<b>и</b>, о здани<b>и</b></i></td></tr>
+      <tr><td class="k">о / е после ж, ш, ч, щ, ц<br><small>§3, §5</small></td>
+        <td>Под ударением <b>о</b>, без ударения <b>е</b> — и у существительных, и у прилагательных.</td>
+        <td><i>плащ<b>о́</b>м — ме́сяц<b>е</b>м<br>больш<b>о́</b>е — хоро́ш<b>е</b>е</i></td></tr>
+      <tr><td class="k">Прилагательные</td>
+        <td>✏️ По вопросу от существительного (см. блок 5).</td>
+        <td><i>(о каком?) о зимн<b>ем</b> вечере</i></td></tr>
+    </table>
+
+    <div class="trap"><b>Ещё не проходили:</b> в списке цели есть «НЕ с отрицательными местоимениями и глаголами» — это §35–36 во второй части. ✏️ На всякий случай: <b>не с глаголами пишется раздельно</b> (<i>не знаю, не успел</i>), кроме слов, которых без <i>не</i> нет (<i>ненавидеть, негодовать</i>).</div>
+  </section>
+
+  <footer>Учебник «Русский язык», 5 класс, часть 1 (Сабитова З. К., Скляренко К. С.), §1–11 · ✏️ — подсказки не из учебника</footer>
+</div>
+
+</div>
+</body>
+</html>
