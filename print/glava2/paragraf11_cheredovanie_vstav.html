@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · §9–11 · вставь букву: чередование в корне</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+    --violet: #6a4fb3; --violet-soft: #efeafb; --red: #c0463b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+      --violet: #a993e8; --violet-soft: #2a2440; --red: #f08a7f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    --violet: #a993e8; --violet-soft: #2a2440; --red: #f08a7f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5; padding: 28px 16px 48px; }
+  .page { max-width: 780px; margin: 0 auto; }
+  .kicker { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px; }
+  h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 26px; text-align: center; margin: 0 0 6px; line-height: 1.1; text-wrap: balance; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 9px; }
+
+  .how { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 7px 12px; margin: 0 0 11px; font-size: 13px; }
+  .how b { font-family: 'Nunito', sans-serif; color: var(--accent-deep); }
+  .how .m { display: inline-block; margin-right: 14px; }
+
+  section { margin: 0 0 11px; break-inside: avoid; page-break-inside: avoid; }
+  h2 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 3px; display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; break-after: avoid; }
+  h2 .n { flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center; }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .s2 h2 { color: var(--amber-deep); } .s2 h2 .n { background: var(--amber); }
+  .s3 h2 { color: var(--violet); } .s3 h2 .n { background: var(--violet); }
+  .task { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 2px 28px; }
+  .items { padding-left: 28px; font-size: 16px; line-height: 2.35; }
+  .items .q { white-space: nowrap; margin-right: 20px; }
+  .gap { display: inline-block; width: 1.15em; height: 1.1em; border-bottom: 1.5px solid var(--ink); margin: 0 1px; vertical-align: -0.2em; }
+  .sent { padding-left: 28px; font-size: 15px; line-height: 2.2; display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }
+  .sent span.why { white-space: nowrap; color: var(--ink-soft); font-size: 13px; margin-left: 6px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 4px; }
+
+  .ans h1 { font-size: 21px; }
+  .ans section { break-inside: auto; page-break-inside: auto; margin-bottom: 8px; }
+  .ans .body { padding-left: 28px; font-size: 12.5px; line-height: 1.5; }
+  .ans .body p { margin: 0 0 3px; }
+  .ans .typ { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 3px 9px; margin: 3px 0 0; font-size: 12px; }
+  .suf { position: relative; display: inline-block; }
+  .suf::before { content: ""; position: absolute; left: 50%; transform: translateX(-50%); top: -0.3em; width: 0.8em; height: 0.4em; background: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%276%27 viewBox=%270 0 12 6%27%3E%3Cpolyline points=%271,5.5 6,1 11,5.5%27 fill=%27none%27 stroke=%27%2323342f%27 stroke-width=%271.6%27/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 8px; }
+
+  @media (max-width: 620px) { .items, .sent, .task, .ans .body { padding-left: 0; margin-left: 0; } .sent { grid-template-columns: 1fr; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · глава II · §9, §10, §11 · чередование в корне</p>
+  <h1>Вставь букву — покажи, почему</h1>
+  <div class="namebar"><span>Дата: ____________</span><span>Ошибок: ______</span></div>
+
+  <div class="how"><b>Как показать «почему»</b> (так, как в учебнике):<br>
+    <span class="m">① поставь <b>ударение</b> ´</span>
+    <span class="m">② <b>подчеркни</b> согласную: г / ж, ст / щ</span>
+    <span class="m">③ отметь суффикс <b>-а-</b> знаком ^ или напиши «нет а»</span>
+    <span class="m">исключение — допиши <b>«искл.»</b></span>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span> Смотрю на ударение <small>гар/гор · зар/зор · клан/клон · §9</small></h2>
+    <p class="task">Поставь ударение, потом вставь букву.</p>
+    <div class="items">
+      <span class="q">заг<span class="gap"></span>рать</span>
+      <span class="q">заг<span class="gap"></span>р</span>
+      <span class="q">ог<span class="gap"></span>рок</span>
+      <span class="q">пог<span class="gap"></span>релец</span>
+      <span class="q">з<span class="gap"></span>рька</span>
+      <span class="q">з<span class="gap"></span>ря</span><br>
+      <span class="q">оз<span class="gap"></span>рение</span>
+      <span class="q">з<span class="gap"></span>рница</span>
+      <span class="q">скл<span class="gap"></span>ниться</span>
+      <span class="q">покл<span class="gap"></span>н</span>
+      <span class="q">кл<span class="gap"></span>няться</span>
+      <span class="q">накл<span class="gap"></span>нить</span>
+    </div>
+  </section>
+
+  <section class="s2">
+    <h2><span class="n">2</span> Смотрю на букву в корне <small>лаг/лож · раст/ращ/рос · §10</small></h2>
+    <p class="task">Вставь букву и подчеркни согласную, которая решила. Найди три исключения.</p>
+    <div class="items">
+      <span class="q">предл<span class="gap"></span>гать</span>
+      <span class="q">прил<span class="gap"></span>жение</span>
+      <span class="q">сл<span class="gap"></span>гаемое</span>
+      <span class="q">ул<span class="gap"></span>жить</span>
+      <span class="q">изл<span class="gap"></span>жение</span>
+      <span class="q">пол<span class="gap"></span>гаться</span><br>
+      <span class="q">р<span class="gap"></span>стение</span>
+      <span class="q">выр<span class="gap"></span>щивать</span>
+      <span class="q">выр<span class="gap"></span>сли</span>
+      <span class="q">зар<span class="gap"></span>сли</span>
+      <span class="q">подр<span class="gap"></span>стать</span><br>
+      <span class="q">р<span class="gap"></span>сток</span>
+      <span class="q">отр<span class="gap"></span>сль</span>
+      <span class="q">пальто на выр<span class="gap"></span>ст</span>
+    </div>
+  </section>
+
+  <section class="s3">
+    <h2><span class="n">3</span> Смотрю на суффикс -а- <small>кас/кос · бер/бир, мер/мир, тер/тир, блест/блист, стел/стил · §11</small></h2>
+    <p class="task">Посмотри на букву сразу за корнем: отметь ^ суффикс -а- или напиши «нет а». Потом вставь букву.</p>
+    <div class="items">
+      <span class="q">к<span class="gap"></span>снуться</span>
+      <span class="q">прик<span class="gap"></span>саться</span>
+      <span class="q">к<span class="gap"></span>сание</span>
+      <span class="q">прик<span class="gap"></span>сновение</span>
+      <span class="q">соб<span class="gap"></span>раю</span>
+      <span class="q">соб<span class="gap"></span>ру</span>
+      <span class="q">зам<span class="gap"></span>рать</span><br>
+      <span class="q">зам<span class="gap"></span>р</span>
+      <span class="q">бл<span class="gap"></span>стать</span>
+      <span class="q">бл<span class="gap"></span>стеть</span>
+      <span class="q">бл<span class="gap"></span>стящий</span>
+      <span class="q">ст<span class="gap"></span>рать</span>
+      <span class="q">выт<span class="gap"></span>реть</span>
+      <span class="q">расст<span class="gap"></span>лать</span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span> Вперемешку <small>§9–11</small></h2>
+    <p class="task">Вставь букву, покажи «почему» и обведи номер правила: ① ударение · ② буква в корне · ③ суффикс -а-.</p>
+    <div class="sent">
+      <div><span class="num">1)</span>Солнце оз<span class="gap"></span>ряет горы. <span class="why">① ② ③</span></div>
+      <div><span class="num">2)</span>Мы заг<span class="gap"></span>рели на море. <span class="why">① ② ③</span></div>
+      <div><span class="num">3)</span>Нужно сл<span class="gap"></span>жить числа. <span class="why">① ② ③</span></div>
+      <div><span class="num">4)</span>Щенок р<span class="gap"></span>с за лето. <span class="why">① ② ③</span></div>
+      <div><span class="num">5)</span>Не к<span class="gap"></span>сайся плиты! <span class="why">① ② ③</span></div>
+      <div><span class="num">6)</span>На небе бл<span class="gap"></span>стят звёзды. <span class="why">① ② ③</span></div>
+      <div><span class="num">7)</span>Дежурный выт<span class="gap"></span>рает доску. <span class="why">① ② ③</span></div>
+      <div><span class="num">8)</span>Берёза накл<span class="gap"></span>нилась. <span class="why">① ② ③</span></div>
+      <div><span class="num">9)</span>Бабушка выр<span class="gap"></span>стила розы. <span class="why">① ② ③</span></div>
+      <div><span class="num">10)</span>В саду взошли р<span class="gap"></span>стки. <span class="why">① ② ③</span></div>
+    </div>
+  </section>
+
+  <!-- ===== Ответы ===== -->
+  <div class="ans">
+    <p class="kicker">Для мамы · ответы · §9–11</p>
+    <h1>Ответы и где ошибаются чаще всего</h1>
+
+    <section>
+      <h2><span class="n">1</span> Ударение</h2>
+      <div class="body">
+        <p>загорáть — <b>о</b> · загáр — <b>а</b> · огáрок — <b>а</b> · погорéлец — <b>о</b> · зóрька — <b>о</b> · з<b>а</b>ря́ — <b>а</b></p>
+        <p>озарéние — <b>а</b> · зарни́ца — <b>а</b> · склони́ться — <b>о</b> · поклóн — <b>о</b> · клáняться — <b>а</b> · наклони́ть — <b>о</b></p>
+        <p class="typ">⚠ <b>Типичная ошибка:</b> «загАрать — потому что загар». Это проверка проверочным словом, при чередовании она не работает. Спросите: «Куда падает ударение? Ударный ли корень?»<br>⚠ <b>зарница, озарение</b> — ребёнок путает с гор: у <b>зар</b> без ударения пишется <b>а</b>, у гор — наоборот, <b>о</b>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span> Буква в корне</h2>
+      <div class="body">
+        <p>предл<b>а</b><u>г</u>ать · прил<b>о</b><u>ж</u>ение · сл<b>а</b><u>г</u>аемое · ул<b>о</b><u>ж</u>ить · изл<b>о</b><u>ж</u>ение · пол<b>а</b><u>г</u>аться</p>
+        <p>р<b>а</b><u>ст</u>ение · выр<b>а</b><u>щ</u>ивать · выр<b>о</b>сли (после «рос» — <b>л</b>) · зар<b>о</b>сли (<b>л</b>) · подр<b>а</b><u>ст</u>ать</p>
+        <p><b>Исключения</b> (📖 стр. 82): р<b>о</b>сток · отр<b>о</b>сль · на выр<b>о</b>ст — здесь <b>о</b>, хотя дальше <b>ст</b>.</p>
+        <p class="typ">⚠ <b>выросли / заросли:</b> ребёнок видит «с» и думает, что это «ст». Пусть подчеркнёт букву после «с»: там <b>л</b>, значит <b>о</b>.<br>⚠ Если написал «ростОк» через а по правилу — правило он применил верно, просто не вспомнил исключение. Отметьте отдельно: «правило знаешь, исключение выучи».</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span> Суффикс -а-</h2>
+      <div class="body">
+        <p>к<b>о</b>снуться (нет а) · прик<b>а</b>с<span class="suf">а</span>ться · к<b>а</b>с<span class="suf">а</span>ние · прик<b>о</b>сновение (нет а)</p>
+        <p>соб<b>и</b>р<span class="suf">а</span>ю · соб<b>е</b>ру (нет а) · зам<b>и</b>р<span class="suf">а</span>ть · зам<b>е</b>р (нет а) · бл<b>и</b>ст<span class="suf">а</span>ть · бл<b>е</b>стеть (нет а)</p>
+        <p>бл<b>е</b>стящий (за корнем <b>я</b>, не а) · ст<b>и</b>р<span class="suf">а</span>ть · выт<b>е</b>реть (нет а) · расст<b>и</b>л<span class="suf">а</span>ть</p>
+        <p class="typ">⚠ <b>блестящий</b> — главная ловушка: «я» звучит похоже на «а». Смотрим именно на букву: я ≠ а → <b>е</b>.<br>⚠ <b>касание</b> — суффикс -а- есть (кас-<b>а</b>-ние), хотя слово не глагол → <b>а</b>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span> Вперемешку</h2>
+      <div class="body">
+        <p>1) оз<b>а</b>ряет — ① (зар без ударения → а) · 2) заг<b>о</b>рели — ① (гор без ударения → о) · 3) сл<b>о</b>жить — ② (перед ж → о)</p>
+        <p>4) р<b>о</b>с — ② (нет ст/щ → о) · 5) к<b>а</b>сайся — ③ (есть -а-) · 6) бл<b>е</b>стят — ③ (за корнем я, не а)</p>
+        <p>7) выт<b>и</b>рает — ③ (есть -а-) · 8) накл<b>о</b>нилась — ① (клон без ударения → о) · 9) выр<b>а</b>стила — ② (перед ст → а) · 10) р<b>о</b>стки — ② <b>исключение</b> (как росток)</p>
+        <p class="typ">⚠ Если номер правила выбран неверно, а буква верная, значит угадал. Попросите найти корень и назвать его группу по плакату.</p>
+      </div>
+    </section>
+
+    <footer>Сабитова З.К., Скляренко К.С. «Русский язык», 5 класс, ч. 1 · §9 (стр. 69–70), §10 (стр. 75, 82), §11 (стр. 87–89) · слова для отработки подобраны ✏️, правила и исключения 📖</footer>
+  </div>
+</div>
+</body>
+</html>
