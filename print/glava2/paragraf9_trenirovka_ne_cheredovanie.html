@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · §8–9 · тренировка: чередование и НЕ</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.92; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .steps { counter-reset: st; list-style: none; margin: 0; padding: 0; }
+  .steps li { counter-increment: st; position: relative; padding-left: 26px; margin-bottom: 4px; font-size: 13px; }
+  .steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 1px; width: 19px; height: 19px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pair { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; margin: 0 0 6px; }
+  .pair p { margin: 0 0 2px; font-size: 14px; line-height: 2.1; }
+  .pair p:last-child { margin-bottom: 0; }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .memo ul { margin: 0 0 4px; padding-left: 18px; font-size: 12.5px; }
+  .memo ul li { margin-bottom: 1px; }
+  .memo .why { margin-top: 5px; padding-top: 4px; border-top: 1px dashed var(--line); font-size: 12.5px; }
+  .mk { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 10.5px; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-left: 4px; white-space: nowrap; }
+  td.w1 { width: 46%; font-size: 14px; }
+  td.n { width: 26px; color: var(--ink-soft); text-align: center; }
+  td.big { height: 2.1em; font-size: 14px; }
+  .chw { font-size: 15px; letter-spacing: .02em; }
+  @media print { .page { zoom: 0.82; } section { margin-bottom: 9px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · глава II, §8–9 · стр. 62, 67, 69–70</p>
+  <h1>Тренировка: чередование и НЕ</h1>
+  <p class="subtitle">Сначала разминка на корни гар/гор, зар/зор, клан/клон, потом НЕ с существительными и прилагательными</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Ошибок: ______</span></div>
+
+  <div class="memo">
+    <h3>Чередование <span class="mk">§9 · стр. 69–70</span></h3>
+    <ul>
+      <li><b>-гар- / -гор-:</b> под ударением <b>а</b>, без ударения <b>о</b>. <i>зага́р — загоре́ть</i></li>
+      <li><b>-зар- / -зор-:</b> наоборот: под ударением <b>о</b>, без ударения <b>а</b>. <i>зо́рька — заря́</i></li>
+      <li><b>-клан- / -клон-:</b> без ударения всегда <b>о</b>. <i>поклони́ться</i></li>
+      <li><b>Проверочное слово здесь не работает.</b> Сначала проверь смысл: корень значит «гореть», «свет зари», «наклон»? Если нет (<i>гора, горе</i>), это обычный корень, и его проверяют проверочным словом.</li>
+    </ul>
+    <h3>НЕ с существительными и прилагательными <span class="mk">§8 · стр. 62</span> <span class="mk">§9 · стр. 67</span></h3>
+    <ul>
+      <li><b>Шаг 1. Есть противопоставление с «а», «но»?</b> → <b>раздельно</b>. <i>Это не правда, а ложь. Не весёлый, а грустный.</i></li>
+      <li><b>Шаг 2 (только у прилагательных). Есть слова далеко не, вовсе не, ничуть не, нисколько не?</b> → <b>раздельно</b>. <i>Вовсе не строгий.</i></li>
+      <li><b>Шаг 3. Без «не» слово не употребляется?</b> → <b>слитно</b>. <i>неряха, ненастный</i></li>
+      <li><b>Шаг 4. Можно заменить синонимом без «не»?</b> → <b>слитно</b>. <i>неправда = ложь, недобрый = злой</i></li>
+    </ul>
+    <p class="why"><b>В каждом задании пиши, почему ты так решил.</b> Можно коротко: <b>«уд. → а»</b>, <b>«без уд. → о»</b>, <b>«проверка: го́ры»</b>; <b>«а/но»</b>, <b>«сигнал: вовсе не»</b>, <b>«без не нет»</b>, <b>«синоним: …»</b>. Ответ без «почему» не засчитывается.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span>Разминка: вставь букву и докажи <small>§9 · стр. 69–70 · поставь ударение в слове</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Слово</th><th>Почему</th></tr>
+        <tr><td class="n">1</td><td class="w1 chw">заг<span class="gap"></span>рать на пляже</td><td class="big"></td></tr>
+        <tr><td class="n">2</td><td class="w1 chw">ог<span class="gap"></span>рок свечи</td><td class="big"></td></tr>
+        <tr><td class="n">3</td><td class="w1 chw">пог<span class="gap"></span>релец</td><td class="big"></td></tr>
+        <tr><td class="n">4</td><td class="w1 chw">з<span class="gap"></span>рянка (птица)</td><td class="big"></td></tr>
+        <tr><td class="n">5</td><td class="w1 chw">алые з<span class="gap"></span>ри</td><td class="big"></td></tr>
+        <tr><td class="n">6</td><td class="w1 chw">солнце оз<span class="gap"></span>ряло лес</td><td class="big"></td></tr>
+        <tr><td class="n">7</td><td class="w1 chw">кл<span class="gap"></span>нялся зрителям</td><td class="big"></td></tr>
+        <tr><td class="n">8</td><td class="w1 chw">откл<span class="gap"></span>нение от курса</td><td class="big"></td></tr>
+        <tr><td class="n">9</td><td class="w1 chw">земные покл<span class="gap"></span>ны</td><td class="big"></td></tr>
+        <tr><td class="n">10</td><td class="w1 chw">г<span class="gap"></span>ристая местность</td><td class="big"></td></tr>
+        <tr><td class="n">11</td><td class="w1 chw">разг<span class="gap"></span>раться (о костре)</td><td class="big"></td></tr>
+        <tr><td class="n">12</td><td class="w1 chw">г<span class="gap"></span>ревать о потере</td><td class="big"></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>НЕ с существительными: одно слово — два написания <small>§8 · стр. 62</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Предложение</th><th style="width:22%">Как пишется</th><th style="width:26%">Почему</th></tr>
+        <tr><td class="n">1</td><td>В комнате был (не)порядок.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">2</td><td>Это (не)порядок, а настоящий хаос.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">3</td><td>Из-за (не)погоды отменили поход.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">4</td><td>Это была (не)погода, а настоящая буря.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">5</td><td>Он посмотрел на меня с (не)доверием.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">6</td><td>Мной движет (не)доверие, а осторожность.</td><td class="big"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>НЕ с существительными: вперемешку <small>§8 · стр. 62</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Предложение</th><th style="width:22%">Как пишется</th><th style="width:26%">Почему</th></tr>
+        <tr><td class="n">1</td><td>Бабушка почувствовала (не)домогание.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">2</td><td>Это был (не)дождь, а мокрый снег.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">3</td><td>Учитель заметил нашу (не)брежность.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">4</td><td>(Не)смелость помешала ему ответить.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">5</td><td>Ему нужна была (не)жалость, а поддержка.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">6</td><td>Малыш играл с (не)валяшкой.</td><td class="big"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>НЕ с прилагательными: найди слово-сигнал <small>§9 · стр. 67 · подчеркни сигнал, если он есть</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Предложение</th><th style="width:22%">Как пишется</th><th style="width:26%">Почему</th></tr>
+        <tr><td class="n">1</td><td>Задача оказалась вовсе (не)сложной.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">2</td><td>Нам дали (не)сложную задачу.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">3</td><td>Вода в реке ничуть (не)холодная.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">4</td><td>Это была далеко (не)новая книга.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">5</td><td>Брат у меня нисколько (не)обидчивый.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">6</td><td>На полке стояла (не)новая, потрёпанная книга.</td><td class="big"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>НЕ с прилагательными: одно слово — три предложения <small>§9 · стр. 67</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Предложение</th><th style="width:22%">Как пишется</th><th style="width:26%">Почему</th></tr>
+        <tr><td class="n">1</td><td>У дома рос (не)высокий клён.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">2</td><td>Клён был (не)высокий, а совсем низкий.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">3</td><td>Клён оказался вовсе (не)высокий.</td><td class="big"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>НЕ с прилагательными: вперемешку <small>§9 · стр. 67</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Предложение</th><th style="width:22%">Как пишется</th><th style="width:26%">Почему</th></tr>
+        <tr><td class="n">1</td><td>По лесу бродил (не)уклюжий медвежонок.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">2</td><td>Вечер был (не)весёлый, а грустный.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">3</td><td>Он дал (не)вежливый ответ.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">4</td><td>Фильм ничуть (не)интересный.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">5</td><td>Из кухни шёл (не)приятный запах.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">6</td><td>На ней был (не)лепый наряд.</td><td class="big"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Всё вместе: существительные и прилагательные <small>§8–9 · напиши ещё и часть речи: сущ. или прил.</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:26px">№</th><th>Предложение</th><th style="width:22%">Как пишется, ч. р.</th><th style="width:26%">Почему</th></tr>
+        <tr><td class="n">1</td><td>(Не)настный день сменился солнечным.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">2</td><td>Это была (не)правда, а выдумка.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">3</td><td>Котёнок вовсе (не)пугливый.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">4</td><td>Ученик ответил с (не)уверенностью.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">5</td><td>Нас окружал (не)знакомый лес.</td><td class="big"></td><td></td></tr>
+        <tr><td class="n">6</td><td>Был (не)жаркий, а прохладный день.</td><td class="big"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>Мои ошибки <small>выпиши после проверки</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th style="width:40%">Слово или предложение</th><th>Какое правило / какой шаг пропустил</th></tr>
+        <tr><td class="fill"></td><td></td></tr>
+        <tr><td class="fill"></td><td></td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <footer>✏️ Тренировочный лист: слова и предложения мои · правила — учебник «Русский язык», 5 класс (Сабитова З.К., Скляренко К.С.), §8 стр. 62, §9 стр. 67 и 69–70</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · §8–9 · тренировка: чередование и НЕ</p>
+    <h1>Ответы для мамы</h1>
+    <p class="subtitle">Засчитывать ответ только вместе с «почему»: если буква верная, а объяснения нет, просите объяснить вслух</p>
+
+    <section>
+      <h2><span class="n">1</span>Чередование</h2>
+      <div class="body">
+        <p>1. заг<b>о</b>ра́ть: без уд. → о · 2. ога́рок: <b>а</b>, уд. → а · 3. пог<b>о</b>ре́лец: без уд. → о · 4. з<b>а</b>ря́нка: без уд. → а · 5. зо́ри: <b>о</b>, уд. → о · 6. оз<b>а</b>ря́ло: без уд. → а · 7. кла́нялся: <b>а</b>, под ударением пишем как слышим · 8. откл<b>о</b>не́ние: без уд. → о · 9. покло́ны: <b>о</b>, под ударением пишем как слышим · 10. г<b>о</b>ри́стая: <b>не чередование</b> (корень «гора»), проверка: го́ры · 11. разг<b>о</b>ра́ться: без уд. → о · 12. г<b>о</b>рева́ть: <b>не чередование</b> (корень «горе»), проверка: го́ре.</p>
+        <p class="ansbar"><b>Где обычно ошибаются.</b> 2 и 5: ребёнок по привычке пишет «о» в <i>огарок</i> и «а» в <i>зори</i>, а ударение тут падает на корень. Пусть произнесёт слово вслух. 10 и 12 — ловушки. Если ответ «без уд. → о», буква случайно верная, но рассуждение неверное: надо было заметить, что корень не значит «гореть», и подобрать проверочное слово.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>НЕ с существительными: пары</h2>
+      <div class="body">
+        <p>1. <b>непорядок</b>: синоним «беспорядок» · 2. <b>не порядок</b>, а хаос: «а» · 3. <b>непогоды</b>: синоним «ненастья», «плохой погоды» · 4. <b>не погода</b>, а буря: «а» · 5. <b>недоверием</b>: синоним «подозрением» · 6. <b>не доверие</b>, а осторожность: «а».</p>
+        <p class="ansbar">Если в паре оба раза написано одинаково, ребёнок снова решает по слову, а не по предложению. Спросите: «Что ты сделал первым делом — посмотрел на слово или поискал “а”?»</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>НЕ с существительными: вперемешку</h2>
+      <div class="body">
+        <p>1. <b>недомогание</b>: без «не» нет · 2. <b>не дождь</b>, а снег: «а» · 3. <b>небрежность</b>: без «не» нет · 4. <b>Несмелость</b>: синоним «робость» · 5. <b>не жалость</b>, а поддержка: «а» · 6. <b>неваляшкой</b>: без «не» нет.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Слова-сигналы</h2>
+      <div class="body">
+        <p>1. вовсе <b>не сложной</b>: сигнал · 2. <b>несложную</b>: синоним «лёгкую» · 3. ничуть <b>не холодная</b>: сигнал · 4. далеко <b>не новая</b>: сигнал · 5. нисколько <b>не обидчивый</b>: сигнал · 6. <b>неновая</b>: синоним «старая»; запятая между прилагательными — не противопоставление.</p>
+        <p class="ansbar">2 и 6 — контрольные: те же слова, что и в 1 и 4, но без сигнала. Если ребёнок и там пишет раздельно, значит, он запомнил слово, а не правило.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Одно слово — три предложения</h2>
+      <div class="body">
+        <p>1. <b>невысокий</b>: синоним «низкий» · 2. <b>не высокий</b>, а низкий: «а» · 3. вовсе <b>не высокий</b>: сигнал.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Прилагательные вперемешку</h2>
+      <div class="body">
+        <p>1. <b>неуклюжий</b>: без «не» нет · 2. <b>не весёлый</b>, а грустный: «а» · 3. <b>невежливый</b>: синоним «грубый» · 4. ничуть <b>не интересный</b>: сигнал · 5. <b>неприятный</b>: синоним «противный» · 6. <b>нелепый</b>: без «не» нет.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span>Всё вместе</h2>
+      <div class="body">
+        <p>1. <b>Ненастный</b>, прил.: без «не» нет · 2. <b>не правда</b>, сущ.: «а» · 3. вовсе <b>не пугливый</b>, прил.: сигнал · 4. <b>неуверенностью</b>, сущ.: синоним «сомнением» · 5. <b>незнакомый</b>, прил.: синоним «чужой» · 6. <b>не жаркий</b>, прил.: «а».</p>
+        <p class="ansbar">Шаг 2 (слова-сигналы) есть только у прилагательных. Если ребёнок в предложении 4 ищет сигнал, это не ошибка, но можно напомнить: у существительных шагов три.</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
