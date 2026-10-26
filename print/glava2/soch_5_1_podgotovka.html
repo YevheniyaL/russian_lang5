@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский · СОЧ за 1 четверть · короткая подготовка</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>✒️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf8f0; --paper-raised: #ffffff; --ink: #23342f; --ink-soft: #56655f;
+    --accent: #16866f; --accent-deep: #0d5c4c; --accent-soft: #d7f0e9; --accent-soft2: #eef8f5;
+    --amber: #c9860f; --amber-deep: #8a5c07; --amber-soft: #fbe9c8; --line: #cfe3dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+      --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+      --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #142320; --paper-raised: #1b2f2a; --ink: #eaf3ef; --ink-soft: #a9c2ba;
+    --accent: #4fcbb0; --accent-deep: #7fe0c9; --accent-soft: #22423a; --accent-soft2: #1c3630;
+    --amber: #e8b34d; --amber-deep: #f0c777; --amber-soft: #3a2f16; --line: #2c4a42;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'PT Sans', Arial, sans-serif; font-size: 13.5px; line-height: 1.5;
+    padding: 28px 16px 48px;
+  }
+  .page { max-width: 780px; margin: 0 auto; }
+  h1, h2 { font-family: 'Nunito', 'Arial Rounded MT Bold', sans-serif; text-wrap: balance; }
+  .kicker {
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); text-align: center; margin: 0 0 3px;
+  }
+  h1 { font-weight: 900; font-size: 27px; text-align: center; margin: 0 0 3px; line-height: 1.1; }
+  .subtitle { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin: 0 0 8px; }
+  .namebar { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 5px; margin: 0 0 10px; }
+
+  section { margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid; }
+  h2 {
+    font-weight: 800; font-size: 15px; color: var(--accent-deep); margin: 0 0 4px;
+    display: flex; align-items: baseline; gap: 7px; break-after: avoid; page-break-after: avoid;
+  }
+  h2 .n {
+    flex: none; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 12px; align-self: center;
+  }
+  h2 small { font-family: 'PT Sans', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); }
+  .body { padding-left: 28px; }
+  p { margin: 0 0 4px; }
+  .items { line-height: 2.2; }
+  .items span.q { white-space: nowrap; margin-right: 15px; }
+  .w { display: inline-block; width: 2.1em; border-bottom: 1.4px solid var(--ink); margin-left: 3px; }
+  .w.wide { width: 4.6em; }
+  .gap { display: inline-block; width: 1.25em; height: 1.1em; border-bottom: 1.4px solid var(--ink); margin: 0 1px; vertical-align: -0.18em; }
+  .hint { background: var(--accent-soft2); border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; padding: 4px 9px; font-size: 12px; margin: 3px 0 5px; }
+  .hint b { color: var(--accent-deep); font-family: 'Nunito', sans-serif; }
+  .ansbar { background: var(--amber-soft); border-left: 3px solid var(--amber); border-radius: 0 7px 7px 0; padding: 5px 10px; font-size: 12px; margin: 3px 0 6px; }
+
+  .start { background: var(--amber-soft); border: 2px solid var(--amber); border-radius: 10px; padding: 7px 12px; font-size: 12.5px; margin: 0 0 10px; }
+  .start b { font-family: 'Nunito', sans-serif; color: var(--amber-deep); }
+  .memo { background: var(--paper-raised); border: 2px solid var(--accent); border-radius: 10px; padding: 8px 13px; margin: 0 0 12px; break-inside: avoid; }
+  .memo h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13.5px; color: var(--accent-deep); margin: 0 0 3px; }
+  .memo p { margin: 0 0 3px; font-size: 12.5px; }
+
+  .tbl-wrap { margin: 0 0 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; background: var(--paper-raised); }
+  th, td { border: 1px solid var(--line); padding: 3px 7px; text-align: left; }
+  th { background: var(--accent-soft); color: var(--accent-deep); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; }
+  td.fill { height: 1.9em; }
+  .e { color: #c0463b; font-weight: 700; }
+
+  .sent { font-size: 14px; line-height: 2.4; margin: 0 0 3px; }
+  .sent .num { color: var(--ink-soft); font-size: 12px; margin-right: 5px; }
+
+  .ans h1 { font-size: 21px; margin-bottom: 1px; }
+  .ans .subtitle { font-size: 11px; margin-bottom: 5px; }
+  .ans .kicker { font-size: 10.5px; }
+  .ans h2 { font-size: 12.5px; margin: 0 0 1px; gap: 6px; }
+  .ans h2 .n { width: 17px; height: 17px; font-size: 10.5px; }
+  .ans .body { font-size: 11.5px; line-height: 1.45; padding-left: 23px; }
+  .ans .body p { margin: 0 0 2px; }
+  .ans section { margin: 0 0 6px; break-inside: auto; page-break-inside: auto; }
+  footer { text-align: center; font-size: 11px; color: var(--ink-soft); margin-top: 10px; }
+
+  @media (max-width: 620px) { .body { padding-left: 0; } }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff !important; padding: 0 !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    .page { zoom: 0.85; box-shadow: none !important; }
+    .page * { box-shadow: none !important; }
+    .ans { break-before: page; page-break-before: always; }
+  }
+</style>
+<style>
+  .line { display: block; border-bottom: 1.4px solid var(--line); height: 1.9em; }
+  .text { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; margin: 0 0 6px; font-size: 13.5px; line-height: 1.55; }
+  .text .ttl { font-family: 'Nunito', sans-serif; font-weight: 800; text-align: center; margin: 0 0 2px; }
+  .text .s { color: var(--ink-soft); font-size: 10.5px; vertical-align: super; margin-right: 1px; }
+  .frag { font-size: 12.5px; }
+  td.fill { width: 22%; }
+  .ow { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; font-size: 14px; line-height: 2.25; }
+  .ow .code { display: inline-block; width: 1.9em; height: 1.35em; border: 1.3px solid var(--ink-soft); border-radius: 4px; vertical-align: -0.3em; margin-left: 6px; }
+  .ow .num { color: var(--ink-soft); font-size: 12px; margin-right: 4px; }
+  .legend { font-size: 12px; margin: 0 0 3px; }
+  .legend b { font-family: 'Nunito', sans-serif; color: var(--accent-deep); }
+  @media (max-width: 620px) { .ow { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="kicker">Русский язык · СОЧ за 1 четверть · главы I–II, §1–11</p>
+  <h1>Короткая подготовка к СОЧ</h1>
+  <p class="subtitle">По одному заданию на каждую цель учителя · подсказки — на плакате СОЧ, блоки 1–6</p>
+  <div class="namebar"><span>Дата: ____________</span><span>Время: ______ мин</span><span>Ошибок: ______</span></div>
+
+  <div class="text">
+    <p class="ttl">Старый дуб</p>
+    <p><span class="s">1</span>У края нашего двора растёт старый дуб. <span class="s">2</span>Каждую весну мы ждём, когда на нём появятся первые листья. <span class="s">3</span>Летом в его тени отдыхают бабушки и играют малыши. <span class="s">4</span>Осенью дети собирают жёлуди и мастерят из них смешные фигурки. <span class="s">5</span>Дедушка рассказывает, что этот дуб посадил его отец, когда дом только построили. <span class="s">6</span>Соседи меняются, а дуб по-прежнему собирает вокруг себя весь двор.</p>
+  </div>
+  <div class="hint"><b>Сначала:</b> прочитай текст <b>один раз целиком</b>, не останавливаясь. Это и есть ознакомительное чтение.</div>
+
+  <section>
+    <h2><span class="n">1</span>Тема и основная мысль <small>5.1.2.1 · плакат, блок 1</small></h2>
+    <div class="body">
+      <p>Тема (о чём? — словосочетанием): <span class="line"></span></p>
+      <p>Основная мысль (чему учит? — предложением): <span class="line"></span><span class="line"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Главное и детали <small>5.2.6.1 · плакат, блок 2</small></h2>
+    <div class="body">
+      <p>Какое предложение — <b>самое главное</b>, без него текст теряет смысл? № <span class="w"></span></p>
+      <p>Какое предложение — <b>деталь</b>, его можно убрать, и смысл не пострадает? № <span class="w"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Допиши окончание прилагательного <small>5.4.3.1 · плакат, блок 5</small></h2>
+    <div class="body">
+      <p class="items"><span class="q">о стар<span class="gap"></span> дубе</span><span class="q">у широк<span class="gap"></span> дороги</span><span class="q">к высок<span class="gap"></span> дереву</span></p>
+      <p class="items"><span class="q">горяч<span class="gap"></span> кофе</span><span class="q">нов<span class="gap"></span> пальто</span><span class="q">с весёл<span class="gap"></span> друзьями</span><span class="q">о хорош<span class="gap"></span> дне</span></p>
+      <div class="hint"><b>Способ:</b> задай вопрос от существительного — окончание вопроса подскажет окончание слова.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Тип текста и стиль <small>5.2.4.1 · плакат, блоки 3–4</small></h2>
+    <div class="body">
+      <div class="tbl-wrap"><table>
+        <tr><th>Отрывок</th><th>Тип</th><th>Стиль</th></tr>
+        <tr><td class="frag"><b>А.</b> 12 октября. Сегодня мы с папой ходили в горы. Сначала было холодно, потом выглянуло солнце, а наверху мы пили чай из термоса. Вообще класс!</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td class="frag"><b>Б.</b> Осенний лес стоит тихий и нарядный. Берёзы жёлтые, клёны красные, а между ними темнеют высокие ели.</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td class="frag"><b>В.</b> Читать нужно каждый день, потому что книги развивают речь и память. Кроме того, чтение помогает понимать людей. Поэтому найди для книги хотя бы полчаса.</td><td class="fill"></td><td class="fill"></td></tr>
+      </table></div>
+      <p>Какой отрывок мог быть в <b>дневнике</b>? <span class="w"></span> &nbsp; Какой похож на отрывок из <b>рассказа</b>? <span class="w"></span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Вставь букву, в окошке — какое правило <small>5.4.1.1 · плакат, блок 6</small></h2>
+    <div class="body">
+      <p class="legend"><b>Ч</b> — чередование · <b>К</b> — проверяемая буква в корне · <b>НЕ</b> — слитно или раздельно · <b>О</b> — окончание</p>
+      <div class="ow">
+        <span><span class="num">1.</span>заг<span class="gap"></span>рать на солнце<span class="code"></span></span>
+        <span><span class="num">6.</span>(не)приятель отступил<span class="code"></span></span>
+        <span><span class="num">2.</span>к<span class="gap"></span>саться рукой<span class="code"></span></span>
+        <span><span class="num">7.</span>дуб (не)высокий, а низкий<span class="code"></span></span>
+        <span><span class="num">3.</span>цветы выр<span class="gap"></span>сли<span class="code"></span></span>
+        <span><span class="num">8.</span>сла<span class="gap"></span>кий чай<span class="code"></span></span>
+        <span><span class="num">4.</span>соб<span class="gap"></span>рать жёлуди<span class="code"></span></span>
+        <span><span class="num">9.</span>отдыхать в санатори<span class="gap"></span><span class="code"></span></span>
+        <span><span class="num">5.</span>вовсе (не)большой<span class="code"></span></span>
+        <span><span class="num">10.</span>стоять под плащ<span class="gap"></span>м<span class="code"></span></span>
+      </div>
+      <div class="hint"><b>Для НЕ:</b> обведи, как писать — слитно или раздельно. <b>Для Ч:</b> проверочное слово не поможет — смотри на ударение, букву после корня или суффикс -а-.</div>
+    </div>
+  </section>
+
+  <footer>✏️ Тексты и задания составлены для подготовки, не из учебника · правила — плакат «СОЧ за 1 четверть», листы 1–2</footer>
+
+  <div class="ans">
+    <p class="kicker">Русский язык · СОЧ за 1 четверть · короткая подготовка</p>
+    <h1>Ответы</h1>
+    <p class="subtitle">Страница для мамы</p>
+
+    <section>
+      <h2><span class="n">1</span>Тема и основная мысль</h2>
+      <div class="body">
+        <p><b>Тема:</b> старый дуб в нашем дворе.</p>
+        <p><b>Основная мысль:</b> старое дерево хранит память и объединяет всех жителей двора: люди меняются, а дуб остаётся. Засчитывайте любое предложение с этим смыслом. Подсказка — последнее предложение (6).</p>
+        <p class="ansbar">Типичные ошибки: вместо темы пишут пересказ («дети собирают жёлуди…»); вместо мысли повторяют тему («текст про дуб»). Спросите: «Зачем автор это написал? Что он хочет нам сказать?»</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Главное и детали</h2>
+      <div class="body">
+        <p>Главное — <b>6</b> (можно принять 1 или 5, если ребёнок объяснит выбор). Деталь — <b>4</b> (или 2, 3): про жёлуди и фигурки можно убрать, смысл не пострадает.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Окончания</h2>
+      <div class="body">
+        <p>о (каком?) стар<b>ом</b> дубе · у (какой?) широк<b>ой</b> дороги · к (какому?) высок<b>ому</b> дереву · горяч<b>ий</b> кофе (м. р.!) · нов<b>ое</b> пальто (ср. р.) · с (какими?) весёл<b>ыми</b> друзьями · о хорош<b>ем</b> дне (после ш без ударения — е).</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Тип и стиль</h2>
+      <div class="body">
+        <p><b>А</b> — повествование (сначала, потом), разговорный («вообще класс»). <b>Б</b> — описание (какой лес? много прилагательных), книжный (художественный). <b>В</b> — рассуждение (потому что, поэтому), книжный.</p>
+        <p>Дневник — <b>А</b>. Рассказ — <b>Б</b>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Орфография</h2>
+      <div class="body">
+        <p>1. заг<b>о</b>рать — <b>Ч</b> (без ударения о) · 2. к<b>а</b>саться — <b>Ч</b> (есть -а-) · 3. выр<b>о</b>сли — <b>Ч</b> (нет ст/щ) · 4. соб<b>и</b>рать — <b>Ч</b> (есть -а-) · 5. вовсе <b>не большой</b> — <b>НЕ</b> (раздельно: «вовсе не»)</p>
+        <p>6. <b>неприятель</b> — <b>НЕ</b> (слитно: = враг) · 7. <b>не высокий</b>, а низкий — <b>НЕ</b> (раздельно: противопоставление с «а») · 8. сла<b>д</b>кий — <b>К</b> (сладок) · 9. в санатори<b>и</b> — <b>О</b> (на -ий → и) · 10. под плащ<b>о́</b>м — <b>О</b> (под ударением о)</p>
+        <p class="ansbar">Ловушки: «загорать» проверяют словом «загар» и пишут а; «выросли» — пишут а по слову «расти»; в № 5 пишут слитно, не заметив «вовсе».</p>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
