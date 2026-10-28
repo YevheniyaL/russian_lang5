@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Русский · §11 · игра: чередование е/и и кас/кос</title>
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22><text%20y=%22.9em%22%20font-size=%2290%22>🧲</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf9f4; --paper-raised: #ffffff; --rule: #b9cfe0; --rule-soft: #dbe8f1;
+    --margin: #2f6690; --margin-soft: #c7dbea; --ink: #24304a; --ink-soft: #647089; --ink-faint: #97a2b8;
+    --good: #3c8a5c; --good-bg: #dff1e5; --bad: #c85a4f; --bad-bg: #fbe4e1;
+    --mark: #2f9e8f; --mark-bg: #d7f0ec; --shadow: rgba(36, 48, 74, 0.14); --star: #e0a526;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1b2431; --paper-raised: #232f3f; --rule: #3c5468; --rule-soft: #29394a;
+      --margin: #7fb1de; --margin-soft: #2c3f4f; --ink: #eceff5; --ink-soft: #a7b2c8; --ink-faint: #6d788e;
+      --good: #6fcb93; --good-bg: #23392c; --bad: #e0847a; --bad-bg: #402b2a;
+      --mark: #5fd0bd; --mark-bg: #1f3d38; --shadow: rgba(0, 0, 0, 0.35); --star: #f0c04a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1b2431; --paper-raised: #232f3f; --rule: #3c5468; --rule-soft: #29394a;
+    --margin: #7fb1de; --margin-soft: #2c3f4f; --ink: #eceff5; --ink-soft: #a7b2c8; --ink-faint: #6d788e;
+    --good: #6fcb93; --good-bg: #23392c; --bad: #e0847a; --bad-bg: #402b2a;
+    --mark: #5fd0bd; --mark-bg: #1f3d38; --shadow: rgba(0, 0, 0, 0.35); --star: #f0c04a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'PT Sans', Arial, sans-serif; line-height: 1.5; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+  h1, .hand { font-family: 'Caveat', 'Comic Sans MS', cursive; font-weight: 700; text-wrap: balance; }
+  .back-link { font-size: 13px; color: var(--ink-faint); text-decoration: none; }
+  .back-link:hover { color: var(--margin); }
+  .sheet { max-width: 640px; margin: 0 auto; padding: 22px 16px 60px 44px; position: relative; min-height: 100vh; }
+  .sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 26px; width: 2px; background: var(--margin); opacity: 0.75; }
+  header.page { padding-top: 6px; padding-bottom: 10px; }
+  h1 { font-size: 36px; margin: 0 0 2px; line-height: 1.1; }
+  .subtitle { font-size: 15px; color: var(--ink-soft); margin: 0 0 6px; }
+
+  .progress { display: flex; justify-content: space-between; align-items: center; font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700; color: var(--margin); margin: 10px 0 8px; }
+  .stars { color: var(--star); letter-spacing: 2px; }
+
+  .card { background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 16px 18px; box-shadow: 1px 2px 0 var(--shadow); }
+  .task-title { font-size: 17px; font-weight: 700; margin: 0 0 6px; }
+  .task-show { font-size: 30px; margin: 6px 0 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .task-text { font-size: 16px; margin: 4px 0 10px; }
+
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1.1; margin: 0 2px; }
+  .frac > span:first-child { border-bottom: 2px solid currentColor; padding: 0 4px 2px; }
+  .frac > span:last-child { padding: 2px 4px 0; }
+  .mixed { display: inline-flex; align-items: center; gap: 2px; }
+
+  details.rule { font-size: 14px; color: var(--ink-soft); margin: 0 0 12px; }
+  details.rule summary { cursor: pointer; color: var(--margin); }
+  details.rule p { margin: 6px 0 0; padding: 8px 10px; background: var(--mark-bg); border-radius: 6px; color: var(--ink); }
+
+  .step { border-top: 1px dashed var(--rule); padding: 12px 0 4px; }
+  .step-q { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+  .step.done { opacity: 0.72; }
+  .step.done .step-q::after { content: "  ✓"; color: var(--good); }
+  .step-body { font-size: 22px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .step-body input { font-family: 'PT Sans', sans-serif; font-size: 22px; width: 58px; text-align: center; padding: 3px 4px; border: 2px solid var(--ink-faint); border-radius: 6px; background: var(--paper); color: var(--ink); }
+  .step-body input:focus { outline: none; border-color: var(--margin); }
+  .step-body input.bad { border-color: var(--bad); background: var(--bad-bg); }
+  .step-body input.ok { border-color: var(--good); background: var(--good-bg); color: var(--good); }
+  .frac input { margin: 2px 0; }
+
+  .choices { display: flex; flex-direction: column; gap: 8px; }
+  .choice { font-family: 'PT Sans', sans-serif; font-size: 16px; text-align: left; padding: 10px 12px; border-radius: 8px; border: 2px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; }
+  .choice:hover:not(:disabled) { border-color: var(--margin); }
+  .choice.wrong { border-color: var(--bad); background: var(--bad-bg); text-decoration: line-through; cursor: default; }
+  .choice.right { border-color: var(--good); background: var(--good-bg); }
+
+  .btn { font-family: 'PT Sans', sans-serif; font-size: 16px; font-weight: 700; background: var(--margin); color: var(--paper); border: none; border-radius: 8px; padding: 9px 18px; cursor: pointer; margin-top: 10px; }
+  .btn:hover { opacity: 0.9; }
+  .btn.big { font-size: 19px; padding: 12px 22px; }
+  .hint { margin-top: 8px; padding: 8px 11px; border-radius: 6px; background: var(--bad-bg); color: var(--ink); font-size: 15px; }
+  .hint.show-answer { background: var(--margin-soft); }
+  .away-note { margin: 0 0 12px; padding: 9px 12px; border-radius: 8px; border: 2px solid var(--star); background: var(--paper); font-size: 15px; }
+  .praise { margin-top: 12px; font-family: 'Caveat', cursive; font-size: 26px; font-weight: 700; color: var(--good); }
+
+  /* награда */
+  .reward { text-align: center; }
+  .reward h2 { font-family: 'Caveat', cursive; font-size: 40px; margin: 6px 0 0; color: var(--margin); }
+  .drobka-wrap { width: 230px; max-width: 70vw; margin: 0 auto; }
+  .drobka-wrap svg { width: 100%; height: auto; overflow: visible; }
+  .dance { animation: dance 0.9s ease-in-out infinite; transform-origin: 50% 90%; }
+  @keyframes dance { 0%,100% { transform: rotate(-7deg) translateY(0); } 50% { transform: rotate(7deg) translateY(-14px); } }
+  .slice { transition: transform 0.6s cubic-bezier(.3,1.6,.5,1); }
+  .boom .slice { transform: translate(var(--dx), var(--dy)); }
+  .arm-l, .arm-r { transform-box: fill-box; animation: wave 0.45s ease-in-out infinite alternate; }
+  .arm-l { transform-origin: right bottom; }
+  .arm-r { transform-origin: left bottom; animation-delay: 0.2s; }
+  @keyframes wave { from { transform: rotate(-25deg); } to { transform: rotate(25deg); } }
+  .eye { transform-box: fill-box; transform-origin: center; animation: blink 3s infinite; }
+  @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+  .whole-count { font-family: 'Caveat', cursive; font-size: 26px; font-weight: 700; color: var(--ink); min-height: 36px; margin: 4px 0; }
+  .joke { margin: 14px auto 0; max-width: 460px; padding: 12px 14px; border-radius: 10px; background: var(--mark-bg); font-size: 16px; text-align: left; }
+  .joke b { font-family: 'Caveat', cursive; font-size: 21px; color: var(--mark); }
+  .stickers { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 10px 0 4px; }
+  .sticker { width: 64px; height: 64px; border-radius: 50%; border: 2px dashed var(--rule); display: flex; align-items: center; justify-content: center; position: relative; font-family: 'Caveat', cursive; font-size: 28px; color: var(--ink-faint); }
+  .sticker.got { border: 2px solid var(--star); background: var(--paper-raised); }
+  .sticker.new { animation: pop 0.8s ease-out 2; }
+  @keyframes pop { 50% { transform: scale(1.25) rotate(8deg); } }
+  .sticker.got { cursor: pointer; }
+  .sticker.got:hover { transform: scale(1.08); }
+  .sticker.picked { box-shadow: 0 0 0 3px var(--mark); }
+  .sticker svg { width: 50px; height: 50px; }
+  .tok { font-family: 'PT Sans', sans-serif; font-size: 26px; padding: 2px 10px; border-radius: 8px; border: 2px dashed var(--margin); background: var(--paper); color: var(--ink); cursor: pointer; }
+  .tok:hover:not(:disabled) { background: var(--margin-soft); }
+  .tok.wrong { border-style: solid; border-color: var(--bad); background: var(--bad-bg); }
+  .tok.right { border-style: solid; border-color: var(--good); background: var(--good-bg); color: var(--good); }
+  .tok:disabled { cursor: default; }
+  .frac .tok { margin: 3px 0; }
+  .sticker .acc { position: absolute; top: -10px; font-size: 26px; }
+  .report-box { margin-top: 18px; text-align: left; }
+  .report-box pre { white-space: pre-wrap; font-family: 'PT Sans', sans-serif; font-size: 14px; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; color: var(--ink); }
+  .sent-note { font-size: 14px; color: var(--good); min-height: 20px; }
+
+  .confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 5; }
+  .confetti i { position: absolute; top: -20px; width: 9px; height: 14px; border-radius: 2px; animation: fall linear forwards; }
+  @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dance, .arm-l, .arm-r, .eye, .sticker.new, .confetti i { animation: none; }
+    .slice { transition: none; }
+  }
+  footer.page { margin-top: 30px; font-size: 12px; color: var(--ink-faint); }
+  footer.page a { color: var(--ink-faint); }
+  [hidden] { display: none !important; }
+  .word-big { font-size: 34px; letter-spacing: 1px; }
+  .ctx { display: block; font-size: 15px; color: var(--ink-soft); margin-top: 2px; }
+  .gap { display: inline-block; min-width: 0.7em; border-bottom: 3px solid var(--margin); color: transparent; }
+  .sentence { font-size: 22px; line-height: 1.4; }
+  .ne { padding: 0 4px; border-radius: 6px; background: var(--margin-soft); font-weight: 700; white-space: nowrap; }
+  .ins { color: var(--good); }
+  .task-show { display: block; }
+  .choices.row { flex-direction: row; flex-wrap: wrap; }
+  .choices.row .choice { min-width: 110px; text-align: center; font-size: 20px; font-weight: 700; }
+  .taps { gap: 2px; }
+  .taps .sep { color: var(--ink-faint); }
+  .done-word { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: var(--good-bg); }
+  .done-word .sentence { font-size: 19px; }
+  details.rule > p { margin: 6px 0 0; padding: 6px 10px; background: var(--mark-bg); border-radius: 6px; color: var(--ink); }
+  .splash { animation: splash 1.4s ease-in-out infinite; transform-origin: 100px 120px; }
+  @keyframes splash { 50% { transform: scale(1.15); opacity: 0.6; } }
+  @media (prefers-reduced-motion: reduce) { .splash { animation: none; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="page">
+    <a class="back-link" href="../index.html#games">&larr; к играм</a>
+    <h1>Чередование: бер/бир, дер/дир… и кас/кос</h1>
+    <p class="subtitle">§11. Чередование с суффиксом -а- · глава II · стр. 87–89 · <b>4 слова по шагам + 8 сразу, ошибки возвращаются в конце</b></p>
+  </header>
+
+  <div class="progress"><span id="progress"></span><span class="stars" id="stars"></span></div>
+  <main id="app"></main>
+
+  <footer class="page">Правила — 📖 из учебника (§11, стр. 87–89); подсказки, слова и Кляксик — ✏️ мои.</footer>
+</div>
+<div class="confetti" id="confetti"></div>
+
+<script>
+// ---------- игра: чередование с суффиксом -а-: бер/бир… и кас/кос (§11, стр. 87–89) ----------
+// Запас: [корень] в квадратных скобках, _ — пропуск; L — буква; g — ei (е/и) | kas | plain;
+// pair — пара с тем же корнем (собирать — соберу); у обычного корня mean и chk — проверочное слово.
+const BANK3 = [
+  ['со[б_р]ать', 'и', 'ei', 'грибы', 'sob'], ['со[б_р]у', 'е', 'ei', 'портфель', 'sob'],
+  ['вы[б_р]ать', 'и', 'ei', 'подарок', 'vyb'], ['вы[б_р]ешь', 'е', 'ei', 'сам', 'vyb'],
+  ['у[б_р]ать', 'и', 'ei', 'игрушки'],
+  ['за[д_р]ать', 'и', 'ei', 'нос', 'zad'], ['за[д_р]ёт', 'е', 'ei', 'нос', 'zad'], ['раз[д_р]ать', 'и', 'ei', 'бумагу'],
+  ['за[м_р]ать', 'и', 'ei', 'от восторга', 'zam'], ['за[м_р]еть', 'е', 'ei', 'на месте', 'zam'], ['об[м_р]ать', 'и', 'ei', 'от страха'],
+  ['за[п_р]ать', 'и', 'ei', 'дверь', 'zap'], ['за[п_р]еть', 'е', 'ei', 'замок', 'zap'],
+  ['от[п_р]ать', 'и', 'ei', 'калитку', 'otp'], ['от[п_р]еть', 'е', 'ei', 'сундук', 'otp'],
+  ['с[т_р]ать', 'и', 'ei', 'пыль', 'st'], ['с[т_р]еть', 'е', 'ei', 'надпись', 'st'],
+  ['вы[т_р]ать', 'и', 'ei', 'руки', 'vyt'], ['вы[т_р]еть', 'е', 'ei', 'стол', 'vyt'], ['в[т_р]ать', 'и', 'ei', 'крем'],
+  ['[бл_ст]ать', 'и', 'ei', 'на сцене', 'bl'], ['[бл_ст]еть', 'е', 'ei', 'на солнце', 'bl'],
+  ['[бл_ст]ательный', 'и', 'ei', 'успех'], ['[бл_ст]ящий', 'е', 'ei', 'лёд'],
+  ['за[ст_л]ать', 'и', 'ei', 'постель', 'zast'], ['за[ст_л]ить', 'е', 'ei', 'кровать', 'zast'],
+  ['вы[ст_л]ать', 'и', 'ei', 'дорожку'], ['рас[ст_л]ить', 'е', 'ei', 'скатерть'], ['по[ст_л]ю', 'е', 'ei', 'коврик'],
+  ['[к_с]аться', 'а', 'kas', 'рукой', 'kas'], ['[к_с]нуться', 'о', 'kas', 'плеча', 'kas'],
+  ['при[к_с]аться', 'а', 'kas', 'к цветку', 'prik'], ['при[к_с]нуться', 'о', 'kas', 'к цветку', 'prik'],
+  ['при[к_с]новение', 'о', 'kas', 'лёгкое'], ['[к_с]ание', 'а', 'kas', 'лёгкое'], ['[к_с]ательная', 'а', 'kas', 'линия'],
+  ['при[м_р]ять', 'е', 'plain', 'платье', null, 'мера, мерить', ['ме́ра', [['замира́ть', 'alt'], ['мери́ло', 'unstr']]]],
+  ['[д_р]евья', 'е', 'plain', 'в лесу', null, 'дерево', ['де́рево', [['задира́ть', 'alt'], ['деревя́нный', 'unstr']]]],
+  ['[т_рп]еливый', 'е', 'plain', 'ученик', null, 'терпеть', ['те́рпит', [['стира́ть', 'alt'], ['терпе́ние', 'unstr']]]],
+  ['[б_р]ежок', 'е', 'plain', 'реки', null, 'берег', ['бе́рег', [['собира́ть', 'alt'], ['берегово́й', 'unstr']]]],
+].map(([s, L, g, ctx, pair, mean, chk], id) => {
+  const a = s.indexOf('['), b = s.indexOf(']') - 1, letters = s.replace('[', '').replace(']', '');
+  return { id, letters, rootStart: a, after: b, L, g, ctx, pair, mean, chk };
+});
+
+const gapHTML3 = s => s.replace('_', '<span class="gap">_</span>');
+const filled3 = it => it.letters.replace('_', it.L);
+const rootOf = it => it.letters.slice(it.rootStart, it.after);
+const LETTERS3 = { ei: ['е', 'и'], plain: ['е', 'и'], kas: ['а', 'о'] };
+const RULE3 = {
+  ei: '📖 Буква <b>и</b> пишется, если после корня стоит суффикс <b>-а-</b>; нет -а- → <b>е</b>.',
+  kas: '📖 кас/кос: есть суффикс <b>-а-</b> после корня → <b>а</b>; нет → <b>о</b>.',
+};
+const TYPE3 = {
+  ei: 'е/и: бер, дер, мер, пер, тер, блест, стел — «брать, драть, замирать, запирать, тереть, блестеть, стелить»',
+  kas: 'кас/кос — «касаться»',
+  plain: 'обычный корень (мера, дерево, терпеть, берег) — проверяем',
+};
+const MEAN3 = { ei: 'брать, драть, замирать, запирать, тереть, блестеть или стелить', kas: 'касаться' };
+const CHK_HINT3 = {
+  unstr: 'Здесь звук тоже без ударения — не слышно, что писать. Нужно слово, где ударение падает на корень.',
+  alt: 'Это корень с чередованием — им проверять нельзя.',
+};
+
+function rootHint3(it, chosen) {
+  const w = gapHTML3(it.letters);
+  if (it.g === 'plain') return `Подумай о смысле: «${w}» — это про «${it.mean}». Это обычный корень, не чередование.`;
+  if (chosen === 'plain') return `Здесь корень значит «${MEAN3[it.g]}» — это корень с чередованием, проверочным словом его не проверить.`;
+  return `Корень слова «${w}» значит «${MEAN3[it.g]}».`;
+}
+
+const GAME = {
+  NAME: 'Чередование с суффиксом -а-: бер/бир, дер/дир… и кас/кос',
+  KEY: 'klyaksik_suffiks_a',
+  NEW_WHAT: 'словами',
+  DIRECT_TITLE: 'Вставь пропущенную букву',
+  RULE: `<p>📖 Корни <b>бер/бир, дер/дир, мер/мир, пер/пир, тер/тир, блест/блист, стел/стил</b>: буква <b>и</b> пишется, если после корня стоит суффикс <b>-а-</b>; нет -а- → <b>е</b>. <i>выбира́ть — выберу, блиста́ть — блесте́ть</i> (§11, стр. 87–89)</p>
+    <p>📖 <b>кас/кос</b>: есть суффикс -а- после корня → <b>а</b>; нет → <b>о</b>. <i>каса́ться — косну́ться</i></p>
+    <p>✏️ Смотри на <b>одну букву сразу за корнем</b>: «а» → и (у кас → а). Любая другая буква → е (у кас → о). <i>блестящий</i>: после корня «я», а не «а» → е.</p>
+    <p>✏️ Сначала смысл: если корень значит «мера», «дерево», «терпеть», «берег» — это обычный корень, его проверяют ударением.</p>`,
+  CODE_TEXT: {
+    root_type: 'не узнал корень', after: 'не нашёл букву после корня', suffix: 'есть ли суффикс -а-',
+    check_word: 'проверочное слово', letter: 'буква в конце разбора', direct: 'сразу вставил неверно',
+  },
+  STICKERS: [
+    { acc: '🧽', name: 'Кляксик с губкой', of: 'Кляксика с губкой' }, { acc: '🔑', name: 'Кляксик с ключиком', of: 'Кляксика с ключиком' },
+    { acc: '✨', name: 'Кляксик-блестяшка', of: 'Кляксика-блестяшки' }, { acc: '🛏', name: 'Кляксик-соня', of: 'Кляксика-сони' },
+    { acc: '🧺', name: 'Кляксик-грибник', of: 'Кляксика-грибника' }, { acc: '🤝', name: 'Кляксик-дружок', of: 'Кляксика-дружка' },
+  ],
+  // ✏️ шутки — по одной на наклейку (одобрены пользователем 2026-10-28)
+  JOKES: [
+    'Кляксик стирает пятно и бормочет: «Стираю — с „и“, ведь за корнем „а“. А сотру — уже с „е“: „а“ убежало!»',
+    'Мама: «Ты дверь запер?» Кляксик: «Запер — с „е“! А пока запираю — с „и“: за корнем стоит суффикс „-а-“!»',
+    'Звёзды спорили: «Мы блестим или блистаем?» Кляксик: «И так, и так! Только в „блистать“ за корнем „а“ — значит, „и“».',
+    '— Постели мне постель! — Постелю — с „е“, а расстилаю — с „и“. Сначала правило, потом сон!',
+    'Кляксик собирал грибы и пел: «Собира-а-аю — с „и“! Соберу корзинку — с „е“!»',
+    'Кляксик хотел коснуться облака. Облако сказало: «Коснуться — с „о“, ведь „а“ после корня нет. А касаться — с „а“, сколько хочешь!»',
+  ],
+
+  // часть A: 2 × е/и, кас/кос, обычный корень; часть B: 2 пары «один корень — две буквы» + 4 любых
+  makeRound(used) {
+    const take = it => { used.add(it.id); return it; };
+    const one = g => take(pick(BANK3.filter(x => x.g === g && !used.has(x.id))));
+    const a = shuffle([one('ei'), one('ei'), one('kas'), one('plain')]);
+    const pairs = shuffle([...new Set(BANK3.filter(x => x.pair).map(x => x.pair))])
+      .filter(p => BANK3.filter(x => x.pair === p).every(x => !used.has(x.id))).slice(0, 2);
+    const b = pairs.flatMap(p => BANK3.filter(x => x.pair === p).map(take));
+    b.push(one('plain'));
+    while (b.length < 8) b.push(take(pick(BANK3.filter(x => x.g !== 'plain' && !used.has(x.id)))));
+    return { a, b: shuffle(b) };
+  },
+  replace(it, used) {
+    let pool = BANK3.filter(x => x.g === it.g && !used.has(x.id));
+    if (!pool.length) pool = BANK3.filter(x => !used.has(x.id));
+    const n = pick(pool); used.add(n.id); return n;
+  },
+  label: it => filled3(it),
+  show: it => `<span class="word-big">${gapHTML3(it.letters)}</span>${it.ctx ? `<span class="ctx">(${it.ctx})</span>` : ''}`,
+  done: it => `<span class="word-big">${it.letters.replace('_', `<b class="ins">${it.L}</b>`)}</span>`,
+  direct: it => ({ q: 'Какая буква пропущена?', options: LETTERS3[it.g].map(l => ({ t: l, ok: l === it.L, code: 'direct' })) }),
+  steps(it) {
+    const steps = [
+      { type: 'choice', q: 'Шаг 1. Какой это корень? Подумай о смысле.', keepOrder: false,
+        options: ['ei', 'kas', 'plain'].map(k => ({ t: TYPE3[k], ok: k === it.g, hint: rootHint3(it, k), code: 'root_type' })) },
+    ];
+    if (it.g === 'plain') {
+      steps.push({ type: 'choice', q: 'Шаг 2. Подбери проверочное слово — чтобы ударение падало на корень',
+        options: [{ t: it.chk[0], ok: true }, ...it.chk[1].map(([t, k]) => ({ t, hint: CHK_HINT3[k], code: 'check_word' }))] });
+      steps.push({ type: 'choice', q: 'Шаг 3. Какую букву пишем?', keepOrder: true, big: true,
+        options: LETTERS3.plain.map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `Посмотри на проверочное слово «${it.chk[0]}»: какая буква под ударением?` })) });
+      return steps;
+    }
+    const next = it.letters[it.after], hasA = next === 'а';
+    steps.push({ type: 'tap', q: 'Шаг 2. Нажми на первую букву сразу после корня', parts: [...it.letters].map(c => c === '_' ? '<span class="gap">_</span>' : c),
+      correct: it.after, code: 'after', hint: `Корень здесь — «${gapHTML3(rootOf(it))}». Нажми на букву сразу после него.` });
+    steps.push({ type: 'choice', q: 'Шаг 3. Сразу после корня стоит суффикс -а-?', keepOrder: true, big: true, options: [
+      { t: 'да', ok: hasA, code: 'suffix', hint: `После корня стоит «${next}», а не «а».` },
+      { t: 'нет', ok: !hasA, code: 'suffix', hint: 'После корня стоит «а» — это суффикс -а-.' }] });
+    steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
+      options: LETTERS3[it.g].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `${RULE3[it.g]} Ты уже выяснил, есть ли -а- после корня.` })) });
+    return steps;
+  },
+};
+
+// ---------- помощники ----------
+const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const pick = arr => arr[rnd(0, arr.length - 1)];
+const shuffle = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = rnd(0, i); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+// ---------- состояние ----------
+// Раунд: часть A — разбор по шагам, часть B — сразу (ошибка → обязательный разбор по шагам).
+// Ошибка в задании — оно один раз возвращается в конце раунда (сразу, без шагов).
+function newRoundState() {
+  const used = new Set(), { a, b } = GAME.makeRound(used);
+  return { used, i: 0, errors: 0, nA: a.length, nB: b.length,
+    queue: [...a.map(item => ({ item, mode: 'steps' })), ...b.map(item => ({ item, mode: 'direct' }))] };
+}
+let R = newRoundState();
+const S = { round: 1, log: [], history: [], away: [], start: Date.now(), notice: false, finished: false, step: 0 };
+const app = document.getElementById('app');
+const cur = () => R.queue[R.i];
+
+function logErr(code) {
+  const t = cur();
+  S.log.push({ round: S.round, code, label: GAME.label(t.item) });
+  R.errors++;
+  if (!t.requeued && !t.repeat) {
+    R.queue.push({ item: t.item, mode: 'direct', repeat: true });
+    t.requeued = true;
+  }
+}
+
+const roundStars = () => R.errors <= 1 ? 3 : R.errors <= 4 ? 2 : 1;
+
+function renderProgress() {
+  const p = document.getElementById('progress');
+  if (R.i >= R.queue.length) p.textContent = `Раунд ${S.round} пройден!`;
+  else if (R.i < R.nA) p.textContent = `Раунд ${S.round} · по шагам ${R.i + 1} из ${R.nA}`;
+  else if (R.i < R.nA + R.nB) p.textContent = `Раунд ${S.round} · сразу ${R.i - R.nA + 1} из ${R.nB}`;
+  else p.textContent = `Раунд ${S.round} · повтор ${R.i - R.nA - R.nB + 1} из ${R.queue.length - R.nA - R.nB}`;
+  document.getElementById('stars').textContent = R.i >= R.queue.length ? '★'.repeat(roundStars()) + '☆'.repeat(3 - roundStars()) : '';
+}
+
+function renderTask() {
+  renderProgress();
+  const t = cur();
+  S.finished = false; S.step = 0;
+  const title = t.repeat ? 'Повтор: здесь была ошибка' : t.mode === 'steps' ? 'Разбери по шагам' : GAME.DIRECT_TITLE;
+  app.innerHTML = `<div class="card">
+      ${S.notice ? '<div class="away-note">Ты уходил со страницы, поэтому задание заменено новым 🙂</div>' : ''}
+      <p class="task-title">${title}</p>
+      <div class="task-show">${GAME.show(t.item)}</div>
+      <details class="rule"><summary>Вспомнить правило</summary>${GAME.RULE}</details>
+      <div id="steps"></div>
+    </div>`;
+  if (t.mode === 'steps') startSteps(); else renderDirect();
+}
+
+function renderDirect() {
+  const t = cur(), d = GAME.direct(t.item);
+  addChoice({ type: 'choice', q: d.q, options: d.options, big: true }, ok => {
+    if (ok) { finish(); return; }
+    const note = document.createElement('div');
+    note.className = 'hint show-answer';
+    note.textContent = 'Неверно. Разбери по шагам — так ты найдёшь, где ошибка.';
+    document.getElementById('steps').appendChild(note);
+    startSteps();
+  }, true);
+}
+
+function startSteps() { S.steps = GAME.steps(cur().item); S.step = 0; renderStep(); }
+
+function renderStep() {
+  const st = S.steps[S.step];
+  const next = () => { S.step++; S.step < S.steps.length ? renderStep() : finish(); };
+  if (st.type === 'tap') addTap(st, next); else addChoice(st, ok => { if (ok) next(); });
+}
+
+// choice: варианты перемешиваются; onDone(true) после верного; direct — первая же ошибка завершает шаг
+function addChoice(st, onDone, direct) {
+  const el = document.createElement('div');
+  el.className = 'step';
+  const order = st.keepOrder ? st.options.map((o, i) => i) : shuffle(st.options.map((o, i) => i));
+  el.innerHTML = `<div class="step-q">${st.q}</div><div class="choices${st.big ? ' row' : ''}">${
+    order.map(i => `<button class="choice" data-i="${i}">${st.options[i].t}</button>`).join('')}</div><div class="fb"></div>`;
+  el.querySelectorAll('.choice').forEach(b => b.onclick = () => {
+    const o = st.options[+b.dataset.i];
+    if (o.ok) {
+      b.classList.add('right');
+      el.querySelectorAll('.choice').forEach(x => x.disabled = true);
+      el.classList.add('done'); el.querySelector('.fb').innerHTML = '';
+      onDone(true);
+      return;
+    }
+    b.classList.add('wrong'); b.disabled = true;
+    logErr(o.code);
+    if (direct) {
+      el.querySelectorAll('.choice').forEach(x => x.disabled = true);
+      el.classList.add('done');
+      onDone(false);
+      return;
+    }
+    el.querySelector('.fb').innerHTML = `<div class="hint">${o.hint}</div>`;
+  });
+  document.getElementById('steps').appendChild(el);
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function addTap(st, onDone) {
+  const el = document.createElement('div');
+  el.className = 'step';
+  el.innerHTML = `<div class="step-q">${st.q}</div><div class="step-body taps">${
+    st.parts.map((p, i) => `<button class="tok" data-i="${i}">${p}</button>`).join('<span class="sep">·</span>')}</div><div class="fb"></div>`;
+  el.querySelectorAll('.tok').forEach(b => b.onclick = () => {
+    if (+b.dataset.i === st.correct) {
+      b.classList.add('right');
+      el.querySelectorAll('.tok').forEach(x => x.disabled = true);
+      el.classList.add('done'); el.querySelector('.fb').innerHTML = '';
+      onDone();
+      return;
+    }
+    b.classList.add('wrong'); b.disabled = true;
+    logErr(st.code);
+    el.querySelector('.fb').innerHTML = `<div class="hint">${st.hint}</div>`;
+  });
+  document.getElementById('steps').appendChild(el);
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function finish() {
+  S.finished = true;
+  const box = document.createElement('div');
+  box.innerHTML = `<div class="done-word">${GAME.done(cur().item)}</div>
+    <div class="praise">${pick(['Верно!', 'Отлично!', 'Молодец!', 'Так держать!'])}</div>
+    <button class="btn big" id="next">${R.i + 1 < R.queue.length ? 'Дальше →' : 'Забрать награду 🎁'}</button>`;
+  document.getElementById('steps').appendChild(box);
+  const btn = box.querySelector('#next');
+  btn.onclick = () => { R.i++; R.i < R.queue.length ? renderTask() : renderReward(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  btn.focus({ preventScroll: true });
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// уход со страницы дольше 3 с — текущее задание заменяется новым того же вида
+let awaySince = null;
+function goneAway() { if (awaySince === null) awaySince = Date.now(); }
+function cameBack() {
+  if (awaySince === null) return;
+  const sec = (Date.now() - awaySince) / 1000;
+  awaySince = null;
+  if (sec < 3 || R.i >= R.queue.length || S.finished) return;
+  S.away.push({ round: S.round });
+  cur().item = GAME.replace(cur().item, R.used);
+  S.notice = true; renderTask(); S.notice = false;
+}
+window.addEventListener('blur', goneAway);
+window.addEventListener('focus', cameBack);
+document.addEventListener('visibilitychange', () => document.hidden ? goneAway() : cameBack());
+
+// ---------- Кляксик ----------
+function klyaksikSVG(mini) {
+  const drop = `<path d="M100,22 C128,68 164,104 164,146 A64,64 0 0 1 36,146 C36,104 72,68 100,22 Z" fill="#2f4f8f" stroke="#1d3566" stroke-width="4"/>
+    <ellipse cx="74" cy="118" rx="9" ry="16" fill="#fff" opacity=".25" transform="rotate(25 74 118)"/>
+    <circle class="eye" cx="80" cy="140" r="12" fill="#fff"/><circle class="eye" cx="120" cy="140" r="12" fill="#fff"/>
+    <circle cx="82" cy="142" r="5.5" fill="#1b2431"/><circle cx="122" cy="142" r="5.5" fill="#1b2431"/>
+    <path d="M82,170 Q100,188 118,170" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="64" cy="164" r="6" fill="#f2a0a0" opacity=".8"/><circle cx="136" cy="164" r="6" fill="#f2a0a0" opacity=".8"/>`;
+  if (mini) return `<svg viewBox="28 16 144 150">${drop}</svg>`;
+  return `<svg viewBox="-10 0 220 240" role="img" aria-label="Кляксик танцует">
+    <g class="splash"><circle cx="20" cy="60" r="7" fill="#2f4f8f"/><circle cx="182" cy="70" r="5" fill="#2f4f8f"/><circle cx="170" cy="30" r="4" fill="#2f4f8f"/><circle cx="30" cy="25" r="4" fill="#2f4f8f"/></g>
+    <line class="arm-l" x1="8" y1="128" x2="40" y2="160" stroke="#1d3566" stroke-width="7" stroke-linecap="round"/>
+    <line class="arm-r" x1="160" y1="160" x2="192" y2="128" stroke="#1d3566" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="78" cy="214" rx="16" ry="8" fill="#1d3566"/><ellipse cx="122" cy="214" rx="16" ry="8" fill="#1d3566"/>
+    ${drop}</svg>`;
+}
+
+function confetti() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const box = document.getElementById('confetti');
+  const colors = ['#e0a526', '#2f9e8f', '#c85a4f', '#2f6690', '#8f6cc8', '#3c8a5c'];
+  let html = '';
+  for (let i = 0; i < 70; i++) html += `<i style="left:${Math.random() * 100}%;background:${colors[i % colors.length]};animation-duration:${2.5 + Math.random() * 2.5}s;animation-delay:${Math.random() * 1.5}s"></i>`;
+  box.innerHTML = html;
+  setTimeout(() => box.innerHTML = '', 7000);
+}
+
+// одна наклейка за каждый пройденный раунд; счётчик только в этом браузере
+function takeSticker() {
+  let got = S.round - 1;
+  try { got = parseInt(localStorage.getItem(GAME.KEY) || '0', 10) || 0; } catch (e) {}
+  const now = Math.min(got + 1, GAME.STICKERS.length);
+  try { localStorage.setItem(GAME.KEY, String(now)); } catch (e) {}
+  return { now, isNew: got < GAME.STICKERS.length };
+}
+
+const jokeOf = i => GAME.JOKES[i] || 'Шутка для этой наклейки скоро появится 🙂';
+const ofName = i => GAME.STICKERS[i].of;
+
+function renderReward() {
+  S.history.push({ round: S.round, stars: roundStars(), repeats: R.queue.length - R.nA - R.nB });
+  renderProgress();
+  const { now, isNew } = takeSticker(), ST = GAME.STICKERS;
+  app.innerHTML = `<div class="card reward">
+      <h2>Ура! Раунд ${S.round} пройден!</h2>
+      <div class="drobka-wrap"><div class="dance">${klyaksikSVG(false)}</div></div>
+      <div class="whole-count">Я Кляксик! Ни одна буква от тебя не убежит!</div>
+      <p class="hand" style="font-size:22px;margin:16px 0 0">${isNew ? `Новая наклейка: ${ST[now - 1].name}!` : 'Все наклейки собраны! 🏆'}</p>
+      <div class="stickers">${ST.map((s, i) => i < now
+        ? `<div class="sticker got${isNew && i === now - 1 ? ' new picked' : ''}" data-i="${i}" title="${s.name} — нажми, чтобы прочитать шутку">${klyaksikSVG(true)}<span class="acc">${s.acc}</span></div>`
+        : '<div class="sticker">?</div>').join('')}</div>
+      <div class="joke" id="joke"><b>Шутка от ${ofName(now - 1)}:</b><br>${jokeOf(now - 1)}</div>
+      <p style="font-size:14px;color:var(--ink-soft);margin:8px 0 0">Нажми на любую открытую наклейку — у каждой своя шутка.</p>
+      <button class="btn big" id="again">🔄 Ещё раунд с новыми ${GAME.NEW_WHAT}${now < ST.length ? ` — открыть наклейку ${now + 1}` : ''}</button>
+      <div class="report-box">
+        <button class="btn big" id="send">📨 Отправить маме</button>
+        <div class="sent-note" id="sent"></div>
+        <pre id="report"></pre>
+      </div>
+    </div>`;
+  confetti();
+  app.querySelectorAll('.sticker.got').forEach(st => st.onclick = () => {
+    const i = +st.dataset.i;
+    app.querySelectorAll('.sticker').forEach(x => x.classList.remove('picked'));
+    st.classList.add('picked');
+    document.getElementById('joke').innerHTML = `<b>Шутка от ${ofName(i)}:</b><br>${jokeOf(i)}`;
+  });
+  document.getElementById('again').onclick = newRound;
+  const report = buildReport();
+  document.getElementById('report').textContent = report;
+  document.getElementById('send').onclick = () => sendReport(report);
+}
+
+function newRound() {
+  S.round++;
+  R = newRoundState();
+  renderTask();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function buildReport() {
+  const d = new Date(), mins = Math.max(1, Math.round((Date.now() - S.start) / 60000));
+  const date = `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+  const lines = [`${GAME.NAME} · ${date} · ${mins} мин · раундов: ${S.history.length}`];
+  S.history.forEach(h => {
+    lines.push('', `Раунд ${h.round}: ${'★'.repeat(h.stars)}${'☆'.repeat(3 - h.stars)} · ${R.nA} по шагам + ${R.nB} сразу${h.repeats ? ` + ${h.repeats} повт.` : ''}`);
+    const away = S.away.filter(a => a.round === h.round).length;
+    if (away) lines.push(`⚠ уходил со страницы: ${away} р.`);
+    const byLabel = {};
+    S.log.filter(e => e.round === h.round).forEach(e => (byLabel[e.label] = byLabel[e.label] || []).push(GAME.CODE_TEXT[e.code] || e.code));
+    if (!Object.keys(byLabel).length) lines.push('• без ошибок 🎉');
+    else Object.entries(byLabel).sort((a, b) => b[1].length - a[1].length)
+      .forEach(([label, list]) => lines.push(`• ${label} — ${list.length} ош. (${[...new Set(list)].join(', ')})`));
+  });
+  return lines.join('\n');
+}
+
+async function sendReport(text) {
+  const note = document.getElementById('sent');
+  if (navigator.share) {
+    try { await navigator.share({ title: GAME.NAME, text }); note.textContent = 'Отправлено!'; return; }
+    catch (e) { if (e.name === 'AbortError') return; }
+  }
+  try { await navigator.clipboard.writeText(text); note.textContent = 'Скопировано! Вставь в сообщение маме (Ctrl+V).'; }
+  catch (e) { note.textContent = 'Выдели текст ниже и скопируй его маме.'; }
+}
+
+renderTask();
+</script>
+</body>
+</html>
