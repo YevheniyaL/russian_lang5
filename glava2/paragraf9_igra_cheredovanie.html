@@ -236,6 +236,36 @@ function rootHint(it, chosen) {
   return `Корень слова «${w}» значит «${GROUPS[it.g].mean}».`;
 }
 
+// показ, ответ и шаги разбора — общие для отдельной и смешанной игры
+const UDAR = {
+  label: it => filled(it),
+  show: it => `<span class="word-big">${gapHTML(it.syl.join(''))}</span>${it.ctx ? `<span class="ctx">(${it.ctx})</span>` : ''}`,
+  done: it => `<span class="word-big">${stressed(it, true)}</span>`,
+  direct: it => ({ q: 'Какая буква пропущена?', options: ['а', 'о'].map(l => ({ t: l, ok: l === it.L, code: 'direct' })) }),
+  steps(it) {
+    const r = rootIdx(it), parts = it.syl.map(gapHTML);
+    const steps = [
+      { type: 'choice', q: 'Шаг 1. Какой это корень? Подумай о смысле.',
+        options: ['gar', 'zar', 'klan', 'plain'].map(k => ({ t: TYPE_LABEL[k], ok: k === it.g, hint: rootHint(it, k), code: 'root_type' })) },
+      { type: 'tap', q: 'Шаг 2. Нажми на ударный слог', parts, correct: it.st, code: 'stress',
+        hint: 'Произнеси слово вслух, как будто зовёшь кого-то: ударный слог тянется дольше.' },
+    ];
+    if (it.g === 'plain') {
+      steps.push({ type: 'choice', q: 'Шаг 3. Подбери проверочное слово — чтобы ударение падало на корень',
+        options: [{ t: it.chk[0], ok: true }, ...it.chk[1].map(([t, k]) => ({ t, hint: CHK_HINT[k], code: 'check_word' }))] });
+      steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
+        options: ['а', 'о'].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `Посмотри на проверочное слово «${it.chk[0]}»: какая буква под ударением?` })) });
+    } else {
+      const where = `Ударный слог — «${parts[it.st]}», а пропуск — в слоге «${parts[r]}».`;
+      steps.push({ type: 'choice', q: 'Шаг 3. Ударение падает на корень — на слог с пропуском?', keepOrder: true, big: true,
+        options: [{ t: 'да', ok: it.st === r, hint: where, code: 'stress_root' }, { t: 'нет', ok: it.st !== r, hint: where, code: 'stress_root' }] });
+      steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
+        options: ['а', 'о'].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `${GROUPS[it.g].rule} Ты уже выяснил, падает ли ударение на корень.` })) });
+    }
+    return steps;
+  },
+};
+
 const GAME = {
   NAME: 'Чередование гар/гор, зар/зор, клан/клон',
   KEY: 'klyaksik_cheredovanie',
@@ -276,32 +306,7 @@ const GAME = {
     if (!pool.length) pool = BANK1.filter(x => !used.has(x.id));
     const n = pick(pool); used.add(n.id); return n;
   },
-  label: it => filled(it),
-  show: it => `<span class="word-big">${gapHTML(it.syl.join(''))}</span>${it.ctx ? `<span class="ctx">(${it.ctx})</span>` : ''}`,
-  done: it => `<span class="word-big">${stressed(it, true)}</span>`,
-  direct: it => ({ q: 'Какая буква пропущена?', options: ['а', 'о'].map(l => ({ t: l, ok: l === it.L, code: 'direct' })) }),
-  steps(it) {
-    const r = rootIdx(it), parts = it.syl.map(gapHTML);
-    const steps = [
-      { type: 'choice', q: 'Шаг 1. Какой это корень? Подумай о смысле.',
-        options: ['gar', 'zar', 'klan', 'plain'].map(k => ({ t: TYPE_LABEL[k], ok: k === it.g, hint: rootHint(it, k), code: 'root_type' })) },
-      { type: 'tap', q: 'Шаг 2. Нажми на ударный слог', parts, correct: it.st, code: 'stress',
-        hint: 'Произнеси слово вслух, как будто зовёшь кого-то: ударный слог тянется дольше.' },
-    ];
-    if (it.g === 'plain') {
-      steps.push({ type: 'choice', q: 'Шаг 3. Подбери проверочное слово — чтобы ударение падало на корень',
-        options: [{ t: it.chk[0], ok: true }, ...it.chk[1].map(([t, k]) => ({ t, hint: CHK_HINT[k], code: 'check_word' }))] });
-      steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
-        options: ['а', 'о'].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `Посмотри на проверочное слово «${it.chk[0]}»: какая буква под ударением?` })) });
-    } else {
-      const where = `Ударный слог — «${parts[it.st]}», а пропуск — в слоге «${parts[r]}».`;
-      steps.push({ type: 'choice', q: 'Шаг 3. Ударение падает на корень — на слог с пропуском?', keepOrder: true, big: true,
-        options: [{ t: 'да', ok: it.st === r, hint: where, code: 'stress_root' }, { t: 'нет', ok: it.st !== r, hint: where, code: 'stress_root' }] });
-      steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
-        options: ['а', 'о'].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `${GROUPS[it.g].rule} Ты уже выяснил, падает ли ударение на корень.` })) });
-    }
-    return steps;
-  },
+  label: UDAR.label, show: UDAR.show, done: UDAR.done, direct: UDAR.direct, steps: UDAR.steps,
 };
 
 // ---------- помощники ----------

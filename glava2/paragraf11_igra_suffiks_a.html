@@ -227,6 +227,36 @@ function rootHint3(it, chosen) {
   return `Корень слова «${w}» значит «${MEAN3[it.g]}».`;
 }
 
+// показ, ответ и шаги разбора — общие для отдельной и смешанной игры
+const SUFF = {
+  label: it => filled3(it),
+  show: it => `<span class="word-big">${gapHTML3(it.letters)}</span>${it.ctx ? `<span class="ctx">(${it.ctx})</span>` : ''}`,
+  done: it => `<span class="word-big">${it.letters.replace('_', `<b class="ins">${it.L}</b>`)}</span>`,
+  direct: it => ({ q: 'Какая буква пропущена?', options: LETTERS3[it.g].map(l => ({ t: l, ok: l === it.L, code: 'direct' })) }),
+  steps(it) {
+    const steps = [
+      { type: 'choice', q: 'Шаг 1. Какой это корень? Подумай о смысле.', keepOrder: false,
+        options: ['ei', 'kas', 'plain'].map(k => ({ t: TYPE3[k], ok: k === it.g, hint: rootHint3(it, k), code: 'root_type' })) },
+    ];
+    if (it.g === 'plain') {
+      steps.push({ type: 'choice', q: 'Шаг 2. Подбери проверочное слово — чтобы ударение падало на корень',
+        options: [{ t: it.chk[0], ok: true }, ...it.chk[1].map(([t, k]) => ({ t, hint: CHK_HINT3[k], code: 'check_word' }))] });
+      steps.push({ type: 'choice', q: 'Шаг 3. Какую букву пишем?', keepOrder: true, big: true,
+        options: LETTERS3.plain.map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `Посмотри на проверочное слово «${it.chk[0]}»: какая буква под ударением?` })) });
+      return steps;
+    }
+    const next = it.letters[it.after], hasA = next === 'а';
+    steps.push({ type: 'tap', q: 'Шаг 2. Нажми на первую букву сразу после корня', parts: [...it.letters].map(c => c === '_' ? '<span class="gap">_</span>' : c),
+      correct: it.after, code: 'after', hint: `Корень здесь — «${gapHTML3(rootOf(it))}». Нажми на букву сразу после него.` });
+    steps.push({ type: 'choice', q: 'Шаг 3. Сразу после корня стоит суффикс -а-?', keepOrder: true, big: true, options: [
+      { t: 'да', ok: hasA, code: 'suffix', hint: `После корня стоит «${next}», а не «а».` },
+      { t: 'нет', ok: !hasA, code: 'suffix', hint: 'После корня стоит «а» — это суффикс -а-.' }] });
+    steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
+      options: LETTERS3[it.g].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `${RULE3[it.g]} Ты уже выяснил, есть ли -а- после корня.` })) });
+    return steps;
+  },
+};
+
 const GAME = {
   NAME: 'Чередование с суффиксом -а-: бер/бир, дер/дир… и кас/кос',
   KEY: 'klyaksik_suffiks_a',
@@ -272,32 +302,7 @@ const GAME = {
     if (!pool.length) pool = BANK3.filter(x => !used.has(x.id));
     const n = pick(pool); used.add(n.id); return n;
   },
-  label: it => filled3(it),
-  show: it => `<span class="word-big">${gapHTML3(it.letters)}</span>${it.ctx ? `<span class="ctx">(${it.ctx})</span>` : ''}`,
-  done: it => `<span class="word-big">${it.letters.replace('_', `<b class="ins">${it.L}</b>`)}</span>`,
-  direct: it => ({ q: 'Какая буква пропущена?', options: LETTERS3[it.g].map(l => ({ t: l, ok: l === it.L, code: 'direct' })) }),
-  steps(it) {
-    const steps = [
-      { type: 'choice', q: 'Шаг 1. Какой это корень? Подумай о смысле.', keepOrder: false,
-        options: ['ei', 'kas', 'plain'].map(k => ({ t: TYPE3[k], ok: k === it.g, hint: rootHint3(it, k), code: 'root_type' })) },
-    ];
-    if (it.g === 'plain') {
-      steps.push({ type: 'choice', q: 'Шаг 2. Подбери проверочное слово — чтобы ударение падало на корень',
-        options: [{ t: it.chk[0], ok: true }, ...it.chk[1].map(([t, k]) => ({ t, hint: CHK_HINT3[k], code: 'check_word' }))] });
-      steps.push({ type: 'choice', q: 'Шаг 3. Какую букву пишем?', keepOrder: true, big: true,
-        options: LETTERS3.plain.map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `Посмотри на проверочное слово «${it.chk[0]}»: какая буква под ударением?` })) });
-      return steps;
-    }
-    const next = it.letters[it.after], hasA = next === 'а';
-    steps.push({ type: 'tap', q: 'Шаг 2. Нажми на первую букву сразу после корня', parts: [...it.letters].map(c => c === '_' ? '<span class="gap">_</span>' : c),
-      correct: it.after, code: 'after', hint: `Корень здесь — «${gapHTML3(rootOf(it))}». Нажми на букву сразу после него.` });
-    steps.push({ type: 'choice', q: 'Шаг 3. Сразу после корня стоит суффикс -а-?', keepOrder: true, big: true, options: [
-      { t: 'да', ok: hasA, code: 'suffix', hint: `После корня стоит «${next}», а не «а».` },
-      { t: 'нет', ok: !hasA, code: 'suffix', hint: 'После корня стоит «а» — это суффикс -а-.' }] });
-    steps.push({ type: 'choice', q: 'Шаг 4. Какую букву пишем?', keepOrder: true, big: true,
-      options: LETTERS3[it.g].map(l => ({ t: l, ok: l === it.L, code: 'letter', hint: `${RULE3[it.g]} Ты уже выяснил, есть ли -а- после корня.` })) });
-    return steps;
-  },
+  label: SUFF.label, show: SUFF.show, done: SUFF.done, direct: SUFF.direct, steps: SUFF.steps,
 };
 
 // ---------- помощники ----------
