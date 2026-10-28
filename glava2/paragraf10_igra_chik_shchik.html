@@ -117,11 +117,6 @@
   .tok:disabled { cursor: default; }
   .frac .tok { margin: 3px 0; }
   .sticker .acc { position: absolute; top: -10px; font-size: 26px; }
-  .sticker.gold { border: 3px solid var(--star); background: radial-gradient(circle at 35% 30%, #fff8dc, #f3c54d 85%); }
-  .sticker.gold-empty { border-color: var(--star); color: var(--star); }
-  .album-h { font-family: 'Caveat', cursive; font-size: 24px; font-weight: 700; color: var(--star); margin: 12px 0 0; }
-  .joke .res { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--rule); }
-  .joke .res pre { white-space: pre-wrap; font-family: 'PT Sans', sans-serif; font-size: 14px; margin: 4px 0 0; }
   .report-box { margin-top: 18px; text-align: left; }
   .report-box pre { white-space: pre-wrap; font-family: 'PT Sans', sans-serif; font-size: 14px; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; color: var(--ink); }
   .sent-note { font-size: 14px; color: var(--good); min-height: 20px; }
@@ -137,6 +132,11 @@
   footer.page { margin-top: 30px; font-size: 12px; color: var(--ink-faint); }
   footer.page a { color: var(--ink-faint); }
   [hidden] { display: none !important; }
+  .sticker.gold { border: 3px solid var(--star); background: radial-gradient(circle at 35% 30%, #fff8dc, #f3c54d 85%); }
+  .sticker.gold-empty { border-color: var(--star); color: var(--star); }
+  .album-h { font-family: 'Caveat', cursive; font-size: 24px; font-weight: 700; color: var(--star); margin: 12px 0 0; }
+  .joke .res { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--rule); }
+  .joke .res pre { white-space: pre-wrap; font-family: 'PT Sans', sans-serif; font-size: 14px; margin: 4px 0 0; }
   .word-big { font-size: 34px; letter-spacing: 1px; }
   .ctx { display: block; font-size: 15px; color: var(--ink-soft); margin-top: 2px; }
   .gap { display: inline-block; min-width: 0.7em; border-bottom: 3px solid var(--margin); color: transparent; }
@@ -430,33 +430,69 @@ function confetti() {
   setTimeout(() => box.innerHTML = '', 7000);
 }
 
-// одна наклейка за каждый пройденный раунд; счётчик только в этом браузере
-function takeSticker() {
-  let got = S.round - 1;
-  try { got = parseInt(localStorage.getItem(GAME.KEY) || '0', 10) || 0; } catch (e) {}
-  const now = Math.min(got + 1, GAME.STICKERS.length);
-  try { localStorage.setItem(GAME.KEY, String(now)); } catch (e) {}
-  return { now, isNew: got < GAME.STICKERS.length };
+// ---------- альбом: 6 обычных наклеек, потом 6 золотых — только за раунд не меньше ★★ ----------
+// localStorage этого браузера: [{ g: золотая, d: 'дд.мм', t: результат раунда — как в отчёте маме }]
+const ALBUM_KEY = GAME.KEY + '_album', OLD_KEY = GAME.KEY, GOLD_RULE = 'не меньше ★★';
+let albumMem = null; // если хранилище недоступно — альбом живёт до закрытия вкладки
+const ddmm = () => { const d = new Date(); return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}`; };
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function loadAlbum() {
+  if (albumMem) return albumMem;
+  let a = null;
+  try { a = JSON.parse(localStorage.getItem(ALBUM_KEY) || 'null'); } catch (e) {}
+  if (Array.isArray(a)) return a;
+  let old = 0; // наклейки, собранные до альбома: результат у них не сохранился
+  try { old = parseInt(localStorage.getItem(OLD_KEY) || '0', 10) || 0; } catch (e) {}
+  return Array.from({ length: Math.min(old, GAME.STICKERS.length) }, () => ({ g: 0, d: '', t: '' }));
 }
-
-const jokeOf = i => GAME.JOKES[i] || 'Шутка для этой наклейки скоро появится 🙂';
-const ofName = i => GAME.STICKERS[i].of;
+function takeSticker(ok, text) {
+  const album = loadAlbum(), N = GAME.STICKERS.length;
+  let idx = -1;
+  if (album.length < N || (album.length < 2 * N && ok)) { album.push({ g: album.length >= N ? 1 : 0, d: ddmm(), t: text }); idx = album.length - 1; }
+  albumMem = album;
+  try { localStorage.setItem(ALBUM_KEY, JSON.stringify(album)); } catch (e) {}
+  return { album, idx };
+}
+function albumHTML(album, idx) {
+  const ST = GAME.STICKERS, N = ST.length;
+  const cell = i => album[i]
+    ? `<div class="sticker got${album[i].g ? ' gold' : ''}${i === idx ? ' new picked' : ''}" data-i="${i}" title="${ST[i % N].name} — нажми: шутка и результат">${klyaksikSVG(true)}<span class="acc">${ST[i % N].acc}</span></div>`
+    : `<div class="sticker${i >= N ? ' gold-empty' : ''}">?</div>`;
+  const row = from => `<div class="stickers">${ST.map((s, i) => cell(from + i)).join('')}</div>`;
+  return row(0) + (album.length >= N ? `<p class="album-h">✨ Золотой альбом — за раунд ${GOLD_RULE}</p>${row(N)}` : '');
+}
+function stickerInfo(album, i) {
+  const s = album[i], st = GAME.STICKERS[i % GAME.STICKERS.length];
+  const joke = GAME.JOKES[i % GAME.STICKERS.length] || 'Шутка для этой наклейки скоро появится 🙂';
+  return `<b>${s.g ? '✨ ' : ''}Шутка от ${st.of}:</b><br>${joke}
+    <div class="res"><b>Результат за эту наклейку${s.d ? ' · ' + s.d : ''}:</b><pre>${s.t ? esc(s.t) : 'не сохранился — наклейка получена, когда игра ещё не запоминала результаты'}</pre></div>`;
+}
+function albumTitle(album, idx) {
+  const N = GAME.STICKERS.length;
+  if (idx >= 0) return `Новая ${album[idx].g ? 'золотая ' : ''}наклейка: ${GAME.STICKERS[idx % N].name}!`;
+  if (album.length >= 2 * N) return 'Все наклейки собраны, и золотые тоже! 🏆';
+  return `Золотая наклейка — за раунд ${GOLD_RULE}. В этот раз не вышло — попробуй ещё!`;
+}
+function againText(album) {
+  const N = GAME.STICKERS.length;
+  return `🔄 Ещё раунд с новыми ${GAME.NEW_WHAT}` + (album.length < N ? ` — открыть наклейку ${album.length + 1}` : album.length < 2 * N ? ' — за золотой наклейкой' : '');
+}
 
 function renderReward() {
   S.history.push({ round: S.round, stars: roundStars(), repeats: R.queue.length - R.nA - R.nB });
   renderProgress();
-  const { now, isNew } = takeSticker(), ST = GAME.STICKERS;
+  const h = S.history[S.history.length - 1];
+  const { album, idx } = takeSticker(h.stars >= 2, roundLines(h).join('\n'));
+  const shown = idx >= 0 ? idx : album.length - 1;
   app.innerHTML = `<div class="card reward">
       <h2>Ура! Раунд ${S.round} пройден!</h2>
       <div class="drobka-wrap"><div class="dance">${klyaksikSVG(false)}</div></div>
       <div class="whole-count">Я Кляксик! Ни одна буква от тебя не убежит!</div>
-      <p class="hand" style="font-size:22px;margin:16px 0 0">${isNew ? `Новая наклейка: ${ST[now - 1].name}!` : 'Все наклейки собраны! 🏆'}</p>
-      <div class="stickers">${ST.map((s, i) => i < now
-        ? `<div class="sticker got${isNew && i === now - 1 ? ' new picked' : ''}" data-i="${i}" title="${s.name} — нажми, чтобы прочитать шутку">${klyaksikSVG(true)}<span class="acc">${s.acc}</span></div>`
-        : '<div class="sticker">?</div>').join('')}</div>
-      <div class="joke" id="joke"><b>Шутка от ${ofName(now - 1)}:</b><br>${jokeOf(now - 1)}</div>
-      <p style="font-size:14px;color:var(--ink-soft);margin:8px 0 0">Нажми на любую открытую наклейку — у каждой своя шутка.</p>
-      <button class="btn big" id="again">🔄 Ещё раунд с новыми ${GAME.NEW_WHAT}${now < ST.length ? ` — открыть наклейку ${now + 1}` : ''}</button>
+      <p class="hand" style="font-size:22px;margin:16px 0 0">${albumTitle(album, idx)}</p>
+      ${albumHTML(album, idx)}
+      <div class="joke" id="joke">${shown >= 0 ? stickerInfo(album, shown) : ''}</div>
+      <p style="font-size:14px;color:var(--ink-soft);margin:8px 0 0">Нажми на любую открытую наклейку — увидишь шутку и результат, за который она получена.</p>
+      <button class="btn big" id="again">${againText(album)}</button>
       <div class="report-box">
         <button class="btn big" id="send">📨 Отправить маме</button>
         <div class="sent-note" id="sent"></div>
@@ -465,10 +501,9 @@ function renderReward() {
     </div>`;
   confetti();
   app.querySelectorAll('.sticker.got').forEach(st => st.onclick = () => {
-    const i = +st.dataset.i;
     app.querySelectorAll('.sticker').forEach(x => x.classList.remove('picked'));
     st.classList.add('picked');
-    document.getElementById('joke').innerHTML = `<b>Шутка от ${ofName(i)}:</b><br>${jokeOf(i)}`;
+    document.getElementById('joke').innerHTML = stickerInfo(album, +st.dataset.i);
   });
   document.getElementById('again').onclick = newRound;
   const report = buildReport();
@@ -484,20 +519,22 @@ function newRound() {
 }
 
 function buildReport() {
-  const d = new Date(), mins = Math.max(1, Math.round((Date.now() - S.start) / 60000));
-  const date = `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}`;
-  const lines = [`${GAME.NAME} · ${date} · ${mins} мин · раундов: ${S.history.length}`];
-  S.history.forEach(h => {
-    lines.push('', `Раунд ${h.round}: ${'★'.repeat(h.stars)}${'☆'.repeat(3 - h.stars)} · ${R.nA} по шагам + ${R.nB} сразу${h.repeats ? ` + ${h.repeats} повт.` : ''}`);
-    const away = S.away.filter(a => a.round === h.round).length;
-    if (away) lines.push(`⚠ уходил со страницы: ${away} р.`);
-    const byLabel = {};
-    S.log.filter(e => e.round === h.round).forEach(e => (byLabel[e.label] = byLabel[e.label] || []).push(GAME.CODE_TEXT[e.code] || e.code));
-    if (!Object.keys(byLabel).length) lines.push('• без ошибок 🎉');
-    else Object.entries(byLabel).sort((a, b) => b[1].length - a[1].length)
-      .forEach(([label, list]) => lines.push(`• ${label} — ${list.length} ош. (${[...new Set(list)].join(', ')})`));
-  });
+  const lines = [`${GAME.NAME} · ${ddmm()} · ${Math.max(1, Math.round((Date.now() - S.start) / 60000))} мин · раундов: ${S.history.length}`];
+  S.history.forEach(h => lines.push('', ...roundLines(h)));
   return lines.join('\n');
+}
+
+// строки отчёта об одном раунде — они же сохраняются у наклейки
+function roundLines(h) {
+  const lines = [`Раунд ${h.round}: ${'★'.repeat(h.stars)}${'☆'.repeat(3 - h.stars)} · ${R.nA} по шагам + ${R.nB} сразу${h.repeats ? ` + ${h.repeats} повт.` : ''}`];
+  const away = S.away.filter(a => a.round === h.round).length;
+  if (away) lines.push(`⚠ уходил со страницы: ${away} р.`);
+  const byLabel = {};
+  S.log.filter(e => e.round === h.round).forEach(e => (byLabel[e.label] = byLabel[e.label] || []).push(GAME.CODE_TEXT[e.code] || e.code));
+  if (!Object.keys(byLabel).length) lines.push('• без ошибок 🎉');
+  else Object.entries(byLabel).sort((a, b) => b[1].length - a[1].length)
+    .forEach(([label, list]) => lines.push(`• ${label} — ${list.length} ош. (${[...new Set(list)].join(', ')})`));
+  return lines;
 }
 
 async function sendReport(text) {
